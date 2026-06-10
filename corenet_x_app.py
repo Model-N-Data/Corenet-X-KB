@@ -113,7 +113,8 @@ def load_registry():
     if github_enabled():
         data, _ = gh_read(f"{DATA_PATH}/registry.json")
         if data: return data
-    return st.session_state.get("registry", DEFAULT_REGISTRY.copy())
+    reg = st.session_state.get("registry")
+    return reg if reg is not None else DEFAULT_REGISTRY.copy()
 
 def save_registry(registry):
     st.session_state["registry"] = registry
@@ -146,7 +147,8 @@ def load_custom_kb():
     if github_enabled():
         data, _ = gh_read(f"{DATA_PATH}/custom_kb.json")
         if data: return data
-    return st.session_state.get("custom_kb", [])
+    kb = st.session_state.get("custom_kb")
+    return kb if kb is not None else []
 
 def save_custom_kb(entries):
     st.session_state["custom_kb"] = entries
