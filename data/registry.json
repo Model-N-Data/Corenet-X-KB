@@ -57,11 +57,12 @@
       "id": "hdb_fb",
       "name": "HDB Feedback Document",
       "version": "2025",
-      "pages": 0,
+      "pages": 1,
       "status": "active",
-      "processed": false,
-      "uploaded": null,
-      "notes": "HDB-specific requirements"
+      "processed": true,
+      "uploaded": "10 Jun 2026 13:57",
+      "notes": "HDB-specific requirements",
+      "chunk_count": 2
     },
     {
       "id": "consultant",
