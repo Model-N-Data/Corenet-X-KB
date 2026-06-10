@@ -1,0 +1,75 @@
+{
+  "documents": [
+    {
+      "id": "cop_v31",
+      "name": "COP v3.1 Edition (Dec 2025)",
+      "version": "3.1",
+      "pages": 442,
+      "status": "active",
+      "processed": true,
+      "uploaded": "10 Jun 2026 13:27",
+      "notes": "Primary regulatory standard",
+      "chunk_count": 1305
+    },
+    {
+      "id": "rabw_2026",
+      "name": "RABW Mar 2026",
+      "version": "Mar 2026",
+      "pages": 181,
+      "status": "active",
+      "processed": false,
+      "uploaded": null,
+      "notes": "Regulatory Advisory for Built Works"
+    },
+    {
+      "id": "ifc_sg",
+      "name": "IFC-SG Revit SP Guide (Sep 2025)",
+      "version": "Sep 2025",
+      "pages": 176,
+      "status": "active",
+      "processed": false,
+      "uploaded": null,
+      "notes": "IFC+SG implementation guide"
+    },
+    {
+      "id": "dg_pdf",
+      "name": "Design Gateway Guidelines",
+      "version": "2025",
+      "pages": 0,
+      "status": "active",
+      "processed": false,
+      "uploaded": null,
+      "notes": "Image-based — OCR may be needed"
+    },
+    {
+      "id": "cg_pdf",
+      "name": "Construction Gateway Guidelines",
+      "version": "2025",
+      "pages": 0,
+      "status": "active",
+      "processed": false,
+      "uploaded": null,
+      "notes": "Image-based — OCR may be needed"
+    },
+    {
+      "id": "hdb_fb",
+      "name": "HDB Feedback Document",
+      "version": "2025",
+      "pages": 0,
+      "status": "active",
+      "processed": false,
+      "uploaded": null,
+      "notes": "HDB-specific requirements"
+    },
+    {
+      "id": "consultant",
+      "name": "Consultant Briefing Notes",
+      "version": "2025",
+      "pages": 0,
+      "status": "active",
+      "processed": false,
+      "uploaded": null,
+      "notes": "Agency briefing materials"
+    }
+  ]
+}
