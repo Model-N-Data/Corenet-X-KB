@@ -326,8 +326,11 @@ def conf_bar(conf, tier):
 # ─── SESSION STATE ────────────────────────────────────────────────────────────
 for k, v in {"messages":[], "review_queue":[], "stats":{"asked":0,"resolved":0,"pending":0},
               "role":"user", "officer_authenticated":False, "pending_q":None,
-              "registry":None, "custom_kb":None}.items():
+              "custom_kb":[]}.items():
     if k not in st.session_state: st.session_state[k] = v
+# Registry must default to the full document list, never None
+if "registry" not in st.session_state or st.session_state["registry"] is None:
+    st.session_state["registry"] = {"documents": [d.copy() for d in DEFAULT_REGISTRY["documents"]]}
 
 # ─── SIDEBAR ──────────────────────────────────────────────────────────────────
 with st.sidebar:
