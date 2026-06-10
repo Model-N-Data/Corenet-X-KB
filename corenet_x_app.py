@@ -310,6 +310,37 @@ Respond ONLY with the JSON array."""
     except Exception:
         return []
 
+# ─── AGENCY CONFIG ────────────────────────────────────────────────────────────
+AGENCIES = ["BCA","URA","SCDF","HDB","JTC","LTA","NEA","NParks","SLA","GovTech","Other"]
+AGENCY_COLORS = {
+    "BCA":"#1a3c5e","URA":"#6b21a8","SCDF":"#dc2626","HDB":"#d97706",
+    "JTC":"#0891b2","LTA":"#065f46","NEA":"#166534","NParks":"#15803d",
+    "SLA":"#9a3412","GovTech":"#1d4ed8","Other":"#6b7280"
+}
+AGENCY_DOMAINS = {
+    "BCA":  ["building control","structural","accessibility","GFA","floor area","height","storey","construction"],
+    "URA":  ["planning","development","land use","zoning","plot ratio","setback","conservation","planning permission"],
+    "SCDF": ["fire","sprinkler","suppression","emergency","evacuation","hose reel","detector","fire engine","SCDF"],
+    "HDB":  ["public housing","HDB","residential flat","estate","HDB project"],
+    "JTC":  ["industrial","warehouse","factory","JTC","logistics"],
+    "LTA":  ["transport","traffic","road","parking","vehicle","LTA"],
+    "NEA":  ["environment","waste","noise","pollution","NEA"],
+    "NParks":["greenery","tree","plant","landscape","planting","soil depth","NParks"],
+    "SLA":  ["land","survey","cadastral","boundary","SLA","lot number"],
+    "GovTech":["digital","IFC","BIM","submission","portal","corenet","ifc-sg","model"],
+}
+
+def suggest_agency(question):
+    """Auto-tag a query to the most likely reviewing agency."""
+    q = question.lower()
+    scores = {agency: sum(1 for kw in kws if kw in q) for agency, kws in AGENCY_DOMAINS.items()}
+    best = max(scores, key=scores.get)
+    return best if scores[best] > 0 else "GovTech"
+
+def agency_badge(agency):
+    color = AGENCY_COLORS.get(agency, "#6b7280")
+    return f'<span style="background:{color};color:#fff;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700">{agency}</span>'
+
 # ─── HELPERS ──────────────────────────────────────────────────────────────────
 TIER_LABELS = {"A": "✅ Verified (Tier A)", "B": "📋 Officer Reviewing (Tier B)",
                "C": "🤖 AI Draft (Tier C)", "D": "📞 Needs Officer (Tier D)"}
@@ -320,10 +351,10 @@ def conf_bar(conf, tier):
 
 # ─── SESSION STATE ────────────────────────────────────────────────────────────
 for k, v in {"messages":[], "review_queue":[], "stats":{"asked":0,"resolved":0,"pending":0},
-              "role":"user", "officer_authenticated":False, "pending_q":None,
-              "custom_kb":[]}.items():
+              "role":"user", "officer_authenticated":False, "pending_q":None, "custom_kb":[],
+              "officer_name":"", "officer_agency":"GovTech",
+              "private_mode":False, "private_messages":[]}.items():
     if k not in st.session_state: st.session_state[k] = v
-# Registry must default to the full document list, never None
 if "registry" not in st.session_state or st.session_state["registry"] is None:
     st.session_state["registry"] = {"documents": [d.copy() for d in DEFAULT_REGISTRY["documents"]]}
 
@@ -331,11 +362,10 @@ if "registry" not in st.session_state or st.session_state["registry"] is None:
 with st.sidebar:
     st.markdown("### 🏗️ CORENET X KB")
     st.caption("Official Singapore government sources")
-
     if github_enabled():
         st.caption("🟢 GitHub sync active")
     else:
-        st.caption("🟡 Session-only mode (add GITHUB_TOKEN to enable sync)")
+        st.caption("🟡 Session-only mode")
 
     st.divider()
     col1, col2 = st.columns(2)
@@ -352,11 +382,39 @@ with st.sidebar:
 
     if st.session_state.role == "officer_login":
         pw = st.text_input("Officer password", type="password", key="pw_input")
+        off_name = st.text_input("Your name", key="off_name_input", placeholder="e.g. Ahmad Razali")
+        off_agency = st.selectbox("Your agency", AGENCIES, key="off_agency_input")
         if st.button("Login", type="primary", use_container_width=True):
             if pw == get_officer_pw():
                 st.session_state.officer_authenticated = True
+                st.session_state.officer_name = off_name or "Officer"
+                st.session_state.officer_agency = off_agency
                 st.session_state.role = "officer"; st.rerun()
             else: st.error("Incorrect password")
+
+    # Show officer identity if logged in
+    if st.session_state.role == "officer" and st.session_state.officer_authenticated:
+        ag = st.session_state.officer_agency
+        color = AGENCY_COLORS.get(ag, "#6b7280")
+        st.markdown(f'<div style="background:{color}22;border:1px solid {color};padding:8px 10px;border-radius:8px;margin:4px 0"><strong style="color:{color}">{ag}</strong><br><span style="font-size:12px">{st.session_state.officer_name}</span></div>', unsafe_allow_html=True)
+        if st.button("🚪 Sign out", use_container_width=True):
+            st.session_state.officer_authenticated = False
+            st.session_state.officer_name = ""
+            st.session_state.role = "user"; st.rerun()
+
+    st.divider()
+
+    # Private mode toggle (user side)
+    if st.session_state.role == "user":
+        private = st.toggle("🔒 Private / Confidential mode", value=st.session_state.private_mode,
+                            help="Your questions and answers are NOT stored or shared. Use for project-specific or confidential queries.")
+        if private != st.session_state.private_mode:
+            st.session_state.private_mode = private
+            if private:
+                st.session_state.private_messages = []
+            st.rerun()
+        if st.session_state.private_mode:
+            st.markdown('<div style="background:#fdeaea;border:1px solid #f5b8b8;padding:8px;border-radius:6px;font-size:12px">🔒 <strong>Private mode ON</strong><br>Nothing stored. Session only.</div>', unsafe_allow_html=True)
 
     st.divider()
     st.markdown("**📊 Session stats**")
@@ -365,7 +423,6 @@ with st.sidebar:
     c2.metric("✅", st.session_state.stats["resolved"])
     c3.metric("⏳", st.session_state.stats["pending"])
 
-    # Document coverage indicator
     registry = load_registry()
     docs = registry.get("documents", [])
     processed = sum(1 for d in docs if d.get("processed") and d["status"]=="active")
@@ -374,13 +431,16 @@ with st.sidebar:
     st.markdown("**📚 Document coverage**")
     st.progress(processed / max(total_active, 1), text=f"{processed}/{total_active} docs processed")
     if processed == 0:
-        st.caption("⚠️ No documents processed yet — using fallback KB. Upload PDFs in Officer → Documents.")
+        st.caption("⚠️ No documents processed yet — using fallback KB.")
     else:
         st.caption(f"✅ {processed} document(s) indexed for live retrieval")
 
     st.divider()
     if st.button("🗑️ Clear conversation", use_container_width=True):
-        st.session_state.messages = []; st.session_state.stats = {"asked":0,"resolved":0,"pending":0}; st.rerun()
+        st.session_state.messages = []
+        st.session_state.private_messages = []
+        st.session_state.stats = {"asked":0,"resolved":0,"pending":0}
+        st.rerun()
 
 # ─── OFFICER DASHBOARD ────────────────────────────────────────────────────────
 if st.session_state.role == "officer" and st.session_state.officer_authenticated:
@@ -405,74 +465,129 @@ if st.session_state.role == "officer" and st.session_state.officer_authenticated
     m5.metric("⛔ Superseded", _superseded)
     st.divider()
 
+    _my_agency = st.session_state.officer_agency
+    _my_name   = st.session_state.officer_name
+
     tab1, tab2, tab3, tab4, tab5 = st.tabs(["📋 Review Queue", "🔍 Search KB", "📚 Documents", "✏️ KB Editor", "📧 Notifications"])
 
     # ── TAB 1: REVIEW QUEUE ───────────────────────────────────────────────────
     with tab1:
-        pending = [q for q in st.session_state.review_queue if not q.get("reviewed")]
-        reviewed = [q for q in st.session_state.review_queue if q.get("reviewed")]
+        rq = st.session_state.review_queue
+        pending   = [q for q in rq if not q.get("reviewed") and not q.get("disputed")]
+        disputed  = [q for q in rq if q.get("disputed") and not q.get("resolved")]
+        reviewed  = [q for q in rq if q.get("reviewed") and not q.get("disputed")]
 
-        # Tier breakdown
-        if st.session_state.review_queue:
-            tier_counts = {}
-            for q in st.session_state.review_queue:
-                t = q.get("tier","?")
-                tier_counts[t] = tier_counts.get(t, 0) + 1
-            tc1,tc2,tc3,tc4,tc5 = st.columns(5)
-            tc1.metric("Total", len(st.session_state.review_queue))
-            tc2.metric("🔵 Tier B", tier_counts.get("B",0))
-            tc3.metric("🟡 Tier C", tier_counts.get("C",0))
-            tc4.metric("🔴 Tier D", tier_counts.get("D",0))
-            tc5.metric("✅ Tier A", tier_counts.get("A",0))
-            st.caption(f"**{len(pending)} pending** · {len(reviewed)} reviewed")
+        # Summary metrics
+        tier_counts = {}
+        for q in rq:
+            t = q.get("tier","?"); tier_counts[t] = tier_counts.get(t,0)+1
+        tc1,tc2,tc3,tc4,tc5,tc6 = st.columns(6)
+        tc1.metric("Total", len(rq))
+        tc2.metric("🔵 Tier B", tier_counts.get("B",0))
+        tc3.metric("🟡 Tier C", tier_counts.get("C",0))
+        tc4.metric("🔴 Tier D", tier_counts.get("D",0))
+        tc5.metric("✅ Tier A", tier_counts.get("A",0))
+        tc6.metric("⚠️ Disputed", len(disputed))
 
-            # Filter
-            show_filter = st.radio("Show:", ["Pending only","All","Reviewed only"], horizontal=True, key="rq_filter")
-            if show_filter == "Pending only": display_queue = [(i,q) for i,q in enumerate(st.session_state.review_queue) if not q.get("reviewed")]
-            elif show_filter == "Reviewed only": display_queue = [(i,q) for i,q in enumerate(st.session_state.review_queue) if q.get("reviewed")]
-            else: display_queue = list(enumerate(st.session_state.review_queue))
-
-            # Bulk actions
-            if pending:
-                ba1, ba2 = st.columns([1,4])
-                if ba1.button("🗑️ Dismiss all reviewed", use_container_width=True):
-                    for qi in st.session_state.review_queue: qi["reviewed"] = True
-                    st.rerun()
-        else:
-            display_queue = []
+        if not rq:
             st.info("No queries yet. Tier B/C/D questions from users appear here automatically.")
+        else:
+            # Filters
+            f1, f2 = st.columns([2,2])
+            show_filter = f1.radio("Show:", ["My agency first","Pending only","Disputed","All"], horizontal=True, key="rq_filter")
+            agency_filter = f2.selectbox("Agency filter:", ["All agencies"] + AGENCIES, key="rq_agency")
 
-        for i, item in display_queue:
+            def _filter_queue(items):
+                result = [(i,q) for i,q in enumerate(rq)]
+                if show_filter == "Pending only":   result = [(i,q) for i,q in result if not q.get("reviewed") and not q.get("disputed")]
+                elif show_filter == "Disputed":     result = [(i,q) for i,q in result if q.get("disputed")]
+                elif show_filter == "My agency first":
+                    result = sorted(result, key=lambda x: (x[1].get("suggested_agency","") != _my_agency, x[1].get("reviewed",False)))
+                if agency_filter != "All agencies":
+                    result = [(i,q) for i,q in result if q.get("suggested_agency","") == agency_filter]
+                return result
+
+            display_queue = _filter_queue(rq)
+            st.caption(f"**{len(pending)} pending** · {len(disputed)} disputed · {len(reviewed)} reviewed · Showing {len(display_queue)} items")
+
+            if pending and f1.button("🗑️ Dismiss all reviewed", key="dismiss_all"):
+                for qi in rq: qi["reviewed"] = True
+                st.rerun()
+
+        for i, item in (display_queue if rq else []):
             icon = {"B":"🔵","C":"🟡","D":"🔴","A":"✅"}.get(item["tier"],"⚪")
-            rev_label = " ✅" if item.get("reviewed") else " 🔴 Action needed"
-            avg_conf = item.get("conf",0)
-            conf_color = "#1b6b3a" if avg_conf>=85 else "#1a3c5e" if avg_conf>=70 else "#d97706" if avg_conf>=40 else "#dc2626"
-            with st.expander(f"{icon} [{item['tier']}] {item['question'][:75]}…{rev_label}"):
-                st.caption(f"Asked: {item.get('timestamp','')} · Conf: {item.get('conf',0)}% · Email: {item.get('email','Not provided')}")
-                # AI answer
+            disp_icon = " ⚠️ DISPUTED" if item.get("disputed") else (" ✅" if item.get("reviewed") else " 🔴")
+            sug_ag = item.get("suggested_agency","?")
+            ag_color = AGENCY_COLORS.get(sug_ag,"#6b7280")
+            is_my_domain = (sug_ag == _my_agency)
+            border_style = f"border-left:4px solid {ag_color}"
+
+            with st.expander(f"{icon} [{item['tier']}] {item['question'][:70]}…{disp_icon}"):
+                # Agency tag + metadata row
+                st.markdown(
+                    f"{agency_badge(sug_ag)} &nbsp; Asked: {item.get('timestamp','')} · "
+                    f"Conf: {item.get('conf',0)}% · "
+                    f"{'👍' if item.get('feedback')=='up' else '👎' if item.get('feedback')=='down' else '—'} feedback · "
+                    f"Email: {item.get('email','None')}",
+                    unsafe_allow_html=True
+                )
+                if item.get("approved_by"):
+                    st.caption(f"✅ Approved by: {item['approved_by']}")
+                if item.get("disputed"):
+                    st.error(f"⚠️ Disputed by **{item.get('disputed_by','unknown')}** ({item.get('dispute_agency','?')}): {item.get('dispute_reason','')}")
+
                 st.markdown("**AI Answer:**")
                 st.markdown(item.get("answer",""), unsafe_allow_html=True)
-                if item.get("sources"): st.caption("📄 Sources: " + " · ".join(item["sources"]))
-                if item.get("chunks_used"): st.caption(f"🔍 Retrieved from: {item['chunks_used']}")
-                if item.get("feedback"):
-                    fb = item["feedback"]
-                    st.caption(f"User feedback: {'👍' if fb=='up' else '👎'}")
+                if item.get("sources"): st.caption("📄 " + " · ".join(item["sources"]))
+                if item.get("chunks_used"): st.caption(f"🔍 {item['chunks_used']}")
                 st.markdown("---")
-                ans = st.text_area("✏️ Official answer (edit before approving):", value=item.get("officer_answer",""), key=f"oa_{i}", height=100)
-                c1,c2,c3,c4 = st.columns(4)
-                if c1.button("✅ Approve → Tier A", key=f"app_{i}", type="primary"):
-                    st.session_state.review_queue[i].update({"officer_answer":ans,"reviewed":True,"tier":"A"})
-                    st.success("Approved and upgraded to Tier A."); st.rerun()
+
+                ans = st.text_area("✏️ Official answer:", value=item.get("officer_answer",""), key=f"oa_{i}", height=90)
+                c1,c2,c3,c4,c5 = st.columns(5)
+
+                if c1.button("✅ Approve", key=f"app_{i}", type="primary"):
+                    st.session_state.review_queue[i].update({
+                        "officer_answer":ans,"reviewed":True,"tier":"A",
+                        "approved_by":f"{_my_name} ({_my_agency})",
+                        "approved_at":datetime.now().strftime("%d %b %Y %H:%M"),
+                        "disputed":False
+                    })
+                    st.success(f"Approved by {_my_name}."); st.rerun()
+
                 if c2.button("💾 Save Draft", key=f"sv_{i}"):
-                    st.session_state.review_queue[i]["officer_answer"] = ans; st.success("Draft saved.")
+                    st.session_state.review_queue[i]["officer_answer"] = ans
+                    st.session_state.review_queue[i]["draft_by"] = f"{_my_name} ({_my_agency})"
+                    st.success("Draft saved.")
+
                 if c3.button("➕ Add to KB", key=f"addkb_{i}"):
                     if ans:
-                        custom_kb = load_custom_kb()
-                        custom_kb.append({"q":item["question"],"a":ans,"src":" · ".join(item.get("sources",[])),"cat":"Other","conf":90,"added":datetime.now().strftime("%d %b %Y %H:%M")})
-                        save_custom_kb(custom_kb)
-                        st.success("Added to KB!"); st.rerun()
-                if c4.button("🗑️ Dismiss", key=f"dis_{i}"):
-                    st.session_state.review_queue[i]["reviewed"] = True; st.rerun()
+                        ckb = load_custom_kb()
+                        ckb.append({"q":item["question"],"a":ans,
+                                    "src":" · ".join(item.get("sources",[])),
+                                    "cat":sug_ag,"conf":90,
+                                    "agency":_my_agency,"officer":_my_name,
+                                    "added":datetime.now().strftime("%d %b %Y %H:%M")})
+                        save_custom_kb(ckb); st.success("Added to KB!"); st.rerun()
+
+                # Dispute button — only show on already-approved items
+                if item.get("reviewed") and item.get("tier")=="A" and not item.get("disputed"):
+                    if c4.button("⚠️ Dispute", key=f"disp_{i}"):
+                        st.session_state[f"show_dispute_{i}"] = True
+                    if st.session_state.get(f"show_dispute_{i}"):
+                        dr = st.text_input("Reason for dispute:", key=f"dr_{i}", placeholder="e.g. Incorrect for HDB projects — refer to HDB circular 2024")
+                        if st.button("Submit dispute", key=f"subdisp_{i}", type="primary"):
+                            if dr:
+                                st.session_state.review_queue[i].update({
+                                    "disputed":True,"reviewed":False,
+                                    "disputed_by":_my_name,"dispute_agency":_my_agency,
+                                    "dispute_reason":dr,
+                                    "disputed_at":datetime.now().strftime("%d %b %Y %H:%M")
+                                })
+                                del st.session_state[f"show_dispute_{i}"]
+                                st.warning("Dispute raised. Item sent back for re-review."); st.rerun()
+                else:
+                    if c5.button("🗑️ Dismiss", key=f"dis_{i}"):
+                        st.session_state.review_queue[i]["reviewed"] = True; st.rerun()
 
     # ── TAB 2: KB SEARCH (officer can test any query) ─────────────────────────
     with tab2:
@@ -630,34 +745,65 @@ if st.session_state.role == "officer" and st.session_state.officer_authenticated
 
     # ── TAB 4: KB EDITOR ──────────────────────────────────────────────────────
     with tab4:
-        st.markdown("### ✏️ Custom KB Entries")
-        st.caption("Add entries that supplement or clarify document content. These are included in every query context.")
+        st.markdown("### ✏️ Knowledge Base Editor")
+        st.caption("All officers see the full KB. Each entry is owned by the agency that created it — only that agency (or admin) should edit it.")
 
         custom_kb = load_custom_kb()
+
+        # Agency filter
+        kb_view = st.radio("View:", [f"My agency ({_my_agency})", "All agencies"], horizontal=True, key="kb_view")
+        if kb_view.startswith("My"):
+            visible_kb = [(j,e) for j,e in enumerate(custom_kb) if e.get("agency","")==_my_agency or not e.get("agency")]
+        else:
+            visible_kb = list(enumerate(custom_kb))
+
+        # Group by agency
+        if kb_view == "All agencies" and custom_kb:
+            by_agency = {}
+            for j, e in visible_kb:
+                ag = e.get("agency","Other")
+                by_agency.setdefault(ag,[]).append((j,e))
+            for ag, entries in sorted(by_agency.items()):
+                color = AGENCY_COLORS.get(ag,"#6b7280")
+                st.markdown(f'<div style="border-left:4px solid {color};padding:4px 12px;margin:12px 0 4px"><strong style="color:{color}">{ag}</strong> — {len(entries)} entries</div>', unsafe_allow_html=True)
+                for j, e in entries:
+                    can_edit = (e.get("agency","") == _my_agency or not e.get("agency"))
+                    lock = "" if can_edit else " 🔒"
+                    with st.expander(f"[{e.get('cat','')}] {e['q'][:60]}…{lock}"):
+                        st.markdown(e["a"])
+                        st.caption(f"Source: {e.get('src','')} · Added by: {e.get('officer','unknown')} · {e.get('added','')} · Conf: {e.get('conf','')}%")
+                        if can_edit:
+                            if st.button("🗑️ Remove", key=f"rmkb_{j}"):
+                                custom_kb.pop(j); save_custom_kb(custom_kb); st.rerun()
+                        else:
+                            st.caption(f"🔒 Owned by {ag}. Raise a dispute if you disagree.")
+        else:
+            if visible_kb:
+                st.markdown(f"**{len(visible_kb)} entries for {_my_agency}:**")
+                for j, e in visible_kb:
+                    with st.expander(f"[{e.get('cat','')}] {e['q'][:60]}…"):
+                        st.markdown(e["a"])
+                        st.caption(f"Source: {e.get('src','')} · {e.get('added','')} · Conf: {e.get('conf','')}%")
+                        if st.button("🗑️ Remove", key=f"rmkb_{j}"):
+                            custom_kb.pop(j); save_custom_kb(custom_kb); st.rerun()
+            else:
+                st.info(f"No KB entries owned by {_my_agency} yet. Add one below.")
+
+        st.divider()
+        st.markdown("**➕ Add new entry** (will be owned by your agency)")
         with st.form("kb_form"):
             kq = st.text_input("Question")
-            ka = st.text_area("Answer (plain text)", height=120)
-            ks = st.text_input("Source reference")
-            kc = st.selectbox("Category", ["Overview","Design Gateway","External Works",
-                                            "Construction Gateway","BIM & IFC+SG",
-                                            "Greenery & Trees","Process","Other"])
+            ka = st.text_area("Answer", height=100)
+            ks = st.text_input("Source reference (document + page)")
+            kc = st.selectbox("Category", ["Overview","Design Gateway","Construction Gateway",
+                                            "BIM & IFC+SG","External Works","Greenery & Trees","Process","Other"])
             kconf = st.slider("Confidence %", 50, 99, 90)
             if st.form_submit_button("➕ Add to KB", type="primary"):
                 if kq and ka:
-                    entry = {"q":kq,"a":ka,"src":ks,"cat":kc,"conf":kconf,
-                             "added":datetime.now().strftime("%d %b %Y %H:%M")}
-                    custom_kb.append(entry)
-                    save_custom_kb(custom_kb)
-                    st.success("Entry added."); st.rerun()
-
-        if custom_kb:
-            st.markdown(f"**{len(custom_kb)} custom entries:**")
-            for j, e in enumerate(custom_kb):
-                with st.expander(f"[{e['cat']}] {e['q'][:60]}…"):
-                    st.markdown(e["a"])
-                    st.caption(f"Source: {e['src']} · Added: {e.get('added','')} · Conf: {e.get('conf','')}%")
-                    if st.button("🗑️ Remove", key=f"rmkb_{j}"):
-                        custom_kb.pop(j); save_custom_kb(custom_kb); st.rerun()
+                    custom_kb.append({"q":kq,"a":ka,"src":ks,"cat":kc,"conf":kconf,
+                                      "agency":_my_agency,"officer":_my_name,
+                                      "added":datetime.now().strftime("%d %b %Y %H:%M")})
+                    save_custom_kb(custom_kb); st.success("Entry added."); st.rerun()
 
     # ── TAB 5: EMAIL NOTIFICATIONS ────────────────────────────────────────────
     with tab5:
@@ -798,9 +944,14 @@ else:
 
         # Input
         st.markdown("---")
+        is_private = st.session_state.get("private_mode", False)
+        if is_private:
+            st.markdown('<div style="background:#fdeaea;border:1px solid #f5b8b8;padding:6px 12px;border-radius:6px;font-size:12px;margin-bottom:8px">🔒 <strong>Private mode</strong> — your question will be answered from the KB but nothing will be stored or shared with officers.</div>', unsafe_allow_html=True)
+
         with st.form("chat_form", clear_on_submit=True):
             ic, bc = st.columns([5,1])
-            user_input = ic.text_input("Ask anything about CORENET X…", label_visibility="collapsed", placeholder="e.g. What does SCDF require at Design Gateway?")
+            placeholder = "Ask a confidential project question…" if is_private else "Ask anything about CORENET X…"
+            user_input = ic.text_input(placeholder, label_visibility="collapsed", placeholder="e.g. What does SCDF require at Design Gateway?")
             submitted = bc.form_submit_button("Send ➤", use_container_width=True, type="primary")
 
         pending = st.session_state.pending_q
@@ -808,29 +959,62 @@ else:
 
         if submitted and user_input and user_input.strip():
             q = user_input.strip()
-            st.session_state.messages.append({"role":"user","content":q,"question":q})
-            history = [{"role":m["role"],"content":m.get("content","")} for m in st.session_state.messages[:-1]]
+            suggested_ag = suggest_agency(q)
 
-            with st.spinner("Searching documents…"):
-                chunks = get_relevant_chunks(q)
-                result = ask_claude(q, history, chunks)
-
-            chunks_label = ", ".join(set(f"{name} p.{c['page']}" for name, c in chunks)) if chunks else None
-            st.session_state.messages.append({
-                "role":"assistant","content":result.get("answer",""),
-                "data":result,"question":q,"chunks_used":chunks_label
-            })
-
-            t = result.get("tier","D")
-            st.session_state.stats["asked"] += 1
-            if t == "A": st.session_state.stats["resolved"] += 1
-            else:
-                st.session_state.stats["pending"] += 1
-                st.session_state.review_queue.append({
-                    "question":q,"tier":t,"conf":result.get("confidence",0),
-                    "answer":result.get("answer",""),"sources":result.get("sources",[]),
-                    "chunks_used":chunks_label,"email":None,
-                    "timestamp":datetime.now().strftime("%d %b %Y %H:%M"),
-                    "reviewed":False,"officer_answer":""
+            if is_private:
+                # ── PRIVATE MODE: answer only, nothing stored ──────────────────
+                st.session_state.private_messages.append({"role":"user","content":q})
+                with st.spinner("Searching KB (private)…"):
+                    chunks = get_relevant_chunks(q)
+                    result = ask_claude(q, [], chunks)
+                chunks_label = ", ".join(set(f"{name} p.{c['page']}" for name, c in chunks)) if chunks else None
+                st.session_state.private_messages.append({
+                    "role":"assistant","content":result.get("answer",""),
+                    "data":result,"chunks_used":chunks_label
                 })
-            st.rerun()
+                # Render private conversation inline
+                st.rerun()
+            else:
+                # ── NORMAL MODE ────────────────────────────────────────────────
+                st.session_state.messages.append({"role":"user","content":q,"question":q})
+                history = [{"role":m["role"],"content":m.get("content","")} for m in st.session_state.messages[:-1]]
+                with st.spinner("Searching documents…"):
+                    chunks = get_relevant_chunks(q)
+                    result = ask_claude(q, history, chunks)
+                chunks_label = ", ".join(set(f"{name} p.{c['page']}" for name, c in chunks)) if chunks else None
+                st.session_state.messages.append({
+                    "role":"assistant","content":result.get("answer",""),
+                    "data":result,"question":q,"chunks_used":chunks_label
+                })
+                t = result.get("tier","D")
+                st.session_state.stats["asked"] += 1
+                if t == "A": st.session_state.stats["resolved"] += 1
+                else:
+                    st.session_state.stats["pending"] += 1
+                    st.session_state.review_queue.append({
+                        "question":q,"tier":t,"conf":result.get("confidence",0),
+                        "answer":result.get("answer",""),"sources":result.get("sources",[]),
+                        "chunks_used":chunks_label,"email":None,
+                        "suggested_agency":suggested_ag,
+                        "timestamp":datetime.now().strftime("%d %b %Y %H:%M"),
+                        "reviewed":False,"officer_answer":"","disputed":False
+                    })
+                st.rerun()
+
+        # Render private messages (shown above input when in private mode)
+        if is_private and st.session_state.private_messages:
+            st.markdown("---")
+            st.markdown('<div style="background:#fdeaea;border:1px solid #f5b8b8;padding:6px 12px;border-radius:6px;font-size:12px;margin:8px 0">🔒 Private session — visible only to you, cleared when you leave this page or turn off private mode.</div>', unsafe_allow_html=True)
+            for pm in st.session_state.private_messages:
+                if pm["role"] == "user":
+                    st.markdown(f'<div style="text-align:right;margin:8px 0"><div class="user-bubble">{pm["content"]}</div></div>', unsafe_allow_html=True)
+                else:
+                    r = pm.get("data",{}); t = r.get("tier","D")
+                    with st.container(border=True):
+                        st.markdown(f'<span class="tier-{t}">{TIER_LABELS[t]}</span>', unsafe_allow_html=True)
+                        if pm.get("chunks_used"): st.caption(f"🔍 {pm['chunks_used']}")
+                        if r.get("key_point"): st.markdown(f'<div class="kp-box">📌 {r["key_point"]}</div>', unsafe_allow_html=True)
+                        st.markdown(r.get("answer",""), unsafe_allow_html=True)
+                        if r.get("sources"): st.markdown(f'<div class="src-box">📄 {" · ".join(r["sources"])}</div>', unsafe_allow_html=True)
+            if st.button("🗑️ Clear private session", key="clear_private"):
+                st.session_state.private_messages = []; st.rerun()
