@@ -384,41 +384,152 @@ with st.sidebar:
 
 # ─── OFFICER DASHBOARD ────────────────────────────────────────────────────────
 if st.session_state.role == "officer" and st.session_state.officer_authenticated:
+    # ── Header with live stats ─────────────────────────────────────────────────
     st.markdown("## 🔐 Officer Dashboard")
     st.caption(f"Logged in · {datetime.now().strftime('%d %b %Y %H:%M')}")
 
-    tab1, tab2, tab3, tab4 = st.tabs(["📋 Review Queue", "📚 Documents", "✏️ KB Editor", "📧 Notifications"])
+    _reg = load_registry()
+    _docs = _reg.get("documents", [])
+    _total = len(_docs)
+    _indexed = sum(1 for d in _docs if d.get("processed") and d["status"]=="active")
+    _superseded = sum(1 for d in _docs if d["status"]=="superseded")
+    _total_chunks = sum(d.get("chunk_count", 0) for d in _docs if d.get("processed"))
+    _pending_q = sum(1 for q in st.session_state.review_queue if not q.get("reviewed"))
+    _total_asked = st.session_state.stats.get("asked", 0)
+
+    m1,m2,m3,m4,m5 = st.columns(5)
+    m1.metric("📚 Docs Indexed", f"{_indexed}/{_total}")
+    m2.metric("🔍 Chunks in KB", f"{_total_chunks:,}")
+    m3.metric("📋 Pending Review", _pending_q)
+    m4.metric("💬 Total Queries", _total_asked)
+    m5.metric("⛔ Superseded", _superseded)
+    st.divider()
+
+    tab1, tab2, tab3, tab4, tab5 = st.tabs(["📋 Review Queue", "🔍 Search KB", "📚 Documents", "✏️ KB Editor", "📧 Notifications"])
 
     # ── TAB 1: REVIEW QUEUE ───────────────────────────────────────────────────
     with tab1:
         pending = [q for q in st.session_state.review_queue if not q.get("reviewed")]
         reviewed = [q for q in st.session_state.review_queue if q.get("reviewed")]
-        st.markdown(f"**{len(pending)} pending** · {len(reviewed)} reviewed")
 
-        if not st.session_state.review_queue:
+        # Tier breakdown
+        if st.session_state.review_queue:
+            tier_counts = {}
+            for q in st.session_state.review_queue:
+                t = q.get("tier","?")
+                tier_counts[t] = tier_counts.get(t, 0) + 1
+            tc1,tc2,tc3,tc4,tc5 = st.columns(5)
+            tc1.metric("Total", len(st.session_state.review_queue))
+            tc2.metric("🔵 Tier B", tier_counts.get("B",0))
+            tc3.metric("🟡 Tier C", tier_counts.get("C",0))
+            tc4.metric("🔴 Tier D", tier_counts.get("D",0))
+            tc5.metric("✅ Tier A", tier_counts.get("A",0))
+            st.caption(f"**{len(pending)} pending** · {len(reviewed)} reviewed")
+
+            # Filter
+            show_filter = st.radio("Show:", ["Pending only","All","Reviewed only"], horizontal=True, key="rq_filter")
+            if show_filter == "Pending only": display_queue = [(i,q) for i,q in enumerate(st.session_state.review_queue) if not q.get("reviewed")]
+            elif show_filter == "Reviewed only": display_queue = [(i,q) for i,q in enumerate(st.session_state.review_queue) if q.get("reviewed")]
+            else: display_queue = list(enumerate(st.session_state.review_queue))
+
+            # Bulk actions
+            if pending:
+                ba1, ba2 = st.columns([1,4])
+                if ba1.button("🗑️ Dismiss all reviewed", use_container_width=True):
+                    for qi in st.session_state.review_queue: qi["reviewed"] = True
+                    st.rerun()
+        else:
+            display_queue = []
             st.info("No queries yet. Tier B/C/D questions from users appear here automatically.")
-        for i, item in enumerate(st.session_state.review_queue):
-            icon = {"B":"🔵","C":"🟡","D":"🔴"}.get(item["tier"],"⚪")
-            rev_label = " ✅" if item.get("reviewed") else ""
+
+        for i, item in display_queue:
+            icon = {"B":"🔵","C":"🟡","D":"🔴","A":"✅"}.get(item["tier"],"⚪")
+            rev_label = " ✅" if item.get("reviewed") else " 🔴 Action needed"
+            avg_conf = item.get("conf",0)
+            conf_color = "#1b6b3a" if avg_conf>=85 else "#1a3c5e" if avg_conf>=70 else "#d97706" if avg_conf>=40 else "#dc2626"
             with st.expander(f"{icon} [{item['tier']}] {item['question'][:75]}…{rev_label}"):
                 st.caption(f"Asked: {item.get('timestamp','')} · Conf: {item.get('conf',0)}% · Email: {item.get('email','Not provided')}")
+                # AI answer
+                st.markdown("**AI Answer:**")
                 st.markdown(item.get("answer",""), unsafe_allow_html=True)
-                if item.get("sources"): st.caption("Sources: " + " · ".join(item["sources"]))
-                if item.get("chunks_used"):
-                    st.caption(f"Retrieved from: {item['chunks_used']}")
+                if item.get("sources"): st.caption("📄 Sources: " + " · ".join(item["sources"]))
+                if item.get("chunks_used"): st.caption(f"🔍 Retrieved from: {item['chunks_used']}")
+                if item.get("feedback"):
+                    fb = item["feedback"]
+                    st.caption(f"User feedback: {'👍' if fb=='up' else '👎'}")
                 st.markdown("---")
-                ans = st.text_area("Official answer:", value=item.get("officer_answer",""), key=f"oa_{i}", height=100)
-                c1,c2,c3 = st.columns(3)
-                if c1.button("✅ Approve → Tier A", key=f"app_{i}"):
+                ans = st.text_area("✏️ Official answer (edit before approving):", value=item.get("officer_answer",""), key=f"oa_{i}", height=100)
+                c1,c2,c3,c4 = st.columns(4)
+                if c1.button("✅ Approve → Tier A", key=f"app_{i}", type="primary"):
                     st.session_state.review_queue[i].update({"officer_answer":ans,"reviewed":True,"tier":"A"})
-                    st.success("Approved."); st.rerun()
+                    st.success("Approved and upgraded to Tier A."); st.rerun()
                 if c2.button("💾 Save Draft", key=f"sv_{i}"):
-                    st.session_state.review_queue[i]["officer_answer"] = ans; st.success("Saved.")
-                if c3.button("🗑️ Dismiss", key=f"dis_{i}"):
+                    st.session_state.review_queue[i]["officer_answer"] = ans; st.success("Draft saved.")
+                if c3.button("➕ Add to KB", key=f"addkb_{i}"):
+                    if ans:
+                        custom_kb = load_custom_kb()
+                        custom_kb.append({"q":item["question"],"a":ans,"src":" · ".join(item.get("sources",[])),"cat":"Other","conf":90,"added":datetime.now().strftime("%d %b %Y %H:%M")})
+                        save_custom_kb(custom_kb)
+                        st.success("Added to KB!"); st.rerun()
+                if c4.button("🗑️ Dismiss", key=f"dis_{i}"):
                     st.session_state.review_queue[i]["reviewed"] = True; st.rerun()
 
-    # ── TAB 2: DOCUMENT REGISTRY ──────────────────────────────────────────────
+    # ── TAB 2: KB SEARCH (officer can test any query) ─────────────────────────
     with tab2:
+        st.markdown("### 🔍 Search & Test the Knowledge Base")
+        st.caption("Test any query as if you were a user. See exactly which document chunks were retrieved and why.")
+
+        with st.form("officer_search_form"):
+            osq = st.text_input("Enter any CORENET X question:", placeholder="e.g. What are the IFC requirements for fire tanks?")
+            os_submitted = st.form_submit_button("🔍 Search KB", type="primary")
+
+        if os_submitted and osq:
+            with st.spinner("Retrieving chunks and generating answer…"):
+                os_chunks = get_relevant_chunks(osq, max_chunks=8)
+                os_result = ask_claude(osq, [], os_chunks)
+
+            t = os_result.get("tier","D"); conf = os_result.get("confidence",0)
+            tier_color = {"A":"#1b6b3a","B":"#1a3c5e","C":"#d97706","D":"#dc2626"}.get(t,"#6b7280")
+
+            st.markdown(f'<span class="tier-{t}">{TIER_LABELS[t]}</span> &nbsp; <span style="color:{tier_color};font-weight:700">{conf}% confidence</span>', unsafe_allow_html=True)
+            st.markdown(os_result.get("answer",""), unsafe_allow_html=True)
+
+            if os_result.get("sources"):
+                st.markdown(f'<div class="src-box">📄 <strong>Sources:</strong> {" · ".join(os_result["sources"])}</div>', unsafe_allow_html=True)
+
+            if os_chunks:
+                st.markdown(f"**📦 {len(os_chunks)} chunks retrieved:**")
+                for doc_name, chunk in os_chunks:
+                    with st.expander(f"📄 {doc_name} — Page {chunk['page']}"):
+                        st.text(chunk["text"][:600] + ("…" if len(chunk["text"])>600 else ""))
+            else:
+                st.warning("No matching chunks found — answer came from fallback KB.")
+
+            st.divider()
+            st.caption(f"Tier reason: {os_result.get('tier_reason','')}")
+            c1, c2 = st.columns(2)
+            if c1.button("➕ Add this answer to KB", key="os_addkb"):
+                custom_kb = load_custom_kb()
+                custom_kb.append({"q":osq,"a":os_result.get("answer",""),"src":" · ".join(os_result.get("sources",[])),"cat":"Other","conf":conf,"added":datetime.now().strftime("%d %b %Y %H:%M")})
+                save_custom_kb(custom_kb)
+                st.success("Added to KB!")
+
+        # Document coverage overview
+        st.divider()
+        st.markdown("**📊 Indexed document coverage:**")
+        _r = load_registry()
+        for d in _r.get("documents",[]):
+            if d.get("processed") and d["status"]=="active":
+                chunks = load_chunks(d["id"])
+                pages_covered = len(set(c["page"] for c in chunks))
+                st.markdown(f"🟢 **{d['name']}** — {d.get('chunk_count', len(chunks)):,} chunks · {pages_covered} pages covered · v{d['version']}")
+            elif d["status"]=="superseded":
+                st.markdown(f"⛔ ~~{d['name']}~~ — superseded")
+            else:
+                st.markdown(f"🔴 **{d['name']}** — not yet uploaded")
+
+    # ── TAB 3: DOCUMENT REGISTRY ──────────────────────────────────────────────
+    with tab3:
         st.markdown("### 📚 Document Registry")
         st.caption("Upload PDFs to enable live document-based answers. Mark old versions as superseded when updating.")
 
@@ -517,8 +628,8 @@ if st.session_state.role == "officer" and st.session_state.officer_authenticated
                         save_registry(registry)
                         st.success(f"Added '{nd_name}' — now upload the PDF above."); st.rerun()
 
-    # ── TAB 3: KB EDITOR ──────────────────────────────────────────────────────
-    with tab3:
+    # ── TAB 4: KB EDITOR ──────────────────────────────────────────────────────
+    with tab4:
         st.markdown("### ✏️ Custom KB Entries")
         st.caption("Add entries that supplement or clarify document content. These are included in every query context.")
 
@@ -548,8 +659,8 @@ if st.session_state.role == "officer" and st.session_state.officer_authenticated
                     if st.button("🗑️ Remove", key=f"rmkb_{j}"):
                         custom_kb.pop(j); save_custom_kb(custom_kb); st.rerun()
 
-    # ── TAB 4: EMAIL NOTIFICATIONS ────────────────────────────────────────────
-    with tab4:
+    # ── TAB 5: EMAIL NOTIFICATIONS ────────────────────────────────────────────
+    with tab5:
         with_email = [q for q in st.session_state.review_queue if q.get("email")]
         st.markdown(f"**{len(with_email)} queries with user email**")
         if not with_email:
@@ -567,67 +678,122 @@ if st.session_state.role == "officer" and st.session_state.officer_authenticated
 # ─── USER CHAT INTERFACE ──────────────────────────────────────────────────────
 else:
     if st.session_state.role not in ("officer_login",):
-        st.markdown("## 🏗️ CORENET X Interactive Knowledge Base")
+        # Header
+        st.markdown("""
+        <div style="background:linear-gradient(135deg,#1a3c5e 0%,#0f2540 100%);padding:24px 28px;border-radius:12px;margin-bottom:20px">
+          <h2 style="color:#fff;margin:0;font-size:26px">🏗️ CORENET X Knowledge Base</h2>
+          <p style="color:#a8c4e0;margin:6px 0 0;font-size:14px">Official Singapore government sources · Powered by Claude AI</p>
+        </div>
+        """, unsafe_allow_html=True)
 
         registry = load_registry()
         docs = registry.get("documents", [])
         processed_count = sum(1 for d in docs if d.get("processed") and d["status"]=="active")
-        if processed_count > 0:
-            st.caption(f"Live answers from {processed_count} processed document(s) · Powered by Claude AI")
-        else:
-            st.caption("Answers from official document summaries · Upload PDFs in Officer Dashboard for full accuracy")
+        total_chunks = sum(d.get("chunk_count",0) for d in docs if d.get("processed"))
 
-        # Starter questions
+        # Live status bar
+        if processed_count > 0:
+            st.markdown(f'<div style="background:#e8f5ec;border:1px solid #a8d5b5;padding:8px 14px;border-radius:8px;font-size:13px;margin-bottom:16px">✅ <strong>Live mode</strong> — answering from {processed_count} indexed document(s) · {total_chunks:,} searchable chunks</div>', unsafe_allow_html=True)
+        else:
+            st.markdown('<div style="background:#fff3e0;border:1px solid #ffd580;padding:8px 14px;border-radius:8px;font-size:13px;margin-bottom:16px">⚠️ <strong>Fallback mode</strong> — using built-in summaries. Upload PDFs in Officer Dashboard for full accuracy.</div>', unsafe_allow_html=True)
+
+        # Starter questions with category tabs
         if not st.session_state.messages:
-            st.markdown("**Try a question:**")
-            starters = ["What is CORENET X?","What do I need for a fire tank?",
-                        "External works at Design Gateway?","What are the 3 key gateways?",
-                        "Do I need to model soil depth at DG?","What are the validity periods?",
-                        "Do I need 2D drawings for BIM?","How do I model trees in IFC+SG?"]
-            cols = st.columns(4)
-            for i, q in enumerate(starters):
-                if cols[i%4].button(q, key=f"s_{i}", use_container_width=True):
-                    st.session_state.pending_q = q; st.rerun()
+            st.markdown("### 💡 Browse by topic or just start typing below")
+            STARTER_CATEGORIES = {
+                "🏛️ Overview": [
+                    "What is CORENET X?",
+                    "What are the 3 key gateways?",
+                    "Which agencies are involved?",
+                    "What are the validity periods?",
+                ],
+                "📐 Design Gateway": [
+                    "What does SCDF require at Design Gateway?",
+                    "Do I need to model soil depth at DG?",
+                    "External works at Design Gateway?",
+                    "What is the minimum planting area soil depth?",
+                ],
+                "🏗️ Construction Gateway": [
+                    "What are fire suppression requirements at CG?",
+                    "What changes between DG and CG submissions?",
+                    "Construction Gateway IFC requirements?",
+                ],
+                "📦 BIM & IFC+SG": [
+                    "Do I need 2D drawings for BIM?",
+                    "How do I model trees in IFC+SG?",
+                    "What do I need for a fire tank?",
+                    "What is the max IFC file size?",
+                ],
+            }
+            cat_tabs = st.tabs(list(STARTER_CATEGORIES.keys()))
+            for cat_tab, (cat_name, questions) in zip(cat_tabs, STARTER_CATEGORIES.items()):
+                with cat_tab:
+                    cols = st.columns(2)
+                    for qi, q in enumerate(questions):
+                        if cols[qi%2].button(q, key=f"s_{cat_name}_{qi}", use_container_width=True):
+                            st.session_state.pending_q = q; st.rerun()
 
         # Render messages
-        for msg in st.session_state.messages:
+        for msg_idx, msg in enumerate(st.session_state.messages):
             if msg["role"] == "user":
                 st.markdown(f'<div style="text-align:right;margin:12px 0"><div class="user-bubble">{msg["content"]}</div></div>', unsafe_allow_html=True)
             else:
                 r = msg["data"]; t = r.get("tier","D"); conf = r.get("confidence",0)
                 with st.container(border=True):
-                    st.markdown(f'<span class="tier-{t}">{TIER_LABELS[t]}</span> <span style="font-size:11px;color:#6b7280">{r.get("tier_reason","")}</span>', unsafe_allow_html=True)
-                    st.markdown(conf_bar(conf, t), unsafe_allow_html=True)
+                    hc1, hc2 = st.columns([3,1])
+                    with hc1:
+                        st.markdown(f'<span class="tier-{t}">{TIER_LABELS[t]}</span> <span style="font-size:11px;color:#6b7280">{r.get("tier_reason","")}</span>', unsafe_allow_html=True)
+                        st.markdown(conf_bar(conf, t), unsafe_allow_html=True)
+                    with hc2:
+                        # Feedback buttons
+                        if not msg.get("feedback"):
+                            fb1, fb2 = st.columns(2)
+                            if fb1.button("👍", key=f"fb_up_{msg_idx}", help="Helpful"):
+                                msg["feedback"] = "up"
+                                for qi in st.session_state.review_queue:
+                                    if qi.get("question") == msg.get("question"): qi["feedback"] = "up"
+                                st.rerun()
+                            if fb2.button("👎", key=f"fb_dn_{msg_idx}", help="Not helpful"):
+                                msg["feedback"] = "down"
+                                for qi in st.session_state.review_queue:
+                                    if qi.get("question") == msg.get("question"): qi["feedback"] = "down"
+                                st.rerun()
+                        else:
+                            st.caption("👍 Thanks!" if msg["feedback"]=="up" else "👎 Noted")
+
                     if msg.get("chunks_used"):
-                        st.caption(f"📄 Retrieved from: {msg['chunks_used']}")
+                        st.caption(f"🔍 Retrieved from: {msg['chunks_used']}")
                     if r.get("key_point"):
                         st.markdown(f'<div class="kp-box">📌 <strong>Key point:</strong> {r["key_point"]}</div>', unsafe_allow_html=True)
                     st.markdown(r.get("answer",""), unsafe_allow_html=True)
                     if r.get("sources"):
                         st.markdown(f'<div class="src-box">📄 <strong>Sources:</strong> {" · ".join(r["sources"])}</div>', unsafe_allow_html=True)
                     if t == "A":
-                        st.success("✅ Query resolved — verified from official documents")
+                        st.success("✅ Verified from official documents")
                     else:
-                        notices = {"B":"📬 Being reviewed by a CORENET X officer.",
-                                   "C":"🤖 AI-drafted. Officer verification recommended.",
-                                   "D":"📞 This topic needs direct officer guidance."}
+                        notices = {
+                            "B":"📬 **Officer reviewing** — this answer is partially verified. An officer will review shortly.",
+                            "C":"🤖 **AI-drafted** — based on related content. Officer verification recommended before acting on this.",
+                            "D":"📞 **Needs officer guidance** — this topic wasn't found in the indexed documents."
+                        }
                         st.warning(notices.get(t,""))
                         if not msg.get("email_submitted"):
+                            st.markdown("**Get notified when an officer responds:**")
                             ec, bc = st.columns([3,1])
-                            em = ec.text_input("Leave email for officer follow-up:", key=f"em_{id(msg)}", label_visibility="collapsed", placeholder="your@email.com")
-                            if bc.button("Notify me", key=f"nb_{id(msg)}"):
+                            em = ec.text_input("Your email:", key=f"em_{msg_idx}", label_visibility="collapsed", placeholder="your@email.com")
+                            if bc.button("Notify me →", key=f"nb_{msg_idx}", type="primary"):
                                 if em:
                                     msg["email_submitted"] = True; msg["user_email"] = em
                                     for qi in st.session_state.review_queue:
                                         if qi.get("question") == msg.get("question"): qi["email"] = em
-                                    st.success(f"✅ Registered for {em}"); st.rerun()
+                                    st.success(f"✅ We'll notify {em} when an officer responds."); st.rerun()
                         else:
-                            st.caption(f"✅ Notification registered for {msg.get('user_email','')}")
+                            st.caption(f"✅ Officer response will be sent to {msg.get('user_email','')}")
                     if r.get("follow_ups"):
-                        st.markdown("**Follow-ups:**")
+                        st.markdown("**You might also want to ask:**")
                         fc = st.columns(len(r["follow_ups"]))
                         for i, fq in enumerate(r["follow_ups"]):
-                            if fc[i].button(f"💬 {fq}", key=f"fu_{id(msg)}_{i}", use_container_width=True):
+                            if fc[i].button(f"💬 {fq}", key=f"fu_{msg_idx}_{i}", use_container_width=True):
                                 st.session_state.pending_q = fq; st.rerun()
 
         # Input
