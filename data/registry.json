@@ -26,11 +26,12 @@
       "id": "ifc_sg",
       "name": "IFC-SG Revit SP Guide (Sep 2025)",
       "version": "Sep 2025",
-      "pages": 176,
+      "pages": 202,
       "status": "active",
-      "processed": false,
-      "uploaded": null,
-      "notes": "IFC+SG implementation guide"
+      "processed": true,
+      "uploaded": "10 Jun 2026 13:57",
+      "notes": "IFC+SG implementation guide",
+      "chunk_count": 225
     },
     {
       "id": "dg_pdf",
