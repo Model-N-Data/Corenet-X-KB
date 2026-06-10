@@ -17,9 +17,10 @@
       "version": "Mar 2026",
       "pages": 181,
       "status": "active",
-      "processed": false,
-      "uploaded": null,
-      "notes": "Regulatory Advisory for Built Works"
+      "processed": true,
+      "uploaded": "10 Jun 2026 13:56",
+      "notes": "Regulatory Advisory for Built Works",
+      "chunk_count": 253
     },
     {
       "id": "ifc_sg",
