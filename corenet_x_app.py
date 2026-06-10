@@ -443,7 +443,7 @@ if st.session_state.role == "officer" and st.session_state.officer_authenticated
                     f"Upload PDF", type=["pdf"], key=f"upload_{doc['id']}",
                     label_visibility="collapsed"
                 )
-                if uploaded_file:
+                if uploaded_file and not doc.get("processed"):
                     with st.spinner(f"Extracting text from {doc['name']}…"):
                         if pdfplumber:
                             chunks = extract_chunks_from_pdf(uploaded_file)
