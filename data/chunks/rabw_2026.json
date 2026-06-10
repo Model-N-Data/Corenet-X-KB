@@ -1,0 +1,1267 @@
+[
+  {
+    "page": 1,
+    "text": "CORENET X New Regulatory Approval Process for Building Works (RABW) **current materials extracted from Building Authority of Singapore (BCA)",
+    "chunk_id": "p1_c0"
+  },
+  {
+    "page": 2,
+    "text": "No. Slide Notes Revision Log (29 Jan 2026) 1 Link Updated Slide 8 to include 1 Oct 2025 milestone on mandatory CX submission 2 Link Updated Slide 16 to change “IFC-SG” to “IFC+SG” 3 Link Updated Slide 17 with new images 4 Link New Slide 18 to highlight value proposition of CX 6 Link Updated Slide 19 to change “IFC-SG” to “IFC+SG” and mention latest COP published in Oct 2025. 7 Link Updated Slide 21 to emphasize latest COP published in Oct 2025. 8 Link Updated Slide 22 to describe refinements in latest COP published in Oct 2025. 9 Link Updated Slides 32 – 33 to update image and formatting 10 Link New Slide 35 on Good Practice Modelling Guide 11 Link Updated Slides 39 – 43 to change “IFC-SG” to “IFC+SG” 12 Link Updated Slide 52 to change “IFC-SG” to “IFC+SG” 13 Link Updated Slide 53 to updat",
+    "chunk_id": "p2_c0"
+  },
+  {
+    "page": 2,
+    "text": "o “IFC+SG” 12 Link Updated Slide 52 to change “IFC-SG” to “IFC+SG” 13 Link Updated Slide 53 to update example 14 Link To remove Slide 54 15 Link Updated Slides 59 – 74 to change “Occupation Permit/ Statutory Completion” to “Completion Gateway”. 16 Link New Slides 95 – 98 on TOP/CSC Processes 17 Link Updated Slide 108 to change “Occupation Permit/ Statutory Completion” to “Completion Gateway”. 18 Link To remove Slides 128 – 129 which is to be replaced with new slides 130 - 135 19 Link New Slides 130 – 135 on Agency Reviews to address industry feedback",
+    "chunk_id": "p2_c0"
+  },
+  {
+    "page": 3,
+    "text": "No. Slide Notes Revision Log (29 Jan 2026) 20 Link To remove Slide 137 21 Link New Slides 138 - 139 on updated myths (to replace Slide 137) 22 Link New Slide 141 to inform participants that there is a FAQ webpage 23 Link To remove Slides 144– 177 (case study) 24 Link New Slides 188 and 189 on BIM viewer and new user manual for Submission Portal Note: Regarding Slides 175 – 185, Training Providers can consider expanding this to a second day curriculum or separate course on navigating Submission Portal, with hands-on for participants using the training environment. 25 Link To remove Slides 198 – 199 26 Link New Slides 200 – 201 to replace Slides 198 – 199 27 Link New Slides 203 - 209 28 Link To remove Slides 210 – 224 29 Link Updated Slides 232 – 233 30 Link To remove Slides 234 – 238 31 Lin",
+    "chunk_id": "p3_c0"
+  },
+  {
+    "page": 3,
+    "text": "o remove Slides 210 – 224 29 Link Updated Slides 232 – 233 30 Link To remove Slides 234 – 238 31 Link New Slides 239 – 242 to replace Slides 234 – 238 and serve as a consolidation of all the self-help resources that industry can refer to",
+    "chunk_id": "p3_c0"
+  },
+  {
+    "page": 4,
+    "text": "New Regulatory Approval Process for Building Works (RABW) Privileged/Confidential information is contained in this presentation. Please do not circulate or reproduce without the permission of BCA.",
+    "chunk_id": "p4_c0"
+  },
+  {
+    "page": 5,
+    "text": "Programme Time Content 10am Introduction to CORENET- X • Current regulatory landscape • Service Journey and vision of CORENET X • Preparation for transformation • Implementation Timeline | CX Code of Practice [Updated!] • Leveraging on Technological Enablers 10.30am New Regulatory Approval Process for Building Works (RABW) - 3 Gateway Submission Process • Transforming current practices into new RABW • 3 Gateway submission process • Requirements at each gateway [Updated for Completion Gateway!] • ST Phasing | External Works • Joint-submission and plan processing • Supporting mechanisms 11.30am New RABW - Direct Submission Process (DSP) • DSP as part of differentiated approach • Concept and workflow of DSP • Common Misconceptions about CORENET X New RABW – Infrastructure Projects Summary Rec",
+    "chunk_id": "p5_c0"
+  },
+  {
+    "page": 5,
+    "text": "rkflow of DSP • Common Misconceptions about CORENET X New RABW – Infrastructure Projects Summary Recap of New RABW • Submission workflow for new RABW • Process refinements & Agency reviews [Updated!] • Common misconception of CORENET X [Updated!] 12nn Interactive quiz and answer 12.30pm Lunch 5",
+    "chunk_id": "p5_c0"
+  },
+  {
+    "page": 6,
+    "text": "Programme Time Content 1.45pm Case Study Case study – Mixed development • Project brief • Agencies’ requirements at each gateway 3pm Break 3.15pm Preview of Submission Portal • Introduction to Submission Portal • Submission Portal preview/ Video [Remove] • Verification of Approved Drawings with Checksum 3.30pm Best Practices from Live Projects [Updated!] • Performance of pilot projects • Key learning points • Streamlining Efforts on Space Classification for Regulatory Purposes 4pm Initiatives to support Industry • ABSD and Payment Milestones • Available resources and trainings [Updated!] 4.05pm Interactive quiz and answer 4.30pm Q&A 5pm Closing 6",
+    "chunk_id": "p6_c0"
+  },
+  {
+    "page": 8,
+    "text": "Today’s Built Environment Industry at a Glance Impact of Regulatory Approval Process for Building Works ECONOMY INDUSTRY GOVERNMENT • S$14.4 Billion • 1813 registered architects as • ~5000 regulatory rules of 2023 contribution of the • ~600 Construction Industry to processing officers from 7 • 2525 Singapore’s GDP in 2022 professional engineers regulatory agencies as of 2023 • S$27 - 32 Billion • ~20k newly registered projects • >20 expected construction demand approval stages for a yearly in 2023 single property development project • ~200k project submissions registered via CORENET yearly 8",
+    "chunk_id": "p8_c0"
+  },
+  {
+    "page": 9,
+    "text": "Overview of Plan Submission for Regulatory Approval [Updated!] Driving Adoption of BIM BIM as a key enabling tool to improve coordination of construction value chain & 2025 reduce reworks Mandatory CORENET X 2023 submission for new projects with GFA more than CORENET X with tech 2015 30,000sqm enablers to improve regulatory approval Mandatory BIM BIM submission to be done in submission1 for new 2001 openBIM format IFC+SG projects with GFA more than 5000sqm 3D model 2D Electronic 90s submission Paper-based submission 2D paperless 2D paper 1 Mandatory BIM submission currently applies to projects with GFA > 5000sqm, approx. 94% of total GFA. The approach targets projects with higher business values, while allowing smaller projects and firms to progressively levelled up and transformed. 9",
+    "chunk_id": "p9_c0"
+  },
+  {
+    "page": 9,
+    "text": "lues, while allowing smaller projects and firms to progressively levelled up and transformed. 9",
+    "chunk_id": "p9_c0"
+  },
+  {
+    "page": 10,
+    "text": "Today’s Separate & Concurrent Approval Process Architect ! Developer PE (Mech) C&S Independent Planning & Construction Design ! ! PE (Elec) PE (Civil) Archi M&E Industry Agencies Construction upstream downstream • Plans are prepared by different • Each of the 7 agencies has a different • Plans contain conflicts that professionals independently regulatory mandate need to be resolved during construction • Plans are submitted separately • Comments from 1 agency may lead to to different agencies at different resubmission/ amendment to others • Rectifications = Abortive Works milestones concurrently • Approved plans may conflict; no single • Delayed issuance of TOP/CSC integrated view of approved plan 10",
+    "chunk_id": "p10_c0"
+  },
+  {
+    "page": 11,
+    "text": "Built Environment Industry Transformation Tomorrow’s vision: Integrated Planning & Design (IPD), Advanced Manufacturing and Assembly (AMA) and Sustainable Urban Systems (SUS) Integrated Sustainable Urban Planning & Design Systems (SUS) (IPD) Advanced • Accelerate • Drive collaboration Manufacturing and decarbonisation across value chain to Assembly (AMA) efforts to support net enable better planning zero aspirations • Automate fabrication • Create conduciveness • Streamline operations in factories to improve for collaboration & and improve productivity, quality submissions using maintenance of and work environment data-rich BIM model buildings enabled by used across project • Drive co-location of Integrated, Aggregated lifecycle synergistic Smart FM mgmt construction activities 11",
+    "chunk_id": "p11_c0"
+  },
+  {
+    "page": 11,
+    "text": "on of Integrated, Aggregated lifecycle synergistic Smart FM mgmt construction activities 11",
+    "chunk_id": "p11_c0"
+  },
+  {
+    "page": 13,
+    "text": "New Regulatory Process Through Service Journey Co-creation through Service Journey from Oct 2018 - 2019 57 Engaged firms • Comprising Developers, Consultants (architectural, C&S and M&E), and Builders 6 Engaged TACs REDAS: SIA: ACES & IES: SCAL: SISV: Developers Architects C&S and M&E Engineers Builders Land Surveyors 13",
+    "chunk_id": "p13_c0"
+  },
+  {
+    "page": 14,
+    "text": "New Regulatory Process Through Service Journey Co-creation through Service Journey from Oct 2018 - 2019 7 Sessions involved 106 39 industry reps agency reps Consulted 56 BIM Managers 14",
+    "chunk_id": "p14_c0"
+  },
+  {
+    "page": 15,
+    "text": "New Regulatory Process Through Service Journey Co-creation through Service Journey from Oct 2018 - 2019 “ The BE community & industry is aligned on the more integrative, collaborative & productive approach ” “The need for opportunities for industry and agencies to work together for co-creation. “ “ The agencies, developer and QPs able to see eye to eye on the need to evolve the process ” 15",
+    "chunk_id": "p15_c0"
+  },
+  {
+    "page": 16,
+    "text": "Service Journey Approach; Co-Created with Industry Business Re-engineering for a collective vision to meet tomorrow’s aspirations Reaping Full Benefits Striking the Right Facilitating Regulatory of IDD, BIM Value Chain Regulatory Balance Compliance Improved productivity Industry attains high level of Efficient, smooth & transparent across value-chain with professionalism; Regulators process enabled by tech & refined better quality products can be less interventionistic through data-driven reviews 16",
+    "chunk_id": "p16_c0"
+  },
+  {
+    "page": 17,
+    "text": "Key areas of CORENET X [Updated!] NEW REGULATORY APPROVAL TECH ENABLERS PROCESS FOR BUILDING [Submission Portal & System WORKS (RABW) Integration] o Discovery Phase: Service Blueprint and quick wins Total redesign to provide a new o Envisioning Phase: Redesign of regulatory processes end-to-end experience based on user’s journey o Implementation details, e.g. New Regulatory Approval Process [Collaboration Platform] Facilitate agencies’ collaboration CHANGE MANAGEMENT and coordination in regulatory AND CAPABILITY processing BUILDING [Automated Model Checker] Enhance productivity for industry o Agency: Competency building and and agencies by automating part of change management to facilitate code compliance checks adoption of new workflows o Industry: Onboarding, [Open BIM Format - IFC+SG] C",
+    "chunk_id": "p17_c0"
+  },
+  {
+    "page": 17,
+    "text": "ode compliance checks adoption of new workflows o Industry: Onboarding, [Open BIM Format - IFC+SG] Collaboration and Training on new Support interoperability and process and requirements localised requirements – critical for both CP and AMC 17",
+    "chunk_id": "p17_c0"
+  },
+  {
+    "page": 18,
+    "text": "Vision of CORENET X [Updated!] Future Ecosystem of Regulatory Approval of Building Works Transforming the Construction Industry FIRST IN THE WORLD One-Stop Integrated Digital Shopfront TRANSFORMATION TRANSFORMATION of INDUSTRY of REGULATORY AGENCIES ▪ Reduce silos, iterations ▪ Promote design & condense touchpoints coordination and teamwork ▪ Embrace collaboration & raise productivity amidst ▪ Promote digitalization rising demands of construction sector ▪ Improve accessibility & ▪ Support IPD/IDD1 & centralise information AMA/DfMA2 towards a Single Source imperatives of Truth 1 IDD is the use of digital technologies to integrate work processes and connect stakeholders working on the same project throughout the construction and building life-cycle 2 DfMA is a continuum of various technologi",
+    "chunk_id": "p18_c0"
+  },
+  {
+    "page": 18,
+    "text": "ject throughout the construction and building life-cycle 2 DfMA is a continuum of various technologies and methodologies that promote offsite fabrication from prefabricated components to fully integrated assemblies across the structural, architectural and Mechanical/ Electrical disciplines.",
+    "chunk_id": "p18_c0"
+  },
+  {
+    "page": 19,
+    "text": "CORENET X: New Regulatory Approval Process for Building Works (RABW) Co-creation journey to redesign and streamline the regulatory processes into 3 main gateways [New!] Architect Developer i PE (Mech) Coordinated Submission *Optional PE (Elec) PE (Civil) SAVINGS IN OBTAIN AGENCIES’ BUILD WITH TIME & COST APPROVALS AT ONE GO CERTAINTY \"Get your project done faster and spend less – \"Get all your approval in one go, instead of chasing \"Know exactly what you can build before you start, no more running around or repeated works.\" different agencies separately.\" avoiding expensive changes later.” 1 2 20 Coordinated Response Iterations per Gateway Working Days Response Time Regulatory agencies will collectively review Good quality submissions should be able to For joint submissions, whereby regula",
+    "chunk_id": "p19_c0"
+  },
+  {
+    "page": 19,
+    "text": "collectively review Good quality submissions should be able to For joint submissions, whereby regulatory agencies submissions and provide deconflicted response. obtain clearances within 2 Written Directions. will collaborate to respond within 20 working days. 19",
+    "chunk_id": "p19_c0"
+  },
+  {
+    "page": 20,
+    "text": "Moving towards coordinated BIM submission in openBIM format [Updated!] All Submissions that are made in BIM (currently mandatory for new projects with Gross Floor Area (“GFA”) ≥ 5,000 sqm) will need to use the openBIM standard (IFC) and extension IFC+SG catering to local regulatory requirements. Agencies will issue written directions and approvals based on the submitted BIM model in openBIM standard. Overall Goal Native BIM A Common Representation y b Industry Foundation Class t d r CORENET X e o (IFC) Native BIM B m p An international open BIM x u E format to facilitate s n Common Data Environment interoperability in building o Native BIM C C and construction industry Interoperability and Open Data Standards are crucial • To facilitate and help industry professionals in preparing regulato",
+    "chunk_id": "p20_c0"
+  },
+  {
+    "page": 20,
+    "text": "pen Data Standards are crucial • To facilitate and help industry professionals in preparing regulatory submissions using openBIM format, a Code of Practice has been released – the latest 3rd edition was published in Oct 2025. 20",
+    "chunk_id": "p20_c0"
+  },
+  {
+    "page": 21,
+    "text": "Phased Implementation to Onboard Industry​ [New!] Soft Launch Open to selected projects (by invite) ✓ 18 Dec 2023 • Industry to familiarize themselves with the new system and processes before mandatory submission kicks in. Approx +6 mths • Industry participants who are interested to make submissions via CORENET X during this period may indicate your interest at https://go.gov.sg/cxenquiry. Open to more voluntary 1 From 1 Jun 2024 submissions Current Mandatory submission for all 2 From 1 Oct 2025 projects with GFA 30,000m2 Approx +1 year Next Phase Mandatory submission for all new 3 From 1 Oct 2026 projects, regardless of GFA Approx +1 year 4 From 1 Oct 2027 Onboard ongoing projects Q&A: menti.com Code: 4223 7387 21",
+    "chunk_id": "p21_c0"
+  },
+  {
+    "page": 22,
+    "text": "CORENET X Code of Practice* [Updated] • First edition was released in September 2023 ➢ Intended to help industry practitioners in understanding how to prepare multi-agency regulatory submissions across the key submission gateways • 2nd Edition was released in November 2024 ➢ Incorporates refinements to CORENET X based on learning points and industry feedback from on-going pilot projects • Digital and interactive COP was launched in December 2024 ➢ Makes it easier to search submission requirements by agencies, key gateways or other works • [NEW] 3rd Edition was released in October 2025 ➢ The level of details required at DG and CG have been calibrated to an appropriate level, taking into consideration industry practices and agency reviews. ➢ Clearer guidelines on what can be submitted in 2D ",
+    "chunk_id": "p22_c0"
+  },
+  {
+    "page": 22,
+    "text": "deration industry practices and agency reviews. ➢ Clearer guidelines on what can be submitted in 2D vs 3D. ➢ Further guidance is provided on BIM modelling. Note: This is the link to download the 3rd edition of the COP. * This Code of Practice does not substitute Handbooks, Circulars or other regulatory publications of our regulatory agencies. It complements other resources on the CORENET X website, including the IFC-SG Resource Toolkit 22",
+    "chunk_id": "p22_c0"
+  },
+  {
+    "page": 23,
+    "text": "How to use the Code of Practice (3rd Edition) - Key Refinements [Updated] • What is CORENET X? Section 1: Introduction to CORENET X • What are the key aspects of CORENET X? • What is a user journey of CORENET X like? • QP’s statutory obligations under CORENET X? • What do abbreviations like RABW and IFC-SG stand for? • Example of a project team’s CORENET X Submission workflow from Section 2: General Requirements project registration to Completion Gateway • Introduction of Checksums for approved plans • [New] Other processes that may be relevant to projects • RABW Requirements categorised by Regulatory Agencies Section 3: Specific Requirements • RABW Requirements categorised by Key Gateways • RABW Requirements for other Building Works: o External Works o Direct Submission Process o Conserva",
+    "chunk_id": "p23_c0"
+  },
+  {
+    "page": 23,
+    "text": " RABW Requirements for other Building Works: o External Works o Direct Submission Process o Conservation o Part-ST Submissions o Infrastructure Works • What does a BIM component need to contain / look like, in order to Section 4: BIM Data Representation satisfy agency’s regulatory requirements? (IFC+SG) and Modelling Good Practice • [Updated] Updates to IFC+SG property names, IFC SubTypes and input limitations 23",
+    "chunk_id": "p23_c0"
+  },
+  {
+    "page": 24,
+    "text": "Preparing your 1st CORENET X Submission with the COP Overview of General Specific BIM CORENET X Requirements Requirements Components 24",
+    "chunk_id": "p24_c0"
+  },
+  {
+    "page": 25,
+    "text": "Preparing your 1st CORENET X Submission with the COP Overview of General Specific BIM CORENET X Requirements Requirements Components 25",
+    "chunk_id": "p25_c0"
+  },
+  {
+    "page": 26,
+    "text": "A Quick Recap of CORENET X • Unlike CORENET 2.0, CORENET X will I’m not very sure what Facilitate and support new workflows that (1) is CORENET X, is it allow project teams to submit different from CORENET 2.0? coordinated BIM to the authorities, and Bring officers from multiple agencies (2) together to review submission collectively and provide a consolidated response to the project team • For more introduction of CORENET X, you can refer to Section 1 of the COP 26",
+    "chunk_id": "p26_c0"
+  },
+  {
+    "page": 27,
+    "text": "CORENET X User Journey • To support the new workflows, technological enablers are being developed: openBIM format (1) Automated Model Checker (2) CX Backend: Collaboration Platform for (3) agencies’ use • For a user journey of workflow and tech enablers of CORENET X, you can refer to Section 1 of the COP 27",
+    "chunk_id": "p27_c0"
+  },
+  {
+    "page": 28,
+    "text": "Preparing your 1st CORENET X Submission with the COP Overview of General Specific BIM CORENET X Requirements Requirements Components Section 2: General Requirements • Which agency’s approvals are covered under CORENET X? • What do abbreviations like RABW and IFC-SG stand for? • What happens to the QP’s statutory obligations under CORENET X? • What is each project team submission like and maximum file size? • What is the model preparation process like? 28",
+    "chunk_id": "p28_c0"
+  },
+  {
+    "page": 29,
+    "text": "Basics of a CORENET X Submission With all these changes in submission processes, will the QP’s liabilities today change? • Nope! All Statutory responsibilities remain unchanged • In a BIM submission, the project team I heard we need to have upfront should ensure that basic / key coordination, but components from each discipline do what exactly is needed? not clash with one another • Step by step diagrams on joint submission workflows for new and Can I still do an amendment amendment submissions can be submission like found in Section 2 of the COP today? 29",
+    "chunk_id": "p29_c0"
+  },
+  {
+    "page": 30,
+    "text": "Amendment Submission Workflow Amendment submission should not be done in silos, let's review amendments to design holistically! Smart Reminder QPs, remember to indicate the agencies affected during your amendment submissions Smart Reminder Mini 30",
+    "chunk_id": "p30_c0"
+  },
+  {
+    "page": 31,
+    "text": "Understanding the Page and Table format (Regulatory Agencies) Section, Main Header, Sub- Header Other COP Sections (Clickable Hyperlinks) Regulatory Agency Involved Legend (Archi, C&S, M&E, IFC Component) Requirements under the Key Gateways (corresponds to the Gateway No.) G1: Design Gateway G1.5: Piling Gateway G2: Construction Gateway G3: Completion Gateway IFC COMPONENT that may be + Key Words appearing Broad Description of requirements relating to the Key Word + Format of Submission required to be modelled for in a particular Gateway 3D IFC-SG Model requirements under this keyword (linked to Section 4) 2D Examples: CAD Drawings, Reports, Supporting Documents, Supplementary Documents 31",
+    "chunk_id": "p31_c0"
+  },
+  {
+    "page": 32,
+    "text": "How To Include Multiple Files Per Submission Model Size Can I Can I still Each model should not exceed 800 MB, and be submitted by parts (i.e. 1 block per file). If submit submit in a part model exceeds 800MB, the part model should be split into smaller files. more than 2D? 1 model? Is there a size limit to the models? Note: This is an example of a typical submission package, and is not exhaustive. 32",
+    "chunk_id": "p32_c0"
+  },
+  {
+    "page": 33,
+    "text": "Geo-Referencing your BIM Models [Updated!] *For details, please visit the CX website. 33",
+    "chunk_id": "p33_c0"
+  },
+  {
+    "page": 34,
+    "text": "Alignment of Levels and Zones Across All Disciplines’ Models [Updated!] *For details, please visit the CX website. 34",
+    "chunk_id": "p34_c0"
+  },
+  {
+    "page": 35,
+    "text": "Simplified 6 Key Steps on IFC modelling • Key BIM Software Vendors have also contributed 6 simplified modelling steps to help with IFC onboarding in Section 2 of the COP 35",
+    "chunk_id": "p35_c0"
+  },
+  {
+    "page": 37,
+    "text": "Preparing your 1st CORENET X Submission with the COP Overview of General Specific BIM CORENET X Requirements Requirements Components Section 3: Other Building Works • RABW Requirements categorized by Other Building Works Note: Each RABW requirement in Section 3 is complemented by common components from the BIM Model (where relevant) 37",
+    "chunk_id": "p37_c0"
+  },
+  {
+    "page": 38,
+    "text": "All about the new CORENET X Process Are there drawings that I can still submit • All agencies' requirements are listed in detail for independently like the respective disciplines at each of the gateway to current practice? prepare / obtain multi-agency gateway approvals • If required, the project team may carry out pre- consultation with agencies prior to submission • For agency-specific submission, independent What are the URA requirements at submissions are allowed. the gateways? Is it • The COP has indicated whether they need to be in like the PP today? BIM or in 2D format to complement the BIM submissions. • If you are tasked to plan your project timeline, pls refer to Section 3 of the COP 38",
+    "chunk_id": "p38_c0"
+  },
+  {
+    "page": 39,
+    "text": "All about the new CORENET X Process Example of a project making regulatory submissions across CORENET X Gateways Gateways Design Piling Construction Completion Independent Temporary Traffic Demolition ERSS Cladding Barrier Submissions Decking 39",
+    "chunk_id": "p39_c0"
+  },
+  {
+    "page": 40,
+    "text": "Preparing your 1st CORENET X Submission with the COP [Updated] Overview of General Specific BIM CORENET X Requirements Requirements Components Section 4: BIM Data Representation (IFC+SG) and Modelling IFC Note: Each RABW requirement in Section 3 is Good Practice +SG complemented by common components • What does a BIM component need to contain / look like, in from the BIM Model (where relevant) order to satisfy agency’s regulatory requirements? 40",
+    "chunk_id": "p40_c0"
+  },
+  {
+    "page": 41,
+    "text": "How the new process links to IFC+SG components [Updated] Do I have to model out the Wait, I only know how accessibility to model for DWF routes in 3D? submission. What is • A-Z glossary on 3D components, on IFC+SG? IFC+SG data needed, with diagrams, tips and examples of how they are shown tomorrow • Indicates process related to each 3D Which details can be shown in component 2D drawings? • Complements the IFC+SG Resource Kit (templates to generate IFC models) • For more on Data information, you can refer to Section 4 of the COP 41",
+    "chunk_id": "p41_c0"
+  },
+  {
+    "page": 42,
+    "text": "BIM Data Representation [Updated] Identified Components ✓ Also known as “BIM Objects”, “Project Elements” ✓ List in COP is not exhaustive. More identified components will be added progressively. 42",
+    "chunk_id": "p42_c0"
+  },
+  {
+    "page": 43,
+    "text": "Diagrams to help with IFC+SG understanding [Updated] These diagrams will help the project team have a better understanding of the data required in the models! • For more IFC+SG diagrams, you can refer to Section 4 of the COP 43",
+    "chunk_id": "p43_c0"
+  },
+  {
+    "page": 44,
+    "text": "Case example - Beam [Updated] ✓ Examples to further guide readers on specific IFC+SG parameters 44",
+    "chunk_id": "p44_c0"
+  },
+  {
+    "page": 46,
+    "text": "LEVERAGING ON COLLABORATION TECHNOLOGIES PLATFORM ▪ Collaboration INDUSTRY FACING AUTOMATED (CORENET X) MODEL CHECKER PORTAL ▪ Automation OPEN-BIM FORMAT ▪ Interoperability 46",
+    "chunk_id": "p46_c0"
+  },
+  {
+    "page": 47,
+    "text": "Submitted BIM Model COLLABORATION PLATFORM ✓ Extraction of different Extracted Views from BIM Model for different agencies views / areas of interest for review from the same model ✓ Concurrent review & URA: GFA BCA: Barrier Free Access NParks: Green Buffer virtual collaboration among agencies on the platform ✓ Issuance of coordinated SCDF: Fire Escape Route LTA: Carpark Layout PUB/NEA: Sanitary Fittings response to industry 47",
+    "chunk_id": "p47_c0"
+  },
+  {
+    "page": 48,
+    "text": "Submitted BIM Model COLLABORATION PLATFORM Highlighting Amendments Virtual Collaboration ✓ Extraction of different views / areas of interest for review from the same Comment tagged model to elements ✓ Concurrent review & Inter-Agency virtual collaboration Communication among agencies on the platform ✓ Issuance of coordinated response to industry",
+    "chunk_id": "p48_c0"
+  },
+  {
+    "page": 49,
+    "text": "AUTOMATED Sample views extracted from prototype MODEL CHECKER ✓ Auto-Checking for regulatory non- compliance against rules across 7 key agencies, and across 3 building Highlight non-compliance - Door did not meet Summary report on number of non- disciplines (Architectural, minimum door width requirement compliances detected C&S, M&E) Based on current stock take, close to 70% of rules ✓ Allow for pre-checks by involving 7 regulatory agencies could potentially be industry prior to codified for auto-checking. submission 49",
+    "chunk_id": "p49_c0"
+  },
+  {
+    "page": 50,
+    "text": "Video Demonstration for Distance Requirements AUTOMATED (Prototype) MODEL CHECKER Check against regulatory rules/clauses Distance Requirements ✓ Checks for the distance between an object and the different areas of a space ✓ E.g. Algorithm can check for fire escape distance and ventilation distance 50",
+    "chunk_id": "p50_c0"
+  },
+  {
+    "page": 51,
+    "text": "Video Demonstration for Setback Requirements AUTOMATED (Prototype) MODEL CHECKER Check against regulatory rules/clauses Setback Requirements ✓ Checks if the buildings/spaces have sufficient setback by taking references from other objects (e.g. roads) ✓ Algorithm projects a setback based on the requirements/ model and checks for compliance 51",
+    "chunk_id": "p51_c0"
+  },
+  {
+    "page": 52,
+    "text": "PROJECT COMMON CITY GIS) DATA ENVIRONMENT ( OPEN-BIM FORMAT PLANNING Cit y Collaboration environment B u among project parties i l d P i r n 1. Preparation o j g e ( c B and Planning t I S M p ) e c i 6. City Level f i 2. Design c Planning and ( • Data requirements and data and Tender I D Management D footprint through the value- ) Building chain Information ) S & Data I G ( 5. Operation 3. Fabrication • Data flows through the entire t c i and and r value chain, supporting the t s Maintenance Construction i D different applications and use cases 4. As-Built and Handover CORENET X • INTEROPERABILITY and DISTRICT Regulatory OPEN DATA STANDARDS MANAGEMENT submission system 52",
+    "chunk_id": "p52_c0"
+  },
+  {
+    "page": 53,
+    "text": "[Updated] IFC+SG An OpenBIM format customised for local context Native BIM Software A CORENET X Common Representation Export COLLABORATION PLATFORM IFC IFC+SG Native BIM Software B AUTOMATED MODEL CHECKER Industry Foundation Classes (IFC) Export CENTRALISED DATA HUB 01 02 03 04 Non-Standard Format IFC IFC+SG IFC+SG in CX • Multiple solutions/ systems needed to • ISO standard specifications • Adapting IFC to cater for • Localised information of process different formats for digital construction info local Regulatory interest • Increased costs and maintenance • Enables info exchange in a Requirements • Supports CP and AMC • Does not fully cater to gov regulatory consistent and repeatable • Leverage existing eco-system requirements way acceptance and support 53",
+    "chunk_id": "p53_c0"
+  },
+  {
+    "page": 53,
+    "text": "erage existing eco-system requirements way acceptance and support 53",
+    "chunk_id": "p53_c0"
+  },
+  {
+    "page": 54,
+    "text": "[Updated] Example of Regulatory Information (using OPEN-BIM FORMAT IFC+SG) incorporated into the BIM Model (IFC+SG) Fire Engine Access Road ✓ Adapting IFC to cater for local Regulatory Requirements ✓ Leverage existing eco-system acceptance and support ✓ Vendor-Agnostic; Neutral- Defining a customized Standard to reduce “FIREENGINEACCESSROAD\" downstream issues type (ObjectType/SubType) under the IfcSpace entity with the required SGPsets, to indicate the fire engine access road in a project development. 54",
+    "chunk_id": "p54_c0"
+  },
+  {
+    "page": 55,
+    "text": "CORENET X – Overview of the 3 Gateway Approval Process",
+    "chunk_id": "p55_c0"
+  },
+  {
+    "page": 56,
+    "text": "Today’s Separate & Concurrent Approval Process Architect ! Developer PE (Mech) C&S Independent Planning & Construction Design ! ! PE (Elec) PE (Civil) Archi M&E Industry Agencies Construction upstream downstream • Plans are prepared by different • Each of the 7 agencies has a different • Plans contain conflicts that professionals independently regulatory mandate need to be resolved during construction • Plans are submitted separately • Comments from 1 agency may lead to to different agencies at different resubmission/ amendment to others • Rectifications = Abortive Works milestones concurrently • Approved plans may conflict; no single • Delayed issuance of TOP/CSC integrated view of approved plan 56",
+    "chunk_id": "p56_c0"
+  },
+  {
+    "page": 57,
+    "text": "New CORENET X Regulatory Approval Process  Construction Piling Gateway  Occupancy Permit / 1.5  Design Gateway Gateway (Optional) Stat. Completion construction Detailed Design All Other Requirements Compliance to Critical Design Parameters Structural Design Parameters Requirements Independent requirements with Approved Design & “Showstoppers, non-negotiables” “Must-haves before Piling” no conflict across agencies “Must-haves before (Piling &) Statutory Completion Launch of Sales” • The new Regulatory Approval process for Building Works (RABW) streamlines the multiple touchpoints into 3 key sequential submission gateways. This seeks to promote upstream design coordination and minimise downstream issues • The “3-Gateways” will be the default submission process for all building projects • ",
+    "chunk_id": "p57_c0"
+  },
+  {
+    "page": 57,
+    "text": "stream issues • The “3-Gateways” will be the default submission process for all building projects • At each Gateway, coordinated BIM submissions (consisting of various building disciplines) will be submitted and reviewed collectively by agencies. This helps to ensure cross-agency issues and conflicts are identified (and resolved) upfront. 57",
+    "chunk_id": "p57_c0"
+  },
+  {
+    "page": 58,
+    "text": "New RABW - Agencies’ requirements at each Gateway SUMMARY OF GATEWAY OBJECTIVES Submission Stage Objective Design Gateway To resolve key parameters which have an impact on design parameters and client’s brief, before proceeding to detailed design Piling Gateway To resolve requirements pertaining to foundation works that do not affect (Optional) main structural works Construction Gateway To resolve multi-agency requirements concerning design details that need to be coordinated before commencement of works and launch of sales Independent To clear agency-specific requirements of respective building components Scan code to access the submissions (if main requirements at each applicable) regulated by respective agency gateway from the CORENET X circular dated 1 Feb 2023 E.g.: Structural submiss",
+    "chunk_id": "p58_c0"
+  },
+  {
+    "page": 58,
+    "text": "d by respective agency gateway from the CORENET X circular dated 1 Feb 2023 E.g.: Structural submission of ancillary structures and components such as barriers/ claddings to BCA Completion Gateway To document “As-Built” plans and issue Occupancy Permit/ Statutory Completion 58",
+    "chunk_id": "p58_c0"
+  },
+  {
+    "page": 59,
+    "text": "[Updated] Approvals under consolidated CORENET X gateways   1.5  Design Construction Piling Gateway Completion Gateway Gateway Gateway (Optional) construction All Other Completion & Compliance Critical Design Foundation Detailed Design Parameters Requirements Requirements Requirements to Approved Design Independent technical “Showstoppers, “Must-haves “Must-haves before (Piling requirements that are non-negotiables” before Piling” &) Launch of Sales” agency specific Approvals at each Gateway consist of the following agencies’ equivalent clearances today* : • URA PP • BCA ST Approvals for • URA WP Permanent Piling Works • LTA Layout • BCA BP and ST Approvals Key Objective of Gateways Plan, NEA and • LTA RPZ AIP for Pile • LTA Street Plan Clearance, BP PUB DC Design and Layout Plan Resolv",
+    "chunk_id": "p59_c0"
+  },
+  {
+    "page": 59,
+    "text": " NEA and • LTA RPZ AIP for Pile • LTA Street Plan Clearance, BP PUB DC Design and Layout Plan Resolve multi-agency (Parking), BP (Rails) Clearances • Independent clearances, • NEA and PUB BP Clearance requirements concerning • NParks DG e.g. NParks EMMP & PUB’s Cert design details that need to be Approval Earth Control Measures • SCDF BP Approval including tree- Approval coordinated cutting • NParks CG Approval ▪ For simpler projects, we have developed an expedited approval process, with the details to be covered later 59",
+    "chunk_id": "p59_c0"
+  },
+  {
+    "page": 60,
+    "text": "New CORENET X regulatory approval process  1.5  Design Piling Gateway Construction Gateway Gateway (Optional - if project team wishes to advance foundation works) Critical Design Foundation Detailed Design Parameters Requirements Requirements “Showstoppers, “Must-haves “Must-haves before non-negotiables” before Piling” (Piling &) Launch of Sales” • Resolve key parameters which • Clearance for design of • Resolve multi-agency have an impact on design permanent piling and requirements concerning design parameters, before proceeding substructure works (that do details that need to be to detailed design not affect internal layout) coordinated before work • Minimise abortive work • [E.g. structural design (piling), pile commences design approval within Railway across various disciplines and •",
+    "chunk_id": "p60_c0"
+  },
+  {
+    "page": 60,
+    "text": "ural design (piling), pile commences design approval within Railway across various disciplines and • E.g. Detailed floor layouts, household Protection Zone] shelters, accessibility, fire consultants • Commencement of Works compartmentalisation, ventilation and • [E.g. GFA, use mix, vehicular access clearances to be granted ducting, planting requirements, sanitary points, platform levels, provision of Proceed to facilities, parking design, cooling towers, independently by respective green buffers + pedestrian walkways, obtain approval water tanks, sprinklers, external works, etc] building height constraints, flood agencies at next Gateway protection measures, etc] Commence works/ Launch Sales 60",
+    "chunk_id": "p60_c0"
+  },
+  {
+    "page": 61,
+    "text": "[Updated] New CORENET X regulatory approval process  Completion (TOP/CSC) construction All Other Completion & Compliance Requirements to Approved Design Independent technical requirements that are agency specific • Check for compliance of • Site inspection to ensure building specialist details works are constructed as per • Expedite clearance of approved plans and comply with agency-exclusive requirements requirements from various • Ensure completed building is fit disciplines and consultants for occupation • [E.g. Landscaping schemes, meter location, materials certification for Start Occupation, fire protection, etc] Start building Obtain Statutory respective component Completion 61",
+    "chunk_id": "p61_c0"
+  },
+  {
+    "page": 62,
+    "text": "[Updated] New CORENET X Regulatory Approval Process  Construction  Completion Piling Gateway 1.5  Design Gateway Gateway Gateway (Optional) construction Detailed Design All Other Requirements Compliance to Critical Design Parameters Structural Design Parameters Requirements Independent requirements with Approved Design & “Must-haves before Piling” no conflict across agencies “Showstoppers, non-negotiables” “Must-haves before (Piling &) Statutory Completion Launch of Sales” 62",
+    "chunk_id": "p62_c0"
+  },
+  {
+    "page": 63,
+    "text": "Illustration of Design Gateway Considerations • Site layout • Site access points • Analysis of surrounding developments (for instance, if there are emissions) • Building setbacks and buffers • Ancillary structures and communal facilities • Trees to be retained/felled • Parameters for Drainage, Sewerage and Sanitary Works (e.g. MPL, connection points) • Building form, general building layout and development intensity",
+    "chunk_id": "p63_c0"
+  },
+  {
+    "page": 64,
+    "text": "New RABW - Design gateway details Agency Design Gateway (DG) URA Schematic details of key planning parameters, including • Master Plan parameters (ie. land use/height/intensity) pertaining to the overall building form • Site layout and general building layout • How development relates to surroundings e.g. open spaces, activity generating uses, etc • Connectivity provisions within and around development (indicative location and width) 64",
+    "chunk_id": "p64_c0"
+  },
+  {
+    "page": 65,
+    "text": "New RABW - Design gateway details Agency Design Gateway (DG) NParks Greenery provision (ie. Green buffers and planting strips) and tree conservation for developments, and any impact to existing parks or green spaces. The model/plans should include: • The spatial provision for greenery • Information of trees/ plants to be conserved (i.e. species, girth, height) along roadside and/or within development boundary. • Elements affecting green buffers and planting strips, including entrance position(s), fire engine accessways, open air parking areas at street level, and other structures (e.g. covered linkways and pedestrian overhead bridges). NParks will also review the conceptual design of any new parks, park connectors or promenades upfront 65",
+    "chunk_id": "p65_c0"
+  },
+  {
+    "page": 66,
+    "text": "New RABW - Design gateway details Agency Design Gateway (DG) LTA Compliance to traffic operations and safety requirements. Key evaluation areas include:- • Location and provision of access points, pick-up/drop-off and loading/unloading areas • Parking provision and layout • Extent of frontage improvement • Improvement needed to existing traffic scheme • Connections to commuter facilities • Vesting of road reserve plot, if any. Proposals involving commuter facilities should include their layouts, with the architectural and engineering details (ie. alignment, headroom and column positions) assessed at CG. 66",
+    "chunk_id": "p66_c0"
+  },
+  {
+    "page": 67,
+    "text": "New RABW - Design gateway details Agency Design Gateway (DG) LTA For proposed new streets, the horizontal and vertical alignment, road typology and connection to existing road shall be established to determine the Road Reserve Line required. For developments within Railway Protection Zones, Railway protection details should be provided to facilitate the overall impact of the development with respect to any Rail Transit System structures, including: • Plan for development works • Engineering evaluation report • Certified survey plans, etc. 67",
+    "chunk_id": "p67_c0"
+  },
+  {
+    "page": 68,
+    "text": "New RABW - Design gateway details Agency Design Gateway (DG) PUB Broad drainage, sewerage and sanitary works parameters (e.g. Minimum Platform Level, maximum allowable peak runoff, sewer setback, connections, etc.) Key evaluation areas include: • Storm water drainage works, structures or objects in, above or across any drain or drainage reserve (both temporary and permanent) • Any realignment of Drainage Reserve or Drainage Reserve to be set aside and vested to State; • Works which could affect public sewers/sewerage system, or public and common drains; • Buildings or structures to be erected over, across or adjacent to any public sewerage system; and • Proposed connections to the public sewerage system 68",
+    "chunk_id": "p68_c0"
+  },
+  {
+    "page": 69,
+    "text": "New RABW - Design gateway details Agency Design Gateway (DG) NEA Compliance with pollution control and environmental health requirements, including: • Refuse and recyclables collection, storage and removal • Analysis of how surrounding developments/amenities affect subject site • Proposed orientation and location of emission (noise, air and odour) sources and ventilation/discharge systems within and around subject site • Location for storage for materials such as chemical, oil, fuel, etc. • Industrial processes or production activities, or changes to existing activities • Building Height Constraint (BHC) and Minimum Chimney Height (MCH) requirements as stated in SS593 • Energy Efficiency Opportunities Assessment (EEOA) declaration for industrial developments Reports for Pollution Control S",
+    "chunk_id": "p69_c0"
+  },
+  {
+    "page": 69,
+    "text": "ortunities Assessment (EEOA) declaration for industrial developments Reports for Pollution Control Study/Air Dispersion Model Study, Quantitative Risk Assessment, Noise Impact Assessment, Environmental Site Assessment etc. may be required 69",
+    "chunk_id": "p69_c0"
+  },
+  {
+    "page": 70,
+    "text": "New RABW - Design gateway details Agency Design Gateway (DG) BCA NIL If building design involves complex building, consultation with BCA to be held before Piling Gateway SCDF Location of fire engine accessway and hard standing area to be included upfront as part of overall site layout 70",
+    "chunk_id": "p70_c0"
+  },
+  {
+    "page": 71,
+    "text": "[Updated] New CORENET X Regulatory Approval Process  Piling Gateway Construction  Completion 1.5  Design Gateway (Optional) Gateway Gateway construction Structural Design Parameters Detailed Design All Other Requirements Compliance to Critical Design Parameters Requirements Independent requirements with Approved Design & “Showstoppers, non-negotiables” “Must-haves before Piling” no conflict across agencies “Must-haves before (Piling &) Statutory Completion Launch of Sales” 71",
+    "chunk_id": "p71_c0"
+  },
+  {
+    "page": 72,
+    "text": "New RABW – Piling gateway To resolve requirements pertaining to foundation works that do not affect main structural works To resolve requirements pertaining to foundation works that do not affect main structural works • The Piling Gateway clearance pertains to the design of permanent piling and substructure works (that do not affect internal layout), where its clearance is for design approval and not for commencement of works • Other site works (e.g. for site clearance, temporary protection, etc), which do not form part of the permanent structures but still require agencies’ clearances, can be cleared in parallel and need not be tied to the Piling Gateway approval Works affecting Permanent Structures LTA’s Approval in-principle (AIP) for Pile Design and Pile Layout Plan (only within Railwa",
+    "chunk_id": "p72_c0"
+  },
+  {
+    "page": 72,
+    "text": "tructures LTA’s Approval in-principle (AIP) for Pile Design and Pile Layout Plan (only within Railway Protection Zone) Piling Gateway is deemed to be cleared when these clearances are released as a package BCA’s ST Approvals for Piling & relevant Substructure Works Design Gateway Piling Gateway Construction Gateway (Optional) [Parallel Processes] Other Clearances to be Obtained before commencement of respective works Site Clearance Commencement of Works PUB’s Approval to Commence Works BCA’s Permit to Commence Piling & Requiring Earth Control Measures relevant Substructure Works NParks’ no-objection for specific sites LTA’s Rail Engineering Works with environmental mitigation and Permit/Restricted Activity Approval monitoring plan (EMMP)/wildlife PUB’s Approval for Works Within management,",
+    "chunk_id": "p72_c0"
+  },
+  {
+    "page": 72,
+    "text": "ricted Activity Approval monitoring plan (EMMP)/wildlife PUB’s Approval for Works Within management, prior to site clearance Public Sewer / Water Pipe Corridor 72",
+    "chunk_id": "p72_c1"
+  },
+  {
+    "page": 73,
+    "text": "New RABW - Piling gateway permissible works Upon obtaining approval and permit to commence works, the project team may carry out the permissible works DEFINITION OF PERMISSIBLE WORKS • Site preparation, demolition of existing buildings • Excavation and temporary ERSS (earth retaining and stabilising structures) • Permanent sub-structure works - including piling, raft foundation, footings, pile caps, external basement retaining walls, ground beams & slab Points to note • Certain substructure works are not allowed (e.g. intermediate basement floors) as there will be more requirements involved when internal layout, horizontal / vertical circulation components etc come into play i.e. Elements indicated in red • Development project team will need to time the foundation / piling works appropriat",
+    "chunk_id": "p73_c0"
+  },
+  {
+    "page": 73,
+    "text": "dicated in red • Development project team will need to time the foundation / piling works appropriately in relation to Construction Gateway clearance. This is to avoid long periods of inactivity between substructure Substructure and superstructure works, which is not ideal from a productivity or maintenance viewpoint Development Site Development Site Works with basement levels Works without basement levels 73",
+    "chunk_id": "p73_c0"
+  },
+  {
+    "page": 74,
+    "text": "[Updated] New CORENET X Regulatory Approval Process  Completion Piling Gateway  Construction Gateway 1.5  Design Gateway (Optional) Gateway construction All Other Requirements Detailed Design Requirements Compliance to Critical Design Parameters Structural Design “Showstoppers, non-negotiables” Parameters Independent requirements with Approved Design & no conflict across agencies “Must-haves before (Piling &) “Must-haves before Piling” Statutory Completion Launch of Sales” 74",
+    "chunk_id": "p74_c0"
+  },
+  {
+    "page": 75,
+    "text": "New RABW – Construction gateway To resolve multi-agency requirements concerning design details that need to be coordinated before commencement of works and launch of sales To resolve multi-agency requirements concerning design details that need to be coordinated before commencement of works and launch of sales Key milestone in the new RABW • Consolidated clearance containing agencies’ building plan and detailed plan approvals in a single coordinated submission • Written Permission (WP), Building Plan (BP) approval and Structural (ST) approval for all permanent super-structural design are issued in this gateway • Gateway clearance required for launch of sales and commencement of super-structural works External works • External works (works adjacent to site boundary), especially those affect",
+    "chunk_id": "p75_c0"
+  },
+  {
+    "page": 75,
+    "text": "ral works External works • External works (works adjacent to site boundary), especially those affecting the entrance culvert, are to be coordinated and submitted as part of Construction gateway to agencies. Details include • Drainage and sewer improvements • Roadside planting, reinstatement of landscaping • Road improvement, provision of pedestrian facilities • External works details can be submitted in 2D CAD format 75",
+    "chunk_id": "p75_c0"
+  },
+  {
+    "page": 76,
+    "text": "Recap of 3 Gateway Process for Structural Project Under the new Regulatory Approval for Building Works (RABW) framework: • At each gateway, • Project teams are required to collaborate and submit a set of coordinated model • Requirements imposed at the gateway are major requirements that have cross agencies’ dependency • Agency specific requirements may be submitted as independent submissions subsequently. Examples of independent submissions include: • Structural submissions for ancillary works (eg: cladding, barrier) • Structural submissions for temporary works (eg: ERSS) 76",
+    "chunk_id": "p76_c0"
+  },
+  {
+    "page": 77,
+    "text": "Challenges faced for large projects Must the full structural submission (including detailed design and calculations, AC/ACO report, etc.) for the What happens with CORENET X? whole project be submitted in one go under CORENET X? Current Practices • Today, the structural design for large projects are usually submitted in multiple STs. • This allows construction works to commence early and progressively. Industry’s Concerns • While overall design is done upfront, detailed structural calculations, AC/ ACO reports take time. • For huge projects, it is impractical to complete detailed structural design of the whole project in one attempt. • Projects will face significant delays in commencement of works if detailed structural design of the whole project must be submitted and cleared before the r",
+    "chunk_id": "p77_c0"
+  },
+  {
+    "page": 77,
+    "text": " works if detailed structural design of the whole project must be submitted and cleared before the relevant approval and permit can be issued. 77",
+    "chunk_id": "p77_c0"
+  },
+  {
+    "page": 78,
+    "text": "Challenges faced for large projects Must the full structural submission (including detailed design and calculations, AC/ACO report, etc.) for the What happens with CORENET X? whole project be submitted in one go under CORENET X? Within 1 project, the key concern is with the submissions at Piling Gateway (PG) and Construction Gateway (CG), where structural details and calculations need to be submitted To address industry’s concern that structural design takes time (especially if AC/ACO reports are required) and it is impractical to complete the full structural details in one go • Detailed structural design and calculations of eligible projects need not be submitted in a single attempt but done through a limited number of part ST submissions (please see details in the next few slide) 78",
+    "chunk_id": "p78_c0"
+  },
+  {
+    "page": 78,
+    "text": "e through a limited number of part ST submissions (please see details in the next few slide) 78",
+    "chunk_id": "p78_c0"
+  },
+  {
+    "page": 79,
+    "text": "Large projects that qualify for part ST Submissions ❑ Building projects: 1. Any project with a Gross Floor Area (GFA) > 40,000sqm is eligible for part ST submission if – a. the project consists of 5 or more blocks of building of at least 4 storeys high each; or b. the project consists of 3 or more blocks of building of at least 4 storeys high each, with common podium or basement. 2. Cluster housing projects with 40 or more landed units ❑ Infrastructure projects: 1. Infrastructure works that function like a building with length > 150m (e.g. MRT stations, transport nodes/ interchanges); 2. Infrastructure works that are mostly engineering works with length > 400m (e.g. viaducts, large scale drains, sewers ) 3. Infrastructure works that are mostly coastal works with length > 4,000m (e.g. land ",
+    "chunk_id": "p79_c0"
+  },
+  {
+    "page": 79,
+    "text": "ins, sewers ) 3. Infrastructure works that are mostly coastal works with length > 4,000m (e.g. land reclamation, revetment, sea wall, bund wall ) 79",
+    "chunk_id": "p79_c0"
+  },
+  {
+    "page": 80,
+    "text": "Illustration: Flow of Part ST Submissions (Construction Gateway) When amendment is required: First CG Submission (CG01) (All agencies BP, WP and C&S Part ST 01) Does amendment 1. Coordinated IFC Model comprising: Yes affect coordinated IFC No Model? a) Full Architectural model b) Full M&E model; and Are the Submit amendment to 1st CG c) Structural model (contains full details of changes Yes No 1. Amended coordinated IFC structures under Part ST 01; carcass only material? Model comprising: for structures in remaining Part STs) a) Updated full 2. Supplementary structural drawing, detailed Architectural model Submit amendment to calculations, AC/ACO report for Part ST 01 Capture b) Updated full M&E C&S Part ST 02 amendments Subsequent ST model; and 1. Updated structural IFC in record submissi",
+    "chunk_id": "p80_c0"
+  },
+  {
+    "page": 80,
+    "text": " M&E C&S Part ST 02 amendments Subsequent ST model; and 1. Updated structural IFC in record submissions c) Updated structural Model containing full plans model C&S Part ST 02 details of structures 2. Updated supplementary (C&S only) under Part ST 02 structural drawing, 2. Updated 1. Structural IFC Model containing full details of detailed calculations, supplementary AC/ACO report for Part ST structures under Part ST 02 structural drawing, 01, if necessary 2. Supplementary structural drawing, detailed detailed calculations, calculations, AC/ACO report for Part ST 02 AC/ACO report for Part If amendment to other ST 02 Approval for subsequent C&S Part ST can part STs is required only be obtained after First CG is approved. All amendments must be made to the original submission 80",
+    "chunk_id": "p80_c0"
+  },
+  {
+    "page": 80,
+    "text": " after First CG is approved. All amendments must be made to the original submission 80",
+    "chunk_id": "p80_c1"
+  },
+  {
+    "page": 81,
+    "text": "Guidelines on Part ST Submissions (Large Building Projects) Project teams should propose the Part ST Submission plan based on below guidelines and seek agencies’ concurrence during pre-submission consultations, before making any submissions. Scope of Works Number of Part ST Submissions Allowed Superstructure 1 no. of Part ST Submission for every 4 blocks (rounded to nearest unit) 1 no. of Part ST submission for every 40 landed units (rounded to nearest unit) Example: For a building project consisting of 9 tower blocks, 3 no. of Part ST Submissions of equal GFA is allowed. (i.e. if the total GFA is 105,000 sqm, each of the Part ST Submission should be about 35,000 sqm) Common Basement 1 no. of Part ST Submission Common Podium 1 no. of Part ST Submission All ancillary works 1 no. of Part ST ",
+    "chunk_id": "p81_c0"
+  },
+  {
+    "page": 81,
+    "text": "f Part ST Submission Common Podium 1 no. of Part ST Submission All ancillary works 1 no. of Part ST Submission All external works 1 no. of Part ST Submission ERSS Part ST submission not applicable Cladding (submitted under Independent submissions as per the current arrangement under the Façade standard RABW (without phasing) framework) Temporary Deck 81",
+    "chunk_id": "p81_c0"
+  },
+  {
+    "page": 82,
+    "text": "Guidelines on Part ST Submissions (Large Building Projects) Example Project: 6 HDB blocks with MSCP and ancillary works 4 Major road Site boundary 3 MSCP BLK 4 BLK 5 BLK 6 2 1 Part ST Submission 1: Block 1 – 3 Part ST Submission 3: Ancillary works within site boundary Part ST Submission 2: Block 4 – 6 Part ST Submission 4: External works outside site boundary 82",
+    "chunk_id": "p82_c0"
+  },
+  {
+    "page": 83,
+    "text": "Part ST Submissions for large projects (Infrastructure) Detailed structural design and calculations of eligible projects need not be submitted in a single submission but can be submitted through a sequence of part ST submissions. Definition of large infrastructure projects that qualify for part ST Submissions: a. Infrastructure works that function like a building with length > 150m (e.g. MRT stations, transport nodes/ interchanges); b. Infrastructure works that are mostly engineering works with length > 400m (e.g. railway tunnels, viaducts, large scale drains and sewers) To exemplify this, 3 Case Studies will be explored in the subsequent slides. Case Study 1: Underground MRT station with 3 entrances/exits and 2 launch shafts Case Study 2: 751m long aboveground Railway Track Case Study 3: ",
+    "chunk_id": "p83_c0"
+  },
+  {
+    "page": 83,
+    "text": "entrances/exits and 2 launch shafts Case Study 2: 751m long aboveground Railway Track Case Study 3: Aboveground MRT station with 2 entrances/exits 83",
+    "chunk_id": "p83_c0"
+  },
+  {
+    "page": 84,
+    "text": "Part ST Submissions for large projects (Infrastructure) Case Study 1: Underground MRT station with 3 entrances/exits and 2 launch shafts 84",
+    "chunk_id": "p84_c0"
+  },
+  {
+    "page": 85,
+    "text": "Part ST Submissions for large projects (Infrastructure) Case Study 2: 751m long aboveground Railway Track 85",
+    "chunk_id": "p85_c0"
+  },
+  {
+    "page": 86,
+    "text": "Part ST Submissions for large projects (Infrastructure) Case Study 3: Aboveground MRT station with 2 entrances/exits 86",
+    "chunk_id": "p86_c0"
+  },
+  {
+    "page": 87,
+    "text": "New RABW – External Works The design and regulatory approval of External Works in CORENET X will also be coordinated The design and regulatory approval of External Works in CORENET X will also be coordinated External Works are Part of the new RABW • The QP will submit proposed external works to LTA, NParks and PUB in CORENET X for a coordinated regulatory review. These agencies have worked together to map their regulatory objectives and requirements. Due care was taken to ensure that: • There are no direct conflicts in the rules between the agencies • Various components of the road typology will be holistically reviewed by the respective agencies within the same gateway. Definition of External works • External works (works adjacent to site boundary), especially those affecting the entrance",
+    "chunk_id": "p87_c0"
+  },
+  {
+    "page": 87,
+    "text": "al works • External works (works adjacent to site boundary), especially those affecting the entrance culvert, are to be coordinated and submitted as part of Construction gateway to agencies. Details include • Drainage and sewer improvements • Roadside planting, reinstatement of landscaping • Road improvement, provision of pedestrian facilities • External works details can be submitted in 2D CAD format 87",
+    "chunk_id": "p87_c0"
+  },
+  {
+    "page": 88,
+    "text": "New RABW – External Works External Works can be Categorised Further into (a) Development (Internal) Work and (b) External Work External Works can be Categorised Further into (a) Development (Internal) Work and (b) External Work LTA, NParks and PUB require the following to be submitted in a single package across the regulatory gateways: • Proposed works within the development boundary; and • Proposed external works at the periphery To further elaborate using LTA’s requirements as a example: Works within the development boundary include the layout of pick-up/drop- off(PUDO)points, internal driveways, and EV charging infrastructure External works pertain to works within the road reserve, such as Street improvement works, Commuter facilities, Active mobility infrastructure Interfacing aspects ",
+    "chunk_id": "p88_c0"
+  },
+  {
+    "page": 88,
+    "text": "s Street improvement works, Commuter facilities, Active mobility infrastructure Interfacing aspects at the site boundary are to be cleared as part of Development (Internal) Works 88",
+    "chunk_id": "p88_c0"
+  },
+  {
+    "page": 89,
+    "text": "Examples of Interfacing Aspects Across LTA, NParks and PUB Interfacing Aspects Between Internal and External Works LTA/NParks 1 Vehicular Access Points 2 Pedestrian Access Points 3 Cyclist accesses 4 Covered Linkway / Walkway Connections 5 Pedestrian Overhead Bridge Connections 6 Pedestrian Underpass Connections 7 Bus Stops (If directly interfacing with the development building) 8 Taxi Stands (If directly interfacing with the development building) 9 Vertical Profile of New Street (If proposal involves construction of a new street or widening of existing roads PUB 10 Connection of internal drain to road drain/ drain outlet 11 Minimum Platform Level(s), adjacent road/ ground level, and outlet discharge point levels 12 Point of proposed sewer connection",
+    "chunk_id": "p89_c0"
+  },
+  {
+    "page": 89,
+    "text": "discharge point levels 12 Point of proposed sewer connection",
+    "chunk_id": "p89_c0"
+  },
+  {
+    "page": 90,
+    "text": "Delinking from CG (if required) Example Scenario 1 Example Scenario 2 Separate Clearances for Internal and External works (using LTA as an example) QP submits external and QP submits external and internal works proposal internal works proposal LTA will issue a Street Layout Plan Clearance (at DG), as well as a Street Plan Clearance and Vehicle Parking Building Plan Clearance (at CG), when both the proposed development (internal) works and external Both external, internal works are designed in accordance with the prevailing standards. Internal works, but not works (with interfacing external works are in order details) are in order by 3rd by 3rd submission In a scenario where development (internal) works are in order, but with submission the external works still under review, LTA may issue s",
+    "chunk_id": "p90_c0"
+  },
+  {
+    "page": 90,
+    "text": "rnal) works are in order, but with submission the external works still under review, LTA may issue separate Street Interfacing aspects Layout Plan and Street Plan Approvals, for internal and external works. in order LTA issues a complete street After Construction Gateway, LTA will subsequently issue a separate LTA issues clearance for the layout plan/ street plan approval for internal works when all interfacing aspects within the internal works clearance (Project parties can proceed with external works proposal are designed in accordance with the prevailing (Project parties can proceed with construction/ sales at CG) construction/ sales at CG) standards. External works in order This will help to expedite the clearance and completion of the projects. LTA issues clearance for the external wo",
+    "chunk_id": "p90_c0"
+  },
+  {
+    "page": 90,
+    "text": "p to expedite the clearance and completion of the projects. LTA issues clearance for the external works",
+    "chunk_id": "p90_c1"
+  },
+  {
+    "page": 91,
+    "text": "New CORENET X Regulatory Approval Process  Construction Piling Gateway  Occupancy Permit / 1.5  Design Gateway Gateway (Optional) Stat. Completion construction All Other Requirements Detailed Design Compliance to Critical Design Parameters Structural Design Parameters Requirements Independent requirements with no Approved Design & “Showstoppers, non-negotiables” “Must-haves before Piling” “Must-haves before (Piling &) conflict across agencies Statutory Completion Launch of Sales” 91",
+    "chunk_id": "p91_c0"
+  },
+  {
+    "page": 92,
+    "text": "New RABW – Independent submission To clear agency-specific requirements that do not involve cross-agency collaboration Agency NParks LTA PUB NEA BCA SCDF URA SLA Requirements • EMMP • Railway • Application for • Temporary • Structural • Performance- • Strata/ Land protection/ specified Sanitary design of based fire Subdivision & • Planting/ Road structure activities near Facilities at ancillary works safety Amalgamation landscaping protection Water and Sewer Construction and component scheme within • Fire Protection • Certified Plan (CP), details for pipes site such as development, (FP) and Registrar of Title engineering demolition, including open • Earth Control Mechanical Plan (RT), and Strata work temporary air parking Measures (ECM) Ventilation Certified Plan (CPST) ERSS, cladding, are",
+    "chunk_id": "p92_c0"
+  },
+  {
+    "page": 92,
+    "text": "rata work temporary air parking Measures (ECM) Ventilation Certified Plan (CPST) ERSS, cladding, areas at street • Engineering (MV) Plans • Temporary works barrier, level, and of evaluation affecting • Automatic Fire temporary green verges report drainage/within Alarm/ traffic decking along roadside • Instrumentation drainage reserve extinguishing (i.e. number • Green Mark proposal (e.g. drain system and species of detailed diversion, soil • Method • Emergency trees and requirements investigation statement of Voice plants to be works) work Communication planted) • Water Service System • Emergency • New tree works procedure • Smoke Control planting • Rainwater System details • Pre-condition collection system survey report for non-potable • Certified survey water plan 92",
+    "chunk_id": "p92_c0"
+  },
+  {
+    "page": 92,
+    "text": "ollection system survey report for non-potable • Certified survey water plan 92",
+    "chunk_id": "p92_c1"
+  },
+  {
+    "page": 93,
+    "text": "[Updated] New CORENET X Regulatory Approval Process   Completion Construction Piling Gateway 1.5  Design Gateway Gateway Gateway (Optional) construction All Other Requirements Detailed Design Critical Design Parameters Structural Design Parameters Compliance to Approved Design Requirements Independent requirements with “Showstoppers, non-negotiables” “Must-haves before Piling” no conflict across agencies & Statutory Completion “Must-haves before (Piling &) Launch of Sales” 93",
+    "chunk_id": "p93_c0"
+  },
+  {
+    "page": 94,
+    "text": "New RABW – Completion Gateway To document as-built plans and apply for Occupancy Permit/ Statutory Completion To document as-built plans and apply for Occupancy Permit/ Statutory Completion Application for completion of works • A set of TOP/CSC checklist pertaining to agencies’ requirements are provided to guide the project teams on the list of requirements for TOP/CSC application • This includes as-built plan submissions, record plans, certificate of supervision, post-construction reports e.g. hydrostatic tests, RC trench report etc. Site inspections • Inspection would be carried out separately by agencies (similar to today’s practice) • Once ready for TOP/CSC, QPs will notify the relevant agencies separately through CORENET X. Agencies will inform the project team if an audit/inspection ",
+    "chunk_id": "p94_c0"
+  },
+  {
+    "page": 94,
+    "text": "agencies separately through CORENET X. Agencies will inform the project team if an audit/inspection is required. This is to help project teams plan/ prepare their site early TOP/CSC application • The status of each agencies’ TOP/CSC would be shown and tracked through CORENET X, where the overall TOP/CSC by BCA will only be released when all agencies’ respective clearances are obtained 94",
+    "chunk_id": "p94_c0"
+  },
+  {
+    "page": 95,
+    "text": "Completion Gateway : Agencies Technical Clearances Workflow [New!] When respective part of agencies’ works are completed QPs to submit the relevant documents Project Coordinator to request for site to respective agencies ** inspections for relevant agencies^# If submission is not in (After Site Inspection, if any) No order/issues found , Is the site in order? response will be issued by agency Yes Issuance of Agencies’ Technical Clearance (TOP/CSC) ** Please refer to the CORENET X Code of Practice here for the latest list of submission documents to ensure compliance with agencies requirements. The applicable Technical clearances from relevant agencies will be based on the declarations submitted by QP(s) during the plan submission stage. ^Site inspections conducted by BCA to be applied throu",
+    "chunk_id": "p95_c0"
+  },
+  {
+    "page": 95,
+    "text": "ed by QP(s) during the plan submission stage. ^Site inspections conducted by BCA to be applied through CORENET X Submission Portal. For other agencies, to request for site inspection as per current practice. #If site non-compliance is minor, agencies may request for photographic evidence as documentation in lieu of re-inspection",
+    "chunk_id": "p95_c0"
+  },
+  {
+    "page": 96,
+    "text": "Completion Gateway : Overall TOP/CSC Application Process to BCA [New!] Start of Overall TOP/CSC Application to BCA If there is outstanding Project cleared all applicable technical clearance, technical clearances the Project Coordinator will not be Project Coordinator able to submit the submits TOP/CSC overall TOP/CSC Application to BCA application ^^ As the technical departments have not yet onboarded CORENET X, QPs to submit documents as attachments per current practice for the following type of clearances : Issuance of TOP/CSC by QPs submit all a. Fibre Certification BCA required clearances^^ b. SP Services c. Sentosa d. LTA (Electric Vehicle Charging) e. DSTA / CAAS If issues/non- f. ISD Security Screening compliances found",
+    "chunk_id": "p96_c0"
+  },
+  {
+    "page": 97,
+    "text": "Completion Gateway : For Partial TOP Applications [New!] Repeat for next phase(s) Obtain Submit technical BCA’s clearance (TOP/CSC) to Apply for pre-submission partial TOP Obtain Obtain all agencies consultation for Partial Submit overall agencies’ no agencies’ • Select this as partial* TOP TOP/CSC objection clearance TOP application • Select agencies involved clearance to BCA • Select the pre-populated Obtain in the project for intended phases from the BCA’s final • Provide phasing proposal Phase* approved phasing TOP in parts e.g. Phase A, application Phase B etc. *for final phase, select this is for final phase E ✓ To propose a partial TOP phasing plan and seek agencies' concurrence at the pre-submission consultation T O module before making submissions N ✓ Check project’s eligibility b",
+    "chunk_id": "p97_c0"
+  },
+  {
+    "page": 97,
+    "text": "e pre-submission consultation T O module before making submissions N ✓ Check project’s eligibility before proceeding with pre-submission consultation O T ✓ Select applicable agencies based on the project requirements S ✓ Add scope for each proposed partial TOP phase in the pre-submission consultation T N ✓ Include TOP phasing plan as part of the pre-submission consultation documents I O P ✓ Any changes to the approved TOP phasing scope will require a new submission",
+    "chunk_id": "p97_c0"
+  },
+  {
+    "page": 98,
+    "text": "CORENET X – Transformation into joint submission and plan processing",
+    "chunk_id": "p98_c0"
+  },
+  {
+    "page": 99,
+    "text": "New RABW key principles of implementation Transformation of practices in getting ready for CORENET X Transformation of practices in getting ready for CORENET X CAMIno j ooCmriOnep Rtau EsrpueNfdbrEom Ttno iXts t,sdo iteodhsnaei ygrbe’nys i cspao lrnloo oarcdp ecipshnosaa,int nCigotOeend R tr EoeQN qsPuEtsaiTrte uXdt wo wroyhu erledres ip nmovneosmlvibebi:leitrise ss hoof ualpdp cooimntee do nQbuoaalirfdie eda Prleiersr oton skick-start coordination Compared to today’s process, CORENET X would involve: • A joint submission by all appointed QPs • More upfront design coordination required where members should come onboard earlier to kick-start coordination In CORENET X, there is no change to statutory responsibilities of appointed Qualified Persons 1 Coordinated consolidated response 2 Iterat",
+    "chunk_id": "p99_c0"
+  },
+  {
+    "page": 99,
+    "text": "atutory responsibilities of appointed Qualified Persons 1 Coordinated consolidated response 2 Iterations through Written Directions Coordinated & Iterations through consolidated response Written Directions AACInoggdmeeunnmscctiireeeynss n ’tr sowe wvlroiiietnltlw egbne,e r d d lboeireccea ocrtnetiioqfolniunc-itsrt ea ardgeng sdtpeo ado pp norpdonr doc .uovbclacleefls cfc otionirvm mpemdlayfte trnoet pbso/ecr ctle ofaonrrsa oenlaicdseayst referdof emfroe ran inscsoeuthaenrc eAgency With collective review and collaboration across Agencies, submissions should not iterate more than 2 Written Directions at each gateway •Agencies review, deconflict & respond •With collective review and collaboration across collectively Agencies, submissions should not iterate more than 2 Written Directions at ea",
+    "chunk_id": "p99_c0"
+  },
+  {
+    "page": 99,
+    "text": "on across collectively Agencies, submissions should not iterate more than 2 Written Directions at each gateway •Agencies’ written directions and approvals in pdf to be consolidated for issuance 20 Working days response time by Agencies Working days response time •Comments will be location-tagged on .bcf format report for easy reference by Agencies •Industry no longer be required to produce For BIM submissions, Agencies will collaborate to respond to industry collectively within 20 working days comments/clearances from another Agency •For BIM submissions, Agencies will collaborate to respond to industry collectively within 20 working days 99",
+    "chunk_id": "p99_c1"
+  },
+  {
+    "page": 100,
+    "text": "Summary of new RABW key principles Guiding principles, service standards and governance framework Guiding principles, service standards and governance framework Item Key Principles / Process Steps 1 Overall Approach • 3-Gateway approval process the default workflow for all new projects (including non-BIM) • All agency replies to be consolidated, with no imposing of new requirements after Gateway clearance • No change in Qualified Persons (QP) statutory responsibilities 2 Design/ Piling/ • Service Level Agreement (SLA) for BIM submissions of 20 working days, for majority of cases Construction Gateways put through the standard approvals process • No more than 2 Written Directions to be issued per Gateway (60 working days validity) • QPs can surface conflicting agency-imposed requirements to ",
+    "chunk_id": "p100_c0"
+  },
+  {
+    "page": 100,
+    "text": "per Gateway (60 working days validity) • QPs can surface conflicting agency-imposed requirements to IACC for resolution • Complex cases/conflicts which exceed time thresholds to be escalated to IACC for resolution 3 Other requirements • Project teams can make independent submissions through CORENET X directly to agencies (no inter-dependencies) 4 Completion Gateway • Project teams would be informed early if inspection is required (TOP/CSC) • CORENET X will track respective agencies’ clearance progress and issue TOP/CSC 100",
+    "chunk_id": "p100_c0"
+  },
+  {
+    "page": 101,
+    "text": "Joint-submissions in new RABW Accountability and clarity in roles and responsibilities Accountability and clarity in roles and responsibilities Project coordinator (PC) (lead QP) TCADPPTohorrpeoo emvpecv oenaepidlispanoaesbptpr emlwoseeduir einalb /ltntO moumct ows tioeesoonfnsrdr ie-Qdtoaf rironyP/niefB ’sai snn Quta pepdinPldrduldysa et B csrtpret oI briMwgc oyeeijis n el salto cauebcftbrbce semelm eirdsleo eis ssqi m inscsnuu iogtboibhrnleneemetr d-ri snocsi :stly liosC:csi Okotine nRatm eEpbr Npywao EcsiiTltenl wptbXmae ittr oehfau n tatnethlld e Qaa sgPmyessen ttnoceit mesasel ,tpi nhsa ruarobalultmogewh iasi snSgigieon nnsgscpp ieaeacsrsei,sf ijtlcooo iagn bcitnec-s e tmusobs aa mtdpoeip sp osjoriiooninvntt i QldwyeP ibl sli ynr epaqullut rsier ielne rvtohaleen stjo Qainnutda- slriue",
+    "chunk_id": "p101_c0"
+  },
+  {
+    "page": 101,
+    "text": "ip sp osjoriiooninvntt i QldwyeP ibl sli ynr epaqullut rsier ielne rvtohaleen stjo Qainnutda- slriuefibsepmdo iPnsessiriobsnoilintise (sQ oPf sa)ll QPs of project team to be clearly defined prior to initiation a submission •To enable a coordinated BIM submission in CORENET X to all creates a project on submission portal agencies, submissions are to be made jointly by all relevant Qualified Persons (QPs) PC adds team members, allocates respective roles for •Compared to today’s practice of silo submission by separate submission to relevant agencies QPs to separate agencies, joint-submission will require roles and responsibilities of all QPs of project team to be clearly defined prior to initiation a submission Added members receive email notification, logs into portal to confirm addition •Ap",
+    "chunk_id": "p101_c0"
+  },
+  {
+    "page": 101,
+    "text": "tion a submission Added members receive email notification, logs into portal to confirm addition •Appointment of QPs and project members: •Developer/Owner/Builder will be required to interact with the PC initiates appointment by developer/owner/Builder system through Singpass login to appoint QPs •Process will user-friendly to enable single-click appointment Developer/owner receives email •Provide submission inputs by access control: notification, logs into portal to appoint QPs •The appointment of QPs registered in the system will be fundamental in allowing specific access to provide inputs in the PC initiates application, QPs enabled with joint-submission control to contribute inputs to relevant section in forms for submission 101",
+    "chunk_id": "p101_c1"
+  },
+  {
+    "page": 102,
+    "text": "Joint-submissions in new RABW Establishing submission involvement at the upstream Establishing submission involvement at the upstream IWInn htCoeOdnRa sEyuN'scE hpT rc oXhc,e escsukscs ha at cr TeoO ncfoPirn smdtauagctiteoe,nd i f,a aanngdye c nahcgeieecskn scm ywa hoyau isldd ne bonett i bfbyer oescunog ipnhevt outhlpvafertod cn ointu atldht esrue aqbpmupirriseos vsioaunlb p msrtoaiscgseeios stno,. IeTnshdtiuas sbctlarisyuh si sec slrae drqietuylai riyen d tto ht oeth pseur obpvmroidijesesc dito eancn lpadrr omacteaiosyns i noevra ocrlolyvn eas nuredltc aativgfioeciandtc imioensa jwtooro purkrnosed oxupnce esci twteer dtito tu efpunsl efciotlls na afgitre mtnhaceit eidoson' wr tehnqasuttri rseeuambmme tniosts siimonp rtoov aeg pernocdieusc taivreit ynot required •In today's process at TOP",
+    "chunk_id": "p102_c0"
+  },
+  {
+    "page": 102,
+    "text": "rseeuambmme tniosts siimonp rtoov aeg pernocdieusc taivreit ynot required •In today's process at TOP stage, if any agency has not been involved in the approval process, Industry is required to provide declaration or consult agencies to produce written confirmation that submission to agencies are not required •When such checks are conducted, agencies may identify scope that could require submission. This causes delay to the project and may involve rectification works on site to fulfill agencies' requirements •In CORENET X, such confirmation and checks would be brought upfront at submission stage to establish clarity in the submission process early and avoid major unexpected upsets at the downstream to improve productivity",
+    "chunk_id": "p102_c0"
+  },
+  {
+    "page": 103,
+    "text": "Joint-submission workflow in the new RABW New submission New submission PC adds team members, Project coordinator allocates roles for PC creates a plan (PC) (lead QP) creates developer/owner/Builder application submission a project on appointment submission portal For submission to agencies For submission to agencies where where no QPs are appointed for QPs have been appointed for Appointed QPs for submission to these agencies to provide Project coordinator to declare in system information in form fields/ upload model and that submission does not affect these supplementary documents and declare all information agencies and no approval is required submitted are correct and true Project coordinator attach Project team makes plan correspondence/confirmation processing fee payment from agencie",
+    "chunk_id": "p103_c0"
+  },
+  {
+    "page": 103,
+    "text": "nator attach Project team makes plan correspondence/confirmation processing fee payment from agencies (if any) submission successfully made Submission picked up for Affected agencies collaborate and audit by agencies process plans in 20 working days If Issues/non- Agencies issue Agencies issue In order compliances found gateway clearance consolidated WD 103",
+    "chunk_id": "p103_c0"
+  },
+  {
+    "page": 104,
+    "text": "Joint-submission workflow in the new RABW Amendment submission Amendment submission Agencies issue clearances at Gateway Project team initiates changes in design and assess which agencies are affected and require re-approval To agencies not affected To agencies affected Appointed QPs for submission to these agencies to Appointed QPs for submission to these agencies to provide review, confirm and declare in system that amendment in form fields/ replace drawings and changes are immaterial/ do not require approval declare all information submitted are correct and true Project team makes amendment No further action required plan processing fee payment from relevant appointed QPs Amendment submission successfully Submission picked up for made, affected agencies collaborate and audit by agencies",
+    "chunk_id": "p104_c0"
+  },
+  {
+    "page": 104,
+    "text": "sion successfully Submission picked up for made, affected agencies collaborate and audit by agencies process plans in 20 working days In order Issues/non- Agencies issues Agencies issue compliances found clearances consolidated WD 104",
+    "chunk_id": "p104_c0"
+  },
+  {
+    "page": 105,
+    "text": "Timeframes for lapsed clearances/decisions DESIGN GATEWAY (DG) CLEARANCE • All codes and regulations regardless of gateways are in effect of date of submission for Design Gateway and remain applicable until TOP/CSC (except for critical safety issues) • Initial validity period of 12 months • Clearance must be valid by the time CG submission is made • Upon lapse, new submission is required, subject to prevailing & codes/regulations in force at the time of application PILING GATEWAY (PG) CLEARANCE • Initial validity period of 24 months • Clearance will lapse if building works have not commenced by then CONSTRUCTION GATEWAY (CG) CLEARANCE • Initial validity period of 24 months • Clearance will lapse if building works have not commenced by then • Must remain valid until completion. Upon lapse, ",
+    "chunk_id": "p105_c0"
+  },
+  {
+    "page": 105,
+    "text": "apse if building works have not commenced by then • Must remain valid until completion. Upon lapse, new submission required at DG COMPLETION GATEWAY • CSC to be obtained within 2 years from issuance of TOP • If CSC is not obtained within 2 years, project team is to submit a schedule for closure of outstanding items with a proposed timeline to complete them * Validity of respective agency clearances still applies. Project Team should apply for renewals/ extension accordingly as per today’s practice 105",
+    "chunk_id": "p105_c0"
+  },
+  {
+    "page": 107,
+    "text": "[Updated] Collection of processing fees in new RABW • Collection of agencies’ processing fee are distributed across the submission gateways as follows  Construction  Completion Piling Gateway 1.5  Design Gateway Gateway Gateway (Optional) construction Detailed Design All Other Requirements Compliance to Critical Design Parameters Structural Design Parameters Requirements Approved Design & Statutory Completion • URA development • BCA building • URA development application fees works plan fees application fees (if any) • NParks • BCA building works plan submission fees fees (if increase) • SCDF plan fees • LTA vehicular parking fees 107",
+    "chunk_id": "p107_c0"
+  },
+  {
+    "page": 110,
+    "text": "Supporting mechanisms for the new RABW Pre-submission consultation and waiver Pre-submission consultation and waiver PAPPEPWAarrrrspeeooa rpg--ljpiyevlssoio cuuceocsatbbroda :ttmmm liep ofaiimronssamssr wec iipoo tnaiirnnlctrol es ecccj e obooascnynntntrt sssdoiinuu n ntcdllouttgoiaa evlbnytt ietiisd oooei ussnn nbtpas:ecell oin at amu ntug rdwnaea ddnwigteecehair d etit vmoo ste ’odiu nroa sildntny iciip ’vtiasmiliaen drt p eusbegauae eculb tsialmt auahgtbiseeossmrnsre yiicoins tionestdembssivd jeteei hdatcncruttot.i asvau/len/g asymh,l t puCoeolOurtinitn-RsaatEt tgabNiveneEendfTo cipn ryXreg o c b opwoarona sdsseiavuudlelrst iornasntg is osthhnposeeu cirlnidefvi gcbou eclvlo arinentodsgroi:ytliv oaenpdsp/ arroenvgdau cll lapotrsiooecndes ossff prior to submission to avoid delays in issua",
+    "chunk_id": "p110_c0"
+  },
+  {
+    "page": 110,
+    "text": ":ytliv oaenpdsp/ arroenvgdau cll lapotrsiooecndes ossff prior to submission to avoid delays in issuance of approvals or written direction •Pre-submission consultations and waivers can be submitted at any point before or during the regulatory approval process •As good practice and consistent with today’s regulatory objectives, outstanding waivers should be resolved and closed off prior to submission to avoid delays in issuance of approvals or written direction •Pre-submission consultation: •Project team are strongly encouraged to initiate either individual/multi-agency consultations involving: • Early comments by individual agencies’ on impact assessments/ alternative proposals • Proposal for projects to be split under multiple submissions etc. •Waiver: •Application will continue to be made",
+    "chunk_id": "p110_c0"
+  },
+  {
+    "page": 110,
+    "text": " projects to be split under multiple submissions etc. •Waiver: •Application will continue to be made to individual agencies through CORENET X based on specific conditions/regulations 110",
+    "chunk_id": "p110_c1"
+  },
+  {
+    "page": 111,
+    "text": "Supporting mechanisms for the new RABW Escalation Mechanism Escalation Mechanism PIIERFSAnnlurea oCsChpgjCoOape o lcnoivRsutcre E thtet N eop epiaEnbrlodomTvtt eje mieXosrnc -,uoftat aAsi ngat cegrtleie hnaecnglogmnycu mc,yis lnic ae cptthtsoeheoa rlrhtrli-oairyaaneub vggcdgoeoe rhrb nneac ycfqcotlo iyiumBocn iCntrrsmsee Au tgdmhi/ltutuDrtaeloeraCtinudnitEotog gst nwrho /pys :itr rtcheohogec pn euuafsllasrsicettinito csogri pyfc (a aBectnIo.iMg nna.gfp- lc eipmconrtneoasn mabdecluebchrdte iiIn rvACsgiotC fyplCrl orar o(embicnqoe tuoresaitsrrhte iianeomggrn eea Pnnglcatesytn f bccoeoiremtoswr daeiten Gnar tUoinuRgpA c Doainmredmc LtiTotAtre/) e D)i rfeocr troers loelvuetilon (BCA_IACC_SECRETARIAT@bca.gov.sg) •Project teams facing inter-agency regulatory conflicts can approach IACC (inter ag",
+    "chunk_id": "p111_c0"
+  },
+  {
+    "page": 111,
+    "text": "RIAT@bca.gov.sg) •Project teams facing inter-agency regulatory conflicts can approach IACC (inter agency coordinating committee) for resolution (BCA_IACC_SECRETARIAT@bca.gov.sg) •IACC is held monthly, chaired by BCA/DCE with participating members from other agencies at Group Director/ Director level •In CORENET X, Agencies have committed to: ✓ Enhance inter-agency collaboration through the use of BIM-enabled Collaboration Platform ✓ Resolve obvious regulatory conflicts during processing (e.g. connectivity requirements between URA and LTA) ✓ Flag out potential competing requirements/ regulatory conflicts during processing ✓ Support project teams through consultations 111",
+    "chunk_id": "p111_c0"
+  },
+  {
+    "page": 112,
+    "text": "Supporting mechanisms for the new RABW Escalation Mechanism Escalation Mechanism Agencies issue consolidated 1st written direction (WD) QP assess comments issues deemed to be able to issues are complex and require dedicated resolve through redesign multi-agency discussions issues require clarification by issues require deliberation at Project team redesigns and processing officers higher level coordinate, reply to WD QP to approach IACC for QP to initiate meeting with resolution Agencies issues Agencies issue processing officers clearances consolidated 2nd WD issues are issues unable to IACC reaches a decision successfully resolve through clarified clarifications QP apply for waiver (where necessary) 112",
+    "chunk_id": "p112_c0"
+  },
+  {
+    "page": 113,
+    "text": "CORENET X – Summary of key changes of new RABW submission process",
+    "chunk_id": "p113_c0"
+  },
+  {
+    "page": 114,
+    "text": "7 Key Changes in Submission Processes Current Practice CORENET X Process 3-Gateway process will apply for all new projects. Industry to coordinate and submit to all Agencies for collective review Industry submits separately to Agencies through > 20 1 touchpoints Direct Submission Process (single stage check) for eligible projects URA's PP will be issued at Design Gateway with all other URA's PP is issued independently of other agencies' DC 2 agencies' DC clearances. However the requirements for PP clearances clearance are reduced e.g. unit layouts are not required At each gateway, QPs are expected to be appointed and added Each QP makes their separate submissions to Agencies 3 as members to provide their inputs and declarations for a joint- when ready submission to be made to Agencies BIM ",
+    "chunk_id": "p114_c0"
+  },
+  {
+    "page": 114,
+    "text": "provide their inputs and declarations for a joint- when ready submission to be made to Agencies BIM model to be submitted in IFC format for new projects of BIM files are submitted in native/lightweight format for 4 GFA ≥ 5,000 sqm, supplemented by documents & files of other new projects of GFA ≥ 5,000 sqm formats 114",
+    "chunk_id": "p114_c0"
+  },
+  {
+    "page": 115,
+    "text": "7 Key Changes in Submission Processes Current Practice CORENET X Process Plan fee payment can be made after submission to 5 Submission can only be made after plan fees are paid Agencies Submission through a Gateway is deemed cleared only when Submission is cleared independently by Agencies 6 Agencies’ issue a consolidated clearance, without which the according to their respective response period project cannot proceed to the next Gateway Construction of main structural works upon ST approval Construction of main structural works upon Construction 7 and permit Gateway as part of consolidated clearance from Agencies External works is cleared separately and independently by External works to be coordinated and submitted as part of 8 Agencies Construction Gateway 115",
+    "chunk_id": "p115_c0"
+  },
+  {
+    "page": 115,
+    "text": " coordinated and submitted as part of 8 Agencies Construction Gateway 115",
+    "chunk_id": "p115_c0"
+  },
+  {
+    "page": 117,
+    "text": "Differentiated Approach for Faster Approvals • While the multi-gateway RABW will be the default regulatory process for most applications, simpler development typologies can be approved through a more direct process • Instead of multiple touchpoints at Design Gateway, Piling Gateway (optional) and Construction Gateway, the Direct Submission Process (DSP) is developed as a single stage approval prior to TOP/CSC. Q&A: menti.com Code: 4223 7387",
+    "chunk_id": "p117_c0"
+  },
+  {
+    "page": 118,
+    "text": "Direct Submission Process (DSP) Differentiated approach for less complex building works that need not be subjected to the typical RABW 3-Gateway process (e.g. single-unit residential landed development, standalone pavilion/ linkway, racking system, etc) One Stage Lodgement/Self-Declaration One Stage Plan Check for Approval • Models/drawings submitted, together with • Agencies directly assess plan application QP declaration on compliance with System will auto- submission. Work will not be allowed to regulatory requirements, for auto-approval channel the applications commence until after such approvals are by agencies based on the details granted • Audits conducted by agencies provided Q&A: menti.com Code: 4223 7387",
+    "chunk_id": "p118_c0"
+  },
+  {
+    "page": 119,
+    "text": "Direct Submission Process (DSP) DSP WORKFLOW • Allows projects to go through the same submission workflow regardless of applicable schemes, facilitated by a guided submission process. • Industry can carry out pre-submission consultations with Agencies before proceeding with DSP with greater certainty • Eligible projects will be put under DSP. Through the guided submission process, projects will also be put through lodgement/ self-declaration/ simplified submission scheme if eligible Industry submission journey CORENET X backend process Legend Portal QPs creates If plans are audited QP makes declaration, System generates Comments to be Collaboration Platform project, adds project & issues found including scope of auto-approval2, issued to industry to members for Note works immaterial to pro",
+    "chunk_id": "p119_c0"
+  },
+  {
+    "page": 119,
+    "text": "nd including scope of auto-approval2, issued to industry to members for Note works immaterial to project appears in review & re-submit Developer/Owner’s 20 working days the relevant agencies1 agencies’ listing (WD/ Approval) 1 In addition to a guided process, this step appointment ensures QPs do their due diligence to discern For agencies with lodgement/ which agencies’ clearances are required self-declaration/ simplified submission scheme 2 “Auto-approval” includes letters for QPs creates acknowledgement/ acceptance/ clearance & QP makes plan fee application, makes 20 working in-principle agreement payment One stage check for inputs to form days other agencies Non-BIM projects will not enjoy the benefits of AMC and cross- PO reviews PO consult agency collaboration application & relevant a",
+    "chunk_id": "p119_c0"
+  },
+  {
+    "page": 119,
+    "text": "y the benefits of AMC and cross- PO reviews PO consult agency collaboration application & relevant agencies supporting & Collaborate/ documents Deconflict (if nec) 119",
+    "chunk_id": "p119_c1"
+  },
+  {
+    "page": 120,
+    "text": "CORENET X – How does the new RABW apply to Infrastructure projects?",
+    "chunk_id": "p120_c0"
+  },
+  {
+    "page": 121,
+    "text": "Categories of Infra Projects Infrastructure that functions Civil Engineering Works that Public Infrastructure Works like a building is external of a development undertaken by public agencies Examples include • new/widening of roads/drain • commuter facilities such as POB, walking/ cycling path, covered Viaducts | MRT Expressways MRT tunnel tracks | HSR UG Substation UG MRT Station Bus interchange linkway, taxi/bus shelter • drain/road improvements Examples include Examples include: • MRT Station (including exits) • Railway track, underground • Transport nodes/ interchange railway tunnels • Electrical substation • Viaducts • UG MRT Station, UG substation Such project will follow the process for external works Such project functions like a building and will be Standalone structures, such Suc",
+    "chunk_id": "p121_c0"
+  },
+  {
+    "page": 121,
+    "text": "or external works Such project functions like a building and will be Standalone structures, such Such project will largely subject to the 3 Gateway as covered linkways, taxi/bus follow the 3 Gateway process, just like any other shelter are covered under process, though extent of building projects Direct Submission Process Design Gateway will differ 121",
+    "chunk_id": "p121_c0"
+  },
+  {
+    "page": 122,
+    "text": "Agencies’ requirements for Infra Projects Overview of submissions required to Technical Agencies • Alignment across agencies remains important especially for roads and drains to ensure the platform levels are aligned/coordinated Infra works URA DC LTA Roads LTA Rails PUB Drainage PUB Sewerage NPARKS Railway/ • Buildings • Exempted • Required if • Required for • Required for • Required if Roads* above and works are diversion, new diversion, new new/ affecting below ground within existing or if works or if works existing DTSS, e.g. ventilation • Submission to railway affect existing affect existing roadside trees, sewerage buildings, MRT LTA Prompt protection drainage sewerage green verges works station boxes, zone and/or existing entrances and park/PCN/ Drainage associated nature area/ stru",
+    "chunk_id": "p122_c0"
+  },
+  {
+    "page": 122,
+    "text": "ks station boxes, zone and/or existing entrances and park/PCN/ Drainage associated nature area/ structures. nature reserve/ PCN/ Parks/ • Proposals that heritage road cycling path deviate from green buffer, Precinct-level the approved • Required if etc. infra works land use works within approval road reserve & affected by road structure safety zone 122",
+    "chunk_id": "p122_c0"
+  },
+  {
+    "page": 123,
+    "text": "3 Gateway process for Infra Projects How would the 3 Gateway process look like for infrastructure projects? • Compared to a building project, the aspects to be cleared under Design Gateway vary based on the types of infra works Others (e.g.: Pre-sub Design Gateway Piling Gateway Construction Gateway process/consultation, Independent) (optional) URA • Must seek land use approval for the infra • Buildings above and below ground e.g. NIL • Buildings above and below ground e.g. alignment prior to DG. For new roads& rail, ventilation buildings, MRT station boxes, ventilation buildings, MRT station boxes, proposed road/rail must keep entrances and associated structures. entrances and associated structures. withinapproved road reserve/railway area • Proposals that deviate from the approved • Prop",
+    "chunk_id": "p123_c0"
+  },
+  {
+    "page": 123,
+    "text": "ructures. withinapproved road reserve/railway area • Proposals that deviate from the approved • Proposals that deviate from the land use approval approved land use approval LTA • Submission via LTA Prompt • If within existing railway protection zone • If within existing • If within existing railway protection zone • If works within road reserve/ affected by railway protection • If works within road reserve/ affected by road structure safety zone zone road structure safety zone NParks • EIA, EMMP, advanced works e.g. tree • If new/affecting existing roadside trees, NIL • If new/affecting existing roadside trees, cutting/earthworks green verges and/or existing park/PCN/ green verges and/or existing park/PCN/ nature area/ nature reserve/ heritage nature area/ nature reserve/ heritage road gre",
+    "chunk_id": "p123_c0"
+  },
+  {
+    "page": 123,
+    "text": "sting park/PCN/ nature area/ nature reserve/ heritage nature area/ nature reserve/ heritage road green buffer, etc. road green buffer, etc. PUB • Access to sewers (Form B) • If new/ affecting existing sewer works NIL • If new/ affecting existing sewer works • Submission via B&P Portal (POWS) • If new/ affecting existing drainage works • If new/ affecting existing drainage works NEA • EIA, NIA (for projects within 70m of resi/ • If within 70m of resi/ noise sensitive NIL • If within 70m of resi/ noise sensitive noise sensitive developments) developments developments • For any environmental health/ pollution • For any environmental health/ pollution control requirements control requirements BCA • Complex structures, ERSS etc. NIL • If piling works • For main structural works involved SCDF • ",
+    "chunk_id": "p123_c1"
+  },
+  {
+    "page": 123,
+    "text": "A • Complex structures, ERSS etc. NIL • If piling works • For main structural works involved SCDF • Performance-based fire engineering NIL NIL • For underground tunnels 123",
+    "chunk_id": "p123_c2"
+  },
+  {
+    "page": 124,
+    "text": "3 Gateway process for Infra Projects Potential Scenarios Type of infra works and site condition Design Piling Construction Independent Gateway Gateway Gateway (optional) 1 JTC/HDB precinct level involving new roads/drains, LTA, PUB, NParks BCA LTA, BCA, PUB, Agency-specific requirements overhead bridge affecting green verge and trees NParks e.g. NParks tree cutting 2 LTA at-grade road construction/ viaduct by LTA, PUB, NParks BCA PUB, BCA, NParks - affecting green verge & drains/sewers more than 1.5m deep 3 PUB construction of drains within railway protection NParks, LTA Rails LTA Rails LTA Rails, NParks - zone, affecting green verge, less than 1.5m depth 4 LTA aboveground railway viaduct affecting some PUB, NEA, BCA PUB, BCA, NEA, Agency-specific requirements existing drains & green verge",
+    "chunk_id": "p124_c0"
+  },
+  {
+    "page": 124,
+    "text": "fecting some PUB, NEA, BCA PUB, BCA, NEA, Agency-specific requirements existing drains & green verge/trees within 70m of NPARKS NParks e.g. NEA noise assessment, residential development NParks tree cutting 5 LTA cut and cover road tunnel affecting green verge NParks, PUB BCA PUB, BCA, SCDF, - requiring diversion of sewer > 1.5m deep NParks 6a LTA underground rail bored tunnel/ common service NParks - BCA, SCDF, NParks Agency-specific requirements tunnels within road reserve affecting green verge & e.g. NParks tree cutting trees 6b LTA underground rail bored tunnel/ common service PUB - BCA, SCDF, PUB Agency-specific requirements tunnels within road reserve affecting existing sewer e.g. performance-based FE 7 PUB DTSS affecting trees and existing sewer PUB, NParks - BCA, NParks Agency-speci",
+    "chunk_id": "p124_c0"
+  },
+  {
+    "page": 124,
+    "text": "rmance-based FE 7 PUB DTSS affecting trees and existing sewer PUB, NParks - BCA, NParks Agency-specific requirements e.g. NParks tree cutting 124",
+    "chunk_id": "p124_c1"
+  },
+  {
+    "page": 126,
+    "text": "10-Step Submission Workflow using the new RABW To help project teams with upfront planning of timeline and coordination among different project members for CORENET X submission, COP Section 2 is updated with an example of a Project Team’s Submission Workflows to exemplify submission workflows using the new RABW. 1 2 3 4 5 Register project Carry out Pre- Submit for Obtain Written Submit for Design on CORENET X submissions and Demolition Directions and Make Gateway or DSP Submission Portal Pre-Consultations (if applicable) Resubmissions 10 9 8 7 6 Completion Submit for Submit for Independent Submit for Piling Obtain Approvals Gateway Construction Submissions, Waivers Gateway (Optional) Gateway and Amendments Each step includes a checklist of key items and good practices that project teams sh",
+    "chunk_id": "p126_c0"
+  },
+  {
+    "page": 126,
+    "text": " and Amendments Each step includes a checklist of key items and good practices that project teams should take note of 126",
+    "chunk_id": "p126_c0"
+  },
+  {
+    "page": 127,
+    "text": "Reviews and Refinements to Address Industry Feedback [New!] • Based on observations from live submissions and industry feedback, agencies have been reviewing the regulatory processes and requirements to achieve a balance between: - What is practical for project team to provide upstream, e.g. details on M&E design - What is critical to ensure compliance at each of the submission gateways - The impact on industry, e.g. critical milestones for commencement of works, launch of sales, etc. • To address potential bottlenecks, which might affect DG/CG clearances and delay project timelines, agencies have reviewed to phase regulatory requirements into stages: - Stage 1: allow submission of only the critical planning parameters and space provision upfront - Stage 2: allow remaining specified detail",
+    "chunk_id": "p127_c0"
+  },
+  {
+    "page": 127,
+    "text": "critical planning parameters and space provision upfront - Stage 2: allow remaining specified details to be submitted at a later stage  Design Gateway (DG) – Issues related to DG (start of the regulatory process) • Originally, certain impact assessments (with full details) are required to be cleared before DG can start. Preparation for such clearances typically takes a long time, which can cause delay to the project. • Some details pertaining to operational details that developers/owners may not be able to firm up upfront.  Construction Gateway (CG) • Agencies require full details at CG submission, which take a long time for industry to prepare, resulting in a chokepoint. • Some details require specialists’ inputs and can only be furnished when they are onboard later. 127",
+    "chunk_id": "p127_c0"
+  },
+  {
+    "page": 127,
+    "text": "quire specialists’ inputs and can only be furnished when they are onboard later. 127",
+    "chunk_id": "p127_c1"
+  },
+  {
+    "page": 128,
+    "text": "Review of Agency Processes and Requirements [New!] PRACTICALITY & CLARITY OF CX CODE OF PRACTICE (COP) Agencies are continuously reviewing the requirements in the CX COP: INDUSTRY FEEDBACK (3rd edition published in Oct 2025) Difficulty in providing • The level of details required at DG and CG are calibrated to an appropriate operational details at level, taking into consideration industry practices and agency reviews. DG/CG without builders • Clearer guidelines are provided on what can be submitted in 2D vs 3D. onboard • Further guidance is provided on BIM modelling. PART STRUCTURAL (ST) SUBMISSIONS [BCA] BCA has reviewed to allow Part ST Submissions for qualifying large INDUSTRY FEEDBACK projects: Difficulty in providing • Full coordinated structural BIM carcass model to be submitted at t",
+    "chunk_id": "p128_c0"
+  },
+  {
+    "page": 128,
+    "text": "ojects: Difficulty in providing • Full coordinated structural BIM carcass model to be submitted at the 1st full structural details of CG submission. the entire development • Detailed structural submissions (including calculations, AC/ACO report, altogether etc.) can be submitted subsequently in parts – 1st part in CG and remaining parts as independent submission after CG. 128",
+    "chunk_id": "p128_c0"
+  },
+  {
+    "page": 129,
+    "text": "Review of Agency Processes and Requirements [New!] CLEARANCE OF EXTERNAL WORKS [LTA, NPARKS & PUB] INDUSTRY FEEDBACK Agencies have reviewed and aligned the processing of external works: Delay in clearance of • Project teams can submit details of external works separately after CG, the main development if required, with the condition that interfacing details between the external due to external works works and main development have been finalised and cleared at CG. TRAFFIC IMPACT ASSESSMENT (TIA) [LTA] LTA has implemented a 2-stage approach for TIA clearance: INDUSTRY FEEDBACK (Circular released on 7 Mar 25): Delay in commencement • Part 1 (pre-DG): requirements with direct impact to development, e.g. of piling due to TIA access arrangements, pick-up-drop-off, traffic management. process pr",
+    "chunk_id": "p129_c0"
+  },
+  {
+    "page": 129,
+    "text": "ent, e.g. of piling due to TIA access arrangements, pick-up-drop-off, traffic management. process prior to DG • Part 2 (pre-CG): requirements with impact beyond development, e.g. traffic submission analysis for junctions that do not affect the boundary, demand management. 129",
+    "chunk_id": "p129_c0"
+  },
+  {
+    "page": 130,
+    "text": "Review of Agency Processes and Requirements [Updated!] DESIGN ADVISORY PANEL (DAP) PROCESS [URA] URA has calibrated the process and requirements for DAP: INDUSTRY FEEDBACK • Architect can develop design details progressively with greater certainty: Project timeline affected by the DAP - Pre-DG DAP + (Stage 1) : Firm up the key design parameters process - Pre-CG DAP + (Stage 2) : Review detailed design, submitted prior to CG ENERGY EFFICIENCY OPPORTUNITY ASSESSMENTS (EEOA) [NEA] NEA has reviewed to allow progressive submission of EEOA reports: INDUSTRY FEEDBACK • EEOA-NV lite report to be submitted and cleared prior to DG clearance. Project timeline • EEOA-NV full report to be submitted and cleared prior to CG clearance, affected by EEOA and conditional CG approval may be issued for incompl",
+    "chunk_id": "p130_c0"
+  },
+  {
+    "page": 130,
+    "text": "leared prior to CG clearance, affected by EEOA and conditional CG approval may be issued for incomplete reports where report submissions justifications are provided. 130",
+    "chunk_id": "p130_c0"
+  },
+  {
+    "page": 131,
+    "text": "Review of Agency Processes and Requirements [New!] PERFORMANCE-BASED FIRE ENGINEERING PROPOSALS [SCDF] INDUSTRY FEEDBACK SCDF has reviewed to allow a more flexible for Fire Engineering Design Project timeline affected Brief (FEDB): by the need for clearance • FEDB can be submitted concurrently at CG. of performance-based • CG clearance will be issued together with in-principle approval for FEDB, on fire engineering condition that related fire safety works only proceed when relevant proposals prior to CG clearances are obtained. submission PNEUMATIC WASTE CONVEYANCE SYSTEM (PWCS) SPECIALIST DETAILS [NEA] NEA will consider granting conditional approval through QP declaration: OBSERVATIONS FROM • If details are not worked out at DG, QP to confirm in writing that proposed PROJECTS spatial dime",
+    "chunk_id": "p131_c0"
+  },
+  {
+    "page": 131,
+    "text": " • If details are not worked out at DG, QP to confirm in writing that proposed PROJECTS spatial dimensions can accommodate installation of PWCS and to be in Impractical to furnish compliance with SS 642:2019. PWCS specialist details • If details are not worked out at CG, QP to declare compliance to SS as they may not be 642:2019 and follow up with details no more than 6 months following CG onboarded at CG clearance. 131",
+    "chunk_id": "p131_c0"
+  },
+  {
+    "page": 132,
+    "text": "Review of Agency Processes and Requirements [New!] NAMING OF FACILITIES AND SPACES [URA] OBSERVATIONS FROM URA has simplified the regulatory process: PROJECTS • Project teams will not need to amend WP/approved BCA’s BP to reflect Need for WP and BP different names of facilities or spaces shown in marketing materials amendment submission provided to purchasers, so long as homebuyers’ interests are not affected. to align with the • Developers should provide a list specifying the names shown in the facility/space names in approved plans vs names in the marketing materials, for ease of marketing materials understanding for purchasers. CLEARANCES IN THE CRITICAL PATH OF SALES LAUNCH [URA, IRAS, BCA] OBSERVATIONS FROM Agencies are recalibrating relevant regulatory processes to better align PROJE",
+    "chunk_id": "p132_c0"
+  },
+  {
+    "page": 132,
+    "text": "CA] OBSERVATIONS FROM Agencies are recalibrating relevant regulatory processes to better align PROJECTS with the CX workflow: Dependencies in ▪ IRAS: Certification of Numbering (House/Unit address) clearances done ▪ BCA: Share Value sequentially affected by ▪ URA/COH: Sales and Purchase Agreements and Show Unit CX workflows 132",
+    "chunk_id": "p132_c0"
+  },
+  {
+    "page": 133,
+    "text": "Process Refinement The process has been refined to allow concurrent submissions and remove dependencies, relieving time pressure for project teams: 1. Full demolition application (joint submission to URA and BCA) can proceed independently from new development submissions. Demolition fees must be paid with the demolition application. 2. After creating the initial Design Gateway draft, drafts for any submission can be created at any time. 3. Piling Gateway submission may be made while Design Gateway is still pending clearance. 4. Construction Gateway submission may be made while Piling Gateway submission is still pending clearance. 133",
+    "chunk_id": "p133_c0"
+  },
+  {
+    "page": 134,
+    "text": "Common Misconceptions/Myths about CORENET X [New!] DEBUNKED 1 CORENET X only involves the Qualified Persons. No! Key project members such as Developers, Builders, RE/RTO, Accredited Checkers now have to interact with the system as members of the project team in appointment and submission. 2 All projects must submit in BIM format in CORENET X. No! CORENET X covers both non-BIM and BIM projects. BIM submission is ONLY mandatory for projects with GFA ≥ 5000m2. It is optional for smaller projects to submit in BIM though highly encouraged. For BIM submission in CORENET X, the models will have to be exported to and submit in IFC-SG, an openBIM format. 3 3D BIM submissions and still require 2D drawings to be attached . No! 2D drawings are generally NOT REQUIRED, unless for complex details that ar",
+    "chunk_id": "p134_c0"
+  },
+  {
+    "page": 134,
+    "text": "ings to be attached . No! 2D drawings are generally NOT REQUIRED, unless for complex details that are impractical or too tedious to be modelled in 3D. For such details, supplementary drawings in 2D may be provided alongside the main BIM model for agencies' review and approval. The CORENET X Code of Practice provides clarity and guidance on details that may be provided in 2D, if they are unable to be provided in BIM. 134",
+    "chunk_id": "p134_c0"
+  },
+  {
+    "page": 135,
+    "text": "Common Misconceptions/Myths about CORENET X [New!] DEBUNKED 4 All agencies’ requirements must be cleared at the gateways. No! Agencies have reviewed and refined their requirements to ensure alignment across agencies for gateway clearances. Certain detailed and specified requirements can be provided separately to respective agencies for approval e.g. External works, LTA's Transport Impact Assessment, SCDF's performance-based fire safety engineering 5 Demolition works can only happen after the approval of the main building works application. . No! To allow site preparation, application for demolition works can proceed while the design and details of the main building works are being sorted out. 6 Project must restart the process all over if it could not obtain clearance within 2 iterations? ",
+    "chunk_id": "p135_c0"
+  },
+  {
+    "page": 135,
+    "text": ". 6 Project must restart the process all over if it could not obtain clearance within 2 iterations? No! With collective review and collaboration across agencies, submissions should generally not go beyond 2 iterations, unless there are new design changes during resubmission or when the submission quality is lacking. Such submission may require more iterations before clearance may be granted. 135",
+    "chunk_id": "p135_c0"
+  },
+  {
+    "page": 136,
+    "text": "Common Questions about CORENET X 1 Are pre-submission consultations & waivers still allowed? Yes! Consultations and waiver application are still allowed. CORENET X encourages upfront planning and hence waiver applications should not be an after-thought that is done after plan approval or before TOP/ CSC application. Unlike plan application at the Gateways, waiver applications are not joint submission. Instead, they will be made individually to each agency by the respective QP in accordance with the respective Act and Regulations. 2 Are amendments allowed after submission at each Gateway? Yes! If there is any change in design from the approved plans, the project team will need to submit the Amendment Plans. The project team will have to assess which agencies are affected and require re-appr",
+    "chunk_id": "p136_c0"
+  },
+  {
+    "page": 136,
+    "text": "mendment Plans. The project team will have to assess which agencies are affected and require re-approval. Similar to today’s practice, amendment plan fees would apply. The amendment submission workflow can be found in the CORENET X Code of Practice. 3 Will TOP/CSC applications be consolidated in a single submission at the Completion Gateway? No! The Completion Gateway will be similar to today’s process where QPs may proceed to clear the respective agency concurrently and independently. The final TOP/CSC will be issued when the project obtains all the necessary clearances from the technical agencies. To improve the user experience, CORENET X will provide a dashboard / checklist for project members to view the status of the TOP/CSC application to each agency. 136",
+    "chunk_id": "p136_c0"
+  },
+  {
+    "page": 136,
+    "text": "mbers to view the status of the TOP/CSC application to each agency. 136",
+    "chunk_id": "p136_c1"
+  },
+  {
+    "page": 137,
+    "text": "FAQ Webpage on CORENET X [New!] New users are encouraged to look through common FAQs listed and addressed on the CORENET X FAQ Webpage. 137",
+    "chunk_id": "p137_c0"
+  },
+  {
+    "page": 140,
+    "text": "Industry Submission Portal – Background of CORENET Industry facing e-submission system Industry facing e-submission system • CORENET was launched in 2001 that functioned as a conduit for electronic submission to agencies • CORENET 2.0 was launched in Aug 2022 as a technology refresh to serve industry prior to the implementation of CORENET X Nov 2001 – Launch of CORENET Aug 2022 – Launch of CORENET 2.0 140",
+    "chunk_id": "p140_c0"
+  },
+  {
+    "page": 141,
+    "text": "Industry Submission Portal – Revamping the e-submission system Transformation of e-submission system Transformation of e-submission system The CORENET X Submission Portal introduces: • Web-based • Collaborative workflows for joint submission • Submission workspace to track projects and their status • Access to submitted information • Guided journey to assist submissions • Centralised payment 141",
+    "chunk_id": "p141_c0"
+  },
+  {
+    "page": 142,
+    "text": "Industry Submission Portal – CORENET Pay Launch of CORENET payment system (https://pay.corenet.gov.sg/) Launch of CORENET payment system (https://pay.corenet.gov.sg/) • CORENET Pay was launched in Sep 2022 to support payment functionality • Introduction of new interface • For a start, CORENET Pay supports waiver and temporary building applications for BCA • Adopts common payment methods e.g. credit card and PayNow • Allows 3rd party payment and receipt generation Sep 2022 – Launch of CORENET Pay 142",
+    "chunk_id": "p142_c0"
+  },
+  {
+    "page": 143,
+    "text": "Industry Submission Portal – ongoing initiatives Form harmonisation Form harmonisation • Agencies’ current submission forms are filled and processed separately and independently. Users may hence be required to provide similar inputs into different forms • Forms will be harmonised to • Reduce repeated fields e.g. GFA, date of clearance obtained • Consolidate declarations to reduce number of fields and manual clicks, etc. In supporting DSP joint submission to multi- agencies to conduct joint review. Relevant With the redesigning of forms, form fields were populated No. of form fields: No. of form fields: 3000+ over 100 143",
+    "chunk_id": "p143_c0"
+  },
+  {
+    "page": 144,
+    "text": "Industry Submission Portal – clear roles & responsibilities of members Appointment of project team members Appointment of project team members Project members added into system will: • Undergo verification • Role appointment by developer/owner/Builder • Access rights to give inputs in submission forms",
+    "chunk_id": "p144_c0"
+  },
+  {
+    "page": 145,
+    "text": "Industry Submission Portal – clear form structure Consolidating and categorizing information Consolidating and categorizing information • Common info required by all agencies will be consolidated and form structure to provide clarity for joint submission Submission type Common info Agency- specific info Appointed QP breakdown of fees 145",
+    "chunk_id": "p145_c0"
+  },
+  {
+    "page": 146,
+    "text": "Industry Submission Portal - guided application process Submission tracker Submission tracker • Footprint of the project submission process and the pending actions required by the project members will be tracked 146",
+    "chunk_id": "p146_c0"
+  },
+  {
+    "page": 147,
+    "text": "Industry Submission Portal – access to Agencies’ responses Access to responses Access to responses • Submission information and Agencies’ responses will be made accessible to members 147",
+    "chunk_id": "p147_c0"
+  },
+  {
+    "page": 148,
+    "text": "[New!] Industry Submission Portal – openBIM viewer A new openBIM viewer is also available on the CORENET X Submission Portal with various features to enable QPs to verify that their BIM IFC models can be rendered and federated together prior to submission. 148",
+    "chunk_id": "p148_c0"
+  },
+  {
+    "page": 149,
+    "text": "[New!] Industry Submission Portal – User Manuals Offers step-by-step guidance for users to navigate the Submission Portal to create projects and make their submissions. Cover Page Example of step-by-step guidance Flow is based on user journey 149",
+    "chunk_id": "p149_c0"
+  },
+  {
+    "page": 151,
+    "text": "Identifying Approved Plans for Construction Current Practice Identification of Approved Plans via Need for greater ease of verifying/ Checksum on Response Letters identifying approved plans What is Checksum solution? A checksum is an alphanumeric value that uniquely represents the contents of a file Developer QP Site Staff Builder ✓ Digital fingerprint solution Different methods adopted by More secure than traditional watermark different agencies to demarcate approved plans ✓ Easy detection of changes Small changes produce very different looking Difficult to verify whether the checksums plans are indeed the latest approved plans ✓ Files remain intact and can be viewed freely Checksum solution does not affect or encrypt the files 15 1",
+    "chunk_id": "p151_c0"
+  },
+  {
+    "page": 152,
+    "text": "What are the benefits of using checksum? As compared to the current approach where different agencies adopted different methods to demarcate approved plans, using checksum allows: Benefits Standardised approach • Can be used for all kinds of files (e.g. BIM and 2D files) • Can be used by all agencies to demarcate approved plans Checksum (digital ID) Ease of access and authentication of file embedded in QR code • Files and plans can be viewed without decryption Quick verification of Approved Plan whenever in doubt • Low likelihood of forgery Example of checksum (digital ID) of a file – • Verification can be done easily without specific application, software or internet Note: These images are for illustration purposes only. 15 2",
+    "chunk_id": "p152_c0"
+  },
+  {
+    "page": 153,
+    "text": "Where can I find the checksums of the approved plans for my project? In the approval response, QP will find a \"List of Approved Plans\" by each agency. The QR representation of the Approved Plan’s checksum will be listed in the \"List of Approved Plans\" (1 unique checksum per file). Checksum (digital ID) of file embedded in QR code Example of checksum (digital ID) of a file – Note: These images are for illustration purposes only. 15 3",
+    "chunk_id": "p153_c0"
+  },
+  {
+    "page": 154,
+    "text": "Identifying Approved Plans for Construction How do Project Members verify the Approved Plans using Checksum? How do I verify that the BIM/2D file is the Approved Plans? ✓ Internet not required, verification on site without network is possible ✓ No additional software required, uses same Netrust application for digital signing by QPs NOA IFC BIM files Letter Netrust app used for digital signing by QPs (enhanced by CORENET X in partnership with Netrust) 15 4",
+    "chunk_id": "p154_c0"
+  },
+  {
+    "page": 155,
+    "text": "Identifying Approved Plans for Construction How do Project Members verify the Approved Plans using Checksum? How do I verify that the BIM/2D file is the Approved Plans? Method 1 Verification with Netrust Digital Signer (NDS) 1. The latest version of NDS has the capability to perform validation of files with a List of Approved Plans. 2. Please download the latest version of NDS (ZIP folder) and refer to the User Guide for Checksum Validation of Approved Plans using NDS. Note: These images are for illustration purposes only. The actual product may differ from the design shown. 15 5",
+    "chunk_id": "p155_c0"
+  },
+  {
+    "page": 156,
+    "text": "Identifying Approved Plans for Construction How do Project Members verify the Approved Plans using Checksum? How do I verify that the BIM/2D file is the Approved Plans? (without Netrust) ✓ Verification can also be done using tools Method 2 online or phone QR code reader Verification without Netrust Digital Signer (NDS) 1. Scan the QR code in the approval letter using any QR code reader to obtain the SHA256 checksum of the approved plan. 332f82b6d33dfbfacc3372826543d8cbaca9 2. Obtain the SHA256 checksum of the file you wish to verify. There are many ways to obtain the SHA256 checksum of 332f82b6d33dfbfacc3372826543d8cbaca9 the file (e.g. online tool https://emn178.github.io/online- tools/sha256_checksum.html). 3. Compare the checksums from (1) and (2). The checksums will be the same if the ",
+    "chunk_id": "p156_c0"
+  },
+  {
+    "page": 156,
+    "text": "56_checksum.html). 3. Compare the checksums from (1) and (2). The checksums will be the same if the file is the Approved Plan. 15 6",
+    "chunk_id": "p156_c0"
+  },
+  {
+    "page": 157,
+    "text": "[Updated!] Ongoing Live Projects: Current Status & Progress",
+    "chunk_id": "p157_c0"
+  },
+  {
+    "page": 158,
+    "text": "Overall Status of CORENET X Live Projects (as of Dec 2025) [New!] 98 Ongoing/Completed Live Projects 58 40 projects under projects under 3-Gateway1 (3GW) Process Direct Submission Process2 (DSP) 31 22 11 23 5 Completed Completed Completed Obtained DSP Obtained TOP/ Design Gateway Piling Gateway Construction Gateway Clearances CSC Clearances (27 in progress) (36 in progress) (47 in progress) (17 in progress) (35 in progress) 96% of the submissions were processed within the committed Service Level Agreements (SLAs) 4% of submissions which exceeded the committed SLAs were primarily due to submission quality issues and system integration issues 1 3-Gateway (3WG) process is the typical process for CORENET X submissions by default 2 Direct Submission Process (DSP) is a differentiated approach fo",
+    "chunk_id": "p158_c0"
+  },
+  {
+    "page": 158,
+    "text": "r CORENET X submissions by default 2 Direct Submission Process (DSP) is a differentiated approach for simple building works that need not to be subjected to the typical 3GW process (e.g. single-unit residential landed development, standalone pavilion or linkway) 158",
+    "chunk_id": "p158_c0"
+  },
+  {
+    "page": 159,
+    "text": "Performance of CORENET X Live Projects [New!] Service Level Agreements by Agencies 1 Coordinated & ✓ Time taken to obtain clearances for the live projects through consolidated response CORENET X is comparable to the median value for projects undergoing current process (CORENET 2.0). 2 ✓ In CORENET X, CG clearance involves 7 key regulatory Iterations through agencies. Written Directions ✓ Estimated 20%# time savings in obtaining regulatory approvals through CORENET X. 20 Working days response time by Agencies # The figure is projected based on the data of CX clearances granted so far, as the major CX projects have yet to reach TOPCSC stage 159",
+    "chunk_id": "p159_c0"
+  },
+  {
+    "page": 161,
+    "text": "Preparing the Industry for CORENET X – Good Practices Guidebook [New!] Compilation of best practices and key learning points to share with industry practitioners the potential areas to look out for, common pitfalls to avoid and recommended good practices – these should be incorporated into RABW training (link) Scan to access the draft SGcauind etboo oakccess the Guidebook 161",
+    "chunk_id": "p161_c0"
+  },
+  {
+    "page": 162,
+    "text": "Key Recommendations in the Good Practices Guidebook [New!] NEW MINDSET AND PRACTICES • New regulatory process under CX is a major shift from today’s fragmented process to coordinated submission and agency review. • Proper upfront planning and coordination is the key to fully capture the benefits of CX. PITFALLS RECOMMENDATIONS • Some developers still continued to work • Timeline should be agreed upon by the entire project based on old mindset and practice – team, and a realistic timeframe should be allowed allocating little time for upfront design and for design development and coordination, accounting for coordination, leading to rushed and low potential revision cycles and pre-submission quality submissions. consultations/ waivers. • Frequent changes leading to reworks by QPs. • Key mile",
+    "chunk_id": "p162_c0"
+  },
+  {
+    "page": 162,
+    "text": "uality submissions. consultations/ waivers. • Frequent changes leading to reworks by QPs. • Key milestones for design freeze should be established and aligned across the project team. • Late onboarding of contractors, and contractors’ inputs led to additional • Early builder engagement is important if design input resubmissions or amendment downstream. is required from the builder. 162",
+    "chunk_id": "p162_c0"
+  },
+  {
+    "page": 163,
+    "text": "Key Recommendations in the Good Practices Guidebook [New!] PROJECT COLLABORATION • The new regulatory process requires collaboration and communication among the various stakeholders. • Designs should be consolidated and well-coordinated. PITFALLS RECOMMENDATIONS • Designs are still largely done in silos and there • Coordinating roles to lead the design and is limited collaboration among QPs over overall project coordination and the scope of design changes as well as the potential work for each project member should be clearly impacts resulted from such changes. defined. • For some projects, there is a lack of consensus • Collaboration should be viewed as a collective over who is leading the overall coordination. responsibility among all project parties. 163",
+    "chunk_id": "p163_c0"
+  },
+  {
+    "page": 163,
+    "text": "overall coordination. responsibility among all project parties. 163",
+    "chunk_id": "p163_c0"
+  },
+  {
+    "page": 164,
+    "text": "Key Recommendations in the Good Practices Guidebook [New!] SUBMISSION QUALITY • The CX Code of Practice (COP) was introduced to help industry practitioners in preparing multi-agency regulatory submissions across the key submission gateways. • Clear communication is essential during the submission process. PITFALLS RECOMMENDATIONS • Some projects did not model according to the CX • QPs should familiarize with CX COP and ensure COP and agencies’ review could not be conducted submissions are prepared in accordance with the effectively. COP. • For resubmission – Some QPs were unclear in • For resubmission – Clear communication is important their resubmissions on how the revisions and QP should indicate actions taken to address addressed agencies’ WD comments, which led to the comments. If ther",
+    "chunk_id": "p164_c0"
+  },
+  {
+    "page": 164,
+    "text": "ndicate actions taken to address addressed agencies’ WD comments, which led to the comments. If there is a need to refer to additional additional iterations. Example: documents, indicate clearly the document name. o Submission indicated ‘complied with’ against all WD items without explanation. • Clarity works both ways to avoid miscommunication o Submission indicated ‘Pls refer to attached’ when there are and hence eliminate unnecessary iterations. hundreds of attachments submitted. 164",
+    "chunk_id": "p164_c0"
+  },
+  {
+    "page": 165,
+    "text": "Key Recommendations in the Good Practices Guidebook [New!] CX AND BIM READINESS • The new regulatory process aligns the level of details of each agency at key milestones. • Coordinated BIM submission requires collaboration across various disciplines and OpenBIM format (IFC+SG) ensures interoperability across the different authoring software. PITFALLS RECOMMENDATIONS • Some project teams are unfamiliar of the level of • QPs should familiarize with CX process and stay engaged details needed at each submission milestone, with the BIM team to ensure models reflect the design leading to incomplete submissions. intent and comply with agency requirements. • Gaps observed between different disciplines, e.g. • Quality checks should be conducted prior to submission. o Submission models are incorrect",
+    "chunk_id": "p165_c0"
+  },
+  {
+    "page": 165,
+    "text": "es, e.g. • Quality checks should be conducted prior to submission. o Submission models are incorrectly geo- • BIM teams of various building disciplines should jointly referenced. plan the modelling workflows aligned with IFC+SG, o Naming and height of building storeys are with a centralised standard and shared reference file for inconsistent across blocks/ disciplines. consistency. 165",
+    "chunk_id": "p165_c0"
+  },
+  {
+    "page": 166,
+    "text": "Key Recommendations in the Good Practices Guidebook [New!] CX AND BIM READINESS • The new regulatory process aligns the level of details of each agency at key milestones. • Coordinated BIM submission requires collaboration across various disciplines and OpenBIM format (IFC+SG) ensures interoperability across the different authoring software. EXAMPLES OF POOR MODELLING OBSERVED 166",
+    "chunk_id": "p166_c0"
+  },
+  {
+    "page": 167,
+    "text": "Key Recommendations in the Good Practices Guidebook [New!] CX AND BIM READINESS • The onboarding IFC+SG checklist is a recommended starting point and can be found in the Guidebook 167",
+    "chunk_id": "p167_c0"
+  },
+  {
+    "page": 168,
+    "text": "Streamlining Efforts on Space Classification for Regulatory Purposes",
+    "chunk_id": "p168_c0"
+  },
+  {
+    "page": 169,
+    "text": "Challenges with Space Classification under previous Approval Process Inconsistencies in inter- No standardisation in naming Misunderstandings due to lack agencies’ space requirements of explanation Many ways to name the same Project teams may follow their One agency’s regulatory space, sometimes even using own interpretation of the codes requirement is distinguished by acronyms, which can cause and be only informed later that “purpose group”, while another confusion to processing officers the understanding is different by “building type” or “category of and time will be wasted to seek from that of the processing officer premises” clarity from the project team 169",
+    "chunk_id": "p169_c0"
+  },
+  {
+    "page": 170,
+    "text": "New approach to Space Classification under new RABW Architect i Developer PE (Mech) 1 1.5 2 3 Coordinated Design *Piling Construction construction TOP/ Statutory Submission Gateway Gateway Gateway Completion Integrated *optional BIM Model CORENET X will transform and redesign our regulatory processes into 3 main gateways PE (Elec) PE (Civil) To align with the intent of upfront coordinated submission, we have published in the COP a streamlined set of requirements that facilitates collaboration among the project team and the submission of one set of floor plans for regulatory clearance by all agencies. 170",
+    "chunk_id": "p170_c0"
+  },
+  {
+    "page": 171,
+    "text": "NNeeww aapppprrooaacchh ttoo SSppaaccee CCllaassssiiffiiccaattiioonn uunnddeerr nneeww RRAABBWW 1. Harmonise agencies’ space requirements Only 1 room plan and 2 properties required to determine space usage and 2. Less modelling effort typology for all agencies’ requirements 3. Set of standardized values brings greater clarity to industry Example of room plan IfcSpace SpaceName living room OccupancyType multi-unit dwelling IfcSpace IfcSpace SpaceName corridor SpaceName dormitory OccupancyType - OccupancyType dormitory IfcSpace IfcSpace SpaceName female IfcSpace SpaceName office toilet IfcSpace SpaceName production area OccupancyType office OccupancyType factory SpaceName store OccupancyType factory OccupancyType factory 171",
+    "chunk_id": "p171_c0"
+  },
+  {
+    "page": 172,
+    "text": "New approach to Space Classification under new RABW Example Plan: Library with Cafe SpaceName Office - mapped to SCDF’s Toilet Cafe Library room - stack area admin/ functional space general OccupancyType 10. Restaurants and eating mapped to BCA’s 7. Places of public resort establishments building category SpaceName toilet OccupancyType F&B outlet Spaces SpaceName café SpaceName admin office om SpaceName library room (stack) modelled Occupancy F&B outlet Occupancy educational place OccupancyType educational place in BIM Type Type SpaceName accessible washroom OccupancyType F&B outlet 172",
+    "chunk_id": "p172_c0"
+  },
+  {
+    "page": 173,
+    "text": "Space Representation in Code of Practice Standardised list of Space Names and Occupancy Types are provided in Section 4: IFC-SG and Modelling Good Practices, “Usage” sub-section Property value to be provided in IFC model under “OccupancyType” property Examples of space that this Occupancy Type is applicable to How the property value maps to each agency’s space’s categories, for clarity Values to be provided in IFC model How this space relates to SCDF’s Functional under “SpaceName” property Spaces and corresponding occupancy load factor 173",
+    "chunk_id": "p173_c0"
+  },
+  {
+    "page": 174,
+    "text": "Guidelines on Model Preparation Guidelines on overall IFC-SG model preparation is relocated to COP Section 4 from Section 2. Project Teams should ensure: Models are correctly geo-referenced: • Models should be assigned real-world coordinates from the Singapore SVY21 coordinate system (EPSG: 3414) for Easting and Northing. Levels and Zones are aligned across all disciplines’ models • Models from all disciplines must name levels and zones consistently - models should have one set of level names and accurate “Z” values for all levels Exported Models can be opened using openBIM viewer (CORENET X Submission Portal offers a viewer for viewing/ checking after models are uploaded): • A model quality check list will be provided in Section 4 for reference, alongside with modelling tips and good prac",
+    "chunk_id": "p174_c0"
+  },
+  {
+    "page": 174,
+    "text": " check list will be provided in Section 4 for reference, alongside with modelling tips and good practices for each BIM authoring software. 174",
+    "chunk_id": "p174_c0"
+  },
+  {
+    "page": 175,
+    "text": "Supporting BIM Adoption for SMEs [Updated!] Funding Support for Local SMEs Registry of Shared Services ✓ BCA has expanded the scope of the • STAS has set up a registry of consultancy firms Productivity Solutions Grant (PSG) for the providing BIM shared services that industry can tap Built Environment to include a new package on to help scale up BIM/IDD capability consisting the following components: • The engagement of these shared service providers is a i. BIM authoring solution supporting IFC+SG private contract between service buyers and the ii. CORENET X industry training providers, and STAS is not privy to the contractual agreement. Service buyers are advised to pay ✓ Local SMEs can apply for Productivity Solutions attention to the service scope & quality, schedule and Grant (PSG) to ",
+    "chunk_id": "p175_c0"
+  },
+  {
+    "page": 175,
+    "text": "ly for Productivity Solutions attention to the service scope & quality, schedule and Grant (PSG) to co-fund up to 50% of the pricing of the service providers. qualifying costs of pre-approved digital solutions to build up their capability in BIM • SMEs may access the BIM shared services registry at submissions https://stas.org.sg/idd/shared-services-programme/ 175",
+    "chunk_id": "p175_c0"
+  },
+  {
+    "page": 176,
+    "text": "Implementations to Facilitate the Transition to CORENET X [Updated!] EXTENSION OF ABSD REMISSION AND PCP TIMELINES to address financial concerns of developers during the transition • Mitigating measures for qualifying projects during transition: allow 6-month extension to Additional Buyers’ Stamp Duty (ABSD remission) and Project Completion Period (PCP). • Updated eligible window: – Larger Projects ≥ 30,000m2 GFA : Mandatory submission starts 1 Oct 2025 Close of window: 30 Sep 2026 (+ 9 months) – All other New Projects : Mandatory submission starts 1 Oct 2026 Close of window: 30 Sep 2027 (+ 9 months) Review of Payment Milestones to account for the upfront coordination efforts • Public Projects: BCA has updated the payment schedule in the Standard Consultancy Agreement (SCA) for public sect",
+    "chunk_id": "p176_c0"
+  },
+  {
+    "page": 176,
+    "text": "ts: BCA has updated the payment schedule in the Standard Consultancy Agreement (SCA) for public sector construction-related consultancy services. • Private Projects: The joint-TAC taskforce (REDAS, ACES and SIA) has updated the payment schedule for their members’ reference, with necessary adjustments in alignment with the CORENET X workflows. 176",
+    "chunk_id": "p176_c0"
+  },
+  {
+    "page": 177,
+    "text": "How to Prepare for CORENET X (CX) – The Playbook [New!] a. To drive mindset shift with a firm-level change management plan 1. Set up a taskforce led by b. To set milestone targets for preparation and involvement in CX, and to keep the firm leader to champion track of the progress the change c. To identify gaps and measures to address the potential impact d. To plan for the manpower and resources needed 2. Build a CX core team and a. Nominate subject matter experts as “go-to” person set up a training plan to b. Send key reps to RABW1 and IFC+SG2 training elevate firm competency c. The key reps are to bring back the learnings and cascade down to entire firm a. Adjust the internal workflows in alignment with RABW to maximise 3. Align internal business benefits of leveraging BIM and CX process",
+    "chunk_id": "p177_c0"
+  },
+  {
+    "page": 177,
+    "text": "alignment with RABW to maximise 3. Align internal business benefits of leveraging BIM and CX process to maximise the b. Understand the CX Code of Practice (COP) and map the internal templates gains from CX with IFC+SG a. To identify a crack team to lead the first project 4. Get started with a b. To familiarise with the new requirements and CX Submission Portal (SP) – CORENET X project can test out the SP using the CX Training Environment, which is a replica of the SP and can be navigated even without an actual project or Singpass 1RABW: the new Regulatory Approval for Building Works for CORENET X 2IFC+SG: Industry Foundation Class (IFC) with customisations that cater to Singapore’s local requirements",
+    "chunk_id": "p177_c0"
+  },
+  {
+    "page": 178,
+    "text": "How to Prepare for CORENET X (CX) – Resources and Trainings [New!] 01 Stay up to date by joining the CORENET X mailing list Scan to join the mailing list 02 Prime yourself by attending approved courses in RABW and IFC+SG Scan for 03 Utilize the self-help resources to better understand details of CORENET X approved courses • CORENET X Code of Practice (link) • IFC+SG Resource Toolkit (link) • Submission Portal Guides and User Manual (link) • Good Practices Guidebook (link) Scan for • Past Events and Materials (link) Training • List of firms that have onboarded CX (link) Environment Try out the new submission process in the Training Environment 04 without an actual project Scan to register for assisted Take part in a real CORENET X Submission with your projects. onboarding 05 For first-timer",
+    "chunk_id": "p178_c0"
+  },
+  {
+    "page": 178,
+    "text": " assisted Take part in a real CORENET X Submission with your projects. onboarding 05 For first-timers, register for assisted onboarding here. 178",
+    "chunk_id": "p178_c0"
+  },
+  {
+    "page": 179,
+    "text": "How to Prepare for CORENET X (CX) – Training Environment [New!] Training environment replicates the CORENET X Submission Portal for simulated hands-on experience. Allowing industry users to explore the Submission Portal's interface, functions and submission forms without an actual project. Training guide to help industry navigate the simulation environment (click here to access the training guide and here for the webinar recording). 179",
+    "chunk_id": "p179_c0"
+  },
+  {
+    "page": 180,
+    "text": "How to Prepare for CORENET X (CX) – Helpdesk, Clinic and FAQ [New!] Troubleshooting channels and FAQ resources are provided for industry support and reference CX Clinic – Dedicated Platform for CORENET X Consultations o Platform to provide support for CORENET X and RABW queries o Address project-specific submission and regulatory requirements o Deliver hands-on guidance in partnership with BIM training providers CX Helpdesk – Specialised Technical Support for Issue Resolution o Serve as first point of contact for industry users o To provide frontline support, address queries, issues and feedback from industry o Diagnose and resolve technical problems and track issues through to completion FAQ - For Immediate Solutions and Quick Reference o Updated regularly with latest CORENET X informatio",
+    "chunk_id": "p180_c0"
+  },
+  {
+    "page": 180,
+    "text": "Q - For Immediate Solutions and Quick Reference o Updated regularly with latest CORENET X information and developments o Enable quick access to standard solutions and resolution guidance o Serve as comprehensive knowledge repository for industry 180",
+    "chunk_id": "p180_c0"
+  },
+  {
+    "page": 181,
+    "text": "Thank you. More details on CORENET X can be found at https://go.gov.sg/cx",
+    "chunk_id": "p181_c0"
+  }
+]
