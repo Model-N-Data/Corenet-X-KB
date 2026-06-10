@@ -2,12 +2,7 @@
 CORENET X Knowledge Base — RAG-enabled Streamlit App v2
 Documents uploaded by officer → text extracted → stored in GitHub repo.
 Answers drawn from ACTUAL document text, not hardcoded summaries.
-
-REQUIRED STREAMLIT SECRETS:
-  ANTHROPIC_API_KEY  = "sk-ant-..."
-  GITHUB_TOKEN       = "github_pat_..."   (Personal Access Token, repo write scope)
-  GITHUB_REPO        = "Model-N-Data/Corenet-X-KB"
-  OFFICER_PASSWORD   = "cx-officer-2025"  (optional, this is the default)
+Secrets are configured in Streamlit Cloud settings, NOT in this file.
 """
 
 import streamlit as st
