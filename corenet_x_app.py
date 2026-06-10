@@ -1,18 +1,29 @@
 """
-CORENET X Knowledge Base — Interactive Streamlit App
-Answers from 12 official Singapore government documents via Claude AI.
+CORENET X Knowledge Base — RAG-enabled Streamlit App v2
+Documents uploaded by officer → text extracted → stored in GitHub repo.
+Answers drawn from ACTUAL document text, not hardcoded summaries.
 
-SETUP:
-  pip install streamlit anthropic
-  export ANTHROPIC_API_KEY="sk-ant-..."
-  export OFFICER_PASSWORD="your-officer-password"   (optional, default: cx-officer-2025)
-  streamlit run corenet_x_app.py
+REQUIRED STREAMLIT SECRETS:
+  ANTHROPIC_API_KEY  = "sk-ant-..."
+  GITHUB_TOKEN       = "github_pat_..."   (Personal Access Token, repo write scope)
+  GITHUB_REPO        = "Model-N-Data/Corenet-X-KB"
+  OFFICER_PASSWORD   = "cx-officer-2025"  (optional, this is the default)
 """
 
 import streamlit as st
 import anthropic
-import json, os, re
+import json, os, re, base64, io
 from datetime import datetime
+
+try:
+    import requests
+except ImportError:
+    requests = None
+
+try:
+    import pdfplumber
+except ImportError:
+    pdfplumber = None
 
 # ─── Page config ──────────────────────────────────────────────────────────────
 st.set_page_config(
@@ -23,15 +34,18 @@ st.set_page_config(
 )
 
 # ─── Config ───────────────────────────────────────────────────────────────────
-MODEL = "claude-haiku-4-5-20251001"   # Fixed — do not expose model switcher
+MODEL = "claude-haiku-4-5-20251001"
+DATA_PATH = "data"  # folder in GitHub repo
 
-def get_api_key():
-    try: return st.secrets["ANTHROPIC_API_KEY"]
-    except: return os.environ.get("ANTHROPIC_API_KEY", "")
+def cfg(key, default=""):
+    try: return st.secrets[key]
+    except: return os.environ.get(key, default)
 
-def get_officer_password():
-    try: return st.secrets["OFFICER_PASSWORD"]
-    except: return os.environ.get("OFFICER_PASSWORD", "cx-officer-2025")
+def get_api_key():      return cfg("ANTHROPIC_API_KEY")
+def get_github_token(): return cfg("GITHUB_TOKEN")
+def get_github_repo():  return cfg("GITHUB_REPO", "")
+def get_officer_pw():   return cfg("OFFICER_PASSWORD", "cx-officer-2025")
+def github_enabled():   return bool(get_github_token() and get_github_repo())
 
 # ─── Styling ──────────────────────────────────────────────────────────────────
 st.markdown("""
@@ -43,546 +57,609 @@ st.markdown("""
 .kp-box{background:#fffde7;border-left:3px solid #f6c000;padding:9px 13px;border-radius:3px;font-size:13px;margin:8px 0}
 .src-box{background:#f8f9fa;border:1px solid #dde3ec;padding:7px 12px;border-radius:5px;font-size:11.5px;color:#6b7280}
 .user-bubble{background:#1a3c5e;color:#fff;padding:10px 14px;border-radius:16px 4px 16px 16px;display:inline-block;max-width:580px;font-size:14px;line-height:1.6}
-.officer-badge{background:#7c3aed;color:#fff;padding:3px 10px;border-radius:12px;font-size:11px;font-weight:700}
+.doc-active{background:#e8f5ec;border:1px solid #a8d5b5;border-radius:6px;padding:8px 12px;margin:4px 0}
+.doc-superseded{background:#fdeaea;border:1px solid #f5b8b8;border-radius:6px;padding:8px 12px;margin:4px 0;opacity:.7}
+.doc-pending{background:#fff3e0;border:1px solid #ffd580;border-radius:6px;padding:8px 12px;margin:4px 0}
 </style>
 """, unsafe_allow_html=True)
 
-# ─── Knowledge Base context ────────────────────────────────────────────────────
-KB_CONTEXT = """
-OFFICIAL CORENET X KNOWLEDGE BASE
-Sources: COP v3.1 (Dec 2025, 442 pp), RABW Mar 2026 (181 pp), IFC-SG Revit SP Guide Sep 2025 (176 pp).
-ALL Singapore government official documents only. No private firm content.
+# ─── DEFAULT DOCUMENT REGISTRY ────────────────────────────────────────────────
+# Pre-populated with the 12 official sources. "processed" = text chunks extracted.
+DEFAULT_REGISTRY = {"documents": [
+    {"id":"cop_v31",    "name":"COP v3.1 Edition (Dec 2025)",      "version":"3.1",      "pages":442, "status":"active","processed":False,"uploaded":None,"notes":"Primary regulatory standard"},
+    {"id":"rabw_2026",  "name":"RABW Mar 2026",                     "version":"Mar 2026", "pages":181, "status":"active","processed":False,"uploaded":None,"notes":"Regulatory Advisory for Built Works"},
+    {"id":"ifc_sg",     "name":"IFC-SG Revit SP Guide (Sep 2025)", "version":"Sep 2025", "pages":176, "status":"active","processed":False,"uploaded":None,"notes":"IFC+SG implementation guide"},
+    {"id":"dg_pdf",     "name":"Design Gateway Guidelines",         "version":"2025",     "pages":0,   "status":"active","processed":False,"uploaded":None,"notes":"Image-based — OCR may be needed"},
+    {"id":"cg_pdf",     "name":"Construction Gateway Guidelines",   "version":"2025",     "pages":0,   "status":"active","processed":False,"uploaded":None,"notes":"Image-based — OCR may be needed"},
+    {"id":"hdb_fb",     "name":"HDB Feedback Document",            "version":"2025",     "pages":0,   "status":"active","processed":False,"uploaded":None,"notes":"HDB-specific requirements"},
+    {"id":"consultant", "name":"Consultant Briefing Notes",        "version":"2025",     "pages":0,   "status":"active","processed":False,"uploaded":None,"notes":"Agency briefing materials"},
+]}
 
-== OVERVIEW ==
-Q: What is CORENET X?
-A: CORENET X is Singapore's multi-agency One-Stop Integrated Digital Shopfront for regulatory processes in the built environment — one 3D BIM model reviewed simultaneously by up to 10 agencies.
-- Led by BCA and URA; agencies: HDB, JTC, LTA, NEA, NParks, SCDF, SLA, GovTech
-- Soft-launched 18 December 2023; MANDATORY from 1 October 2025
-- Replaces 20+ separate approval stages with 3 Key Gateways
-- Industry submits once; agencies respond collectively
-Source: COP v3.1 §1 pp.8–10
+# ─── GITHUB STORAGE ──────────────────────────────────────────────────────────
+def gh_headers():
+    return {"Authorization": f"Bearer {get_github_token()}",
+            "Accept": "application/vnd.github.v3+json",
+            "X-GitHub-Api-Version": "2022-11-28"}
 
-Q: What are the 3 key gateways?
-A: G1 Design Gateway — critical design parameters (showstoppers). URA Planning Permission, LTA/NEA/PUB/NParks DC Clearances.
-G1.5 Piling Gateway (optional) — structural design for piling/foundations before ground-breaking.
-G2 Construction Gateway — detailed design before piling or sales launch. All agency detailed approvals.
-G3 Completion / TOP — compliance to approved design. Agency clearances trigger overall TOP/CSC.
-Source: COP v3.1 §3 Overview p.95
+def gh_read(path):
+    """Read a JSON file from GitHub. Returns (data, sha) or (None, None)."""
+    if not github_enabled() or not requests: return None, None
+    url = f"https://api.github.com/repos/{get_github_repo()}/contents/{path}"
+    try:
+        r = requests.get(url, headers=gh_headers(), timeout=10)
+        if r.status_code == 200:
+            d = r.json()
+            content = base64.b64decode(d["content"]).decode("utf-8")
+            return json.loads(content), d["sha"]
+    except Exception: pass
+    return None, None
 
-Q: When is CORENET X mandatory?
-A: 1 Oct 2025: mandatory for all new projects regardless of GFA.
-1 Oct 2026: mandatory for GFA ≥ 30,000 m².
-1 Oct 2027: onboard ongoing projects.
-BIM (IFC+SG) format mandatory only for GFA ≥ 5,000 m².
-Source: RABW Mar 2026 p.21
+def gh_write(path, data, message, sha=None):
+    """Write a JSON file to GitHub. Returns True on success."""
+    if not github_enabled() or not requests: return False
+    url = f"https://api.github.com/repos/{get_github_repo()}/contents/{path}"
+    body = {
+        "message": message,
+        "content": base64.b64encode(json.dumps(data, indent=2, ensure_ascii=False).encode()).decode()
+    }
+    if sha: body["sha"] = sha
+    try:
+        r = requests.put(url, headers=gh_headers(), json=body, timeout=15)
+        return r.status_code in (200, 201)
+    except Exception: return False
 
-Q: Which agencies are involved?
-A: 10 agencies: BCA (co-lead), URA (co-lead), GovTech (platform), HDB, JTC, LTA, NEA, NParks, SCDF, SLA. Agencies review submissions collectively and issue a consolidated Written Direction.
-Source: COP v3.1 §1 p.8
+# ─── REGISTRY HELPERS ─────────────────────────────────────────────────────────
+def load_registry():
+    if github_enabled():
+        data, _ = gh_read(f"{DATA_PATH}/registry.json")
+        if data: return data
+    return st.session_state.get("registry", DEFAULT_REGISTRY.copy())
 
-== DESIGN GATEWAY (G1) ==
-Q: What does each agency require at Design Gateway?
-A: BCA: NIL at DG. Complex buildings require pre-consultation before Piling Gateway.
-LTA: Access points, parking provision, frontage improvement, commuter facilities.
-NEA: Refuse location/size, cooling tower setback (5 m), pollution control buffers.
-NParks: Planting areas (3 m/5 m green buffers), tree conservation, Arborist report.
-PUB: Minimum Platform Level, peak run-off C ≤ 0.55, drainage concept, sewer connection.
-SCDF: Fire engine accessway location and width ONLY (fire suppression is a CG requirement, NOT DG).
-URA: Building massing, site layout, land use/GFA/GPR, connectivity, greenery.
-Source: COP v3.1 §3 DG Summary pp.108–126
+def save_registry(registry):
+    st.session_state["registry"] = registry
+    if github_enabled():
+        _, sha = gh_read(f"{DATA_PATH}/registry.json")
+        gh_write(f"{DATA_PATH}/registry.json", registry,
+                 f"Update document registry — {datetime.now().strftime('%Y-%m-%d %H:%M')}", sha)
 
-Q: What are planting area / soil depth requirements at Design Gateway?
-A: NParks requires planting areas modelled at DG. Key rules:
-- Minimum soil depth: 2.0 m (underground structures must be recessed ≥ 2.0 m below planting areas)
-- Green Buffers: 3.0 m setback (along boundaries) or 5.0 m (along roads)
-- Peripheral Planting Verges: 2.0 m
-- Model using IfcGeographicElement SubType PLANTINGAREAS
-- Properties: Area (m²), Status, Turf (Boolean), TurfSpecies, ApprovedSoilMixture, Compensated
-- Compensated and encroached areas modelled as separate elements
-Source: COP v3.1 §4 Planting Areas p.324
+def load_chunks(doc_id):
+    """Load extracted text chunks for a document."""
+    key = f"chunks_{doc_id}"
+    if key in st.session_state: return st.session_state[key]
+    if github_enabled():
+        data, _ = gh_read(f"{DATA_PATH}/chunks/{doc_id}.json")
+        if data:
+            st.session_state[key] = data
+            return data
+    return []
 
-== EXTERNAL WORKS ==
-Q: What is required for external works at Design Gateway?
-A: External Works = proposed works OUTSIDE the development boundary. Submissions may be in 2D CAD.
-LTA (pp.183–186): Horizontal alignment and junction layout of new/modified roads; road vertical profile; development access levels; tree affected plan; layout of drains/sumps/box culverts; commuter facilities (covered linkways, bus stops, POBs); cycling paths.
-NParks (pp.190–191): Conservation of trees (TCOT, Heritage, EIA/EMMP) — Arborist report required; green verges.
-PUB (pp.193–195): Peak run-off C value ≤ 0.55; roadside drain capacity; sewer connection point; Drainage Reserve location and width.
-Source: COP v3.1 §3 External Works pp.178–196
+def save_chunks(doc_id, chunks):
+    """Save text chunks for a document."""
+    st.session_state[f"chunks_{doc_id}"] = chunks
+    if github_enabled():
+        _, sha = gh_read(f"{DATA_PATH}/chunks/{doc_id}.json")
+        gh_write(f"{DATA_PATH}/chunks/{doc_id}.json", chunks,
+                 f"Add chunks for {doc_id} — {datetime.now().strftime('%Y-%m-%d')}", sha)
 
-Q: Can external works be delinked?
-A: Yes — conditional delinking at Construction Gateway if internal works are in order but external works still under review.
-Cannot be delinked: LTA/NParks access points, covered linkways, POB connections, bus stops; PUB drain connections, MPL/outlet levels, sewer connection point.
-Source: COP v3.1 §3 External Works pp.178–179
+def load_custom_kb():
+    """Load officer-added KB entries."""
+    if github_enabled():
+        data, _ = gh_read(f"{DATA_PATH}/custom_kb.json")
+        if data: return data
+    return st.session_state.get("custom_kb", [])
 
-== CONSTRUCTION GATEWAY (G2) ==
-Q: What does SCDF require at Construction Gateway for fire suppression?
-A: Full fire safety design at CG (NOT Design Gateway):
-- Fire cisterns/firefighting water storage tanks — capacity, location, fire engine access
-- Wet/dry pipe sprinkler systems — coverage, zoning, flow calculations
-- Hose reels, fire hydrants — location, spacing
-- Rising mains (wet and dry risers) — location, sizing
-- Means of escape: travel distances, staircase widths, pressurisation
-- Fire compartmentation: fire-rated walls/floors, compartment sizes
-- Smoke control: mechanical ventilation/extraction
-- Emergency Voice Communication (EVC) and Automatic Fire Alarm (AFA)
-NOTE: SCDF at Design Gateway = fire engine accessway ONLY.
-Source: COP v3.1 §3 CG SCDF pp.130–135
+def save_custom_kb(entries):
+    st.session_state["custom_kb"] = entries
+    if github_enabled():
+        _, sha = gh_read(f"{DATA_PATH}/custom_kb.json")
+        gh_write(f"{DATA_PATH}/custom_kb.json", entries,
+                 f"Update custom KB — {datetime.now().strftime('%Y-%m-%d %H:%M')}", sha)
 
-== BIM & IFC+SG ==
-Q: What is IFC+SG?
-A: Singapore's customised openBIM standard extending IFC4 with SGPsets (Singapore-localised property sets). Mandatory for GFA ≥ 5,000 m². Resource Kit: go.gov.sg/ifcsg. Supported: Autodesk Revit, Graphisoft ArchiCAD, Bentley OpenBuildings Designer.
-Source: COP v3.1 Preamble p.4
+# ─── PDF PROCESSING ───────────────────────────────────────────────────────────
+def extract_chunks_from_pdf(uploaded_file, chunk_size=800):
+    """Extract text chunks from a PDF file. Returns list of chunk dicts."""
+    if not pdfplumber:
+        return [{"page": 0, "text": "pdfplumber not installed.", "chunk_id": "err"}]
+    chunks = []
+    try:
+        with pdfplumber.open(uploaded_file) as pdf:
+            for page_num, page in enumerate(pdf.pages, start=1):
+                text = page.extract_text()
+                if not text or not text.strip():
+                    continue  # skip image-only pages
+                text = re.sub(r'\s+', ' ', text).strip()
+                # Split long pages into ~chunk_size char windows
+                for i in range(0, len(text), chunk_size - 100):
+                    chunk_text = text[i:i + chunk_size]
+                    if len(chunk_text) > 50:
+                        chunks.append({
+                            "page": page_num,
+                            "text": chunk_text,
+                            "chunk_id": f"p{page_num}_c{i // chunk_size}"
+                        })
+    except Exception as e:
+        chunks.append({"page": 0, "text": f"Extraction error: {e}", "chunk_id": "err"})
+    return chunks
 
-Q: How do I model trees in IFC+SG?
-A: IfcGeographicElement subtypes: LANDSCAPE_TREE, LANDSCAPE_PALM, LANDSCAPE_HEDGE.
-Required: Girth (mm), Height (mm), Species, Status (Proposed/Existing/To be removed/To be transplanted), TreeNumber (T001...), Roadside (Boolean).
-Simplified lollipop components allowed if IFC+SG properties embedded. Base point at base of tree.
-Source: COP v3.1 §4 Landscape Plants pp.308–309
+# ─── RETRIEVAL ────────────────────────────────────────────────────────────────
+def get_relevant_chunks(query, max_chunks=6):
+    """Find the most relevant text chunks across all active documents."""
+    registry = load_registry()
+    active_docs = [d for d in registry.get("documents", []) if d["status"] == "active" and d.get("processed")]
 
-Q: How do I model fire tanks / fire suppression in IFC+SG?
-A: Fire tank/cistern: IfcTank with IfcObjectType FIREFIGHTERSTORAGE. Properties: Capacity (m³), Location, Status.
-Sprinklers/hose reels/hydrants: IfcFireSuppressionTerminal — subtypes SPRINKLERHEAD, HOSEREEL, FIREHYDRANT.
-Rising mains: IfcPipeSegment for pipe runs; IfcPipeTerminal for outlets.
-Source: COP v3.1 §4 Identified Components pp.247–260
+    query_tokens = set(re.findall(r'\b\w{3,}\b', query.lower()))
+    if not query_tokens:
+        return []
 
-Q: What is the maximum BIM file size?
-A: 800 MB per IFC file. Recommended: 1 block per IFC file. Split by zones/levels if a block exceeds 800 MB. All disciplines (Arch, C&S, MEP) must be coordinated before submission.
-Source: IFC-SG SP Guide Sep 2025 p.9
+    all_scored = []
+    for doc in active_docs:
+        chunks = load_chunks(doc["id"])
+        for chunk in chunks:
+            chunk_tokens = set(re.findall(r'\b\w{3,}\b', chunk["text"].lower()))
+            score = len(query_tokens & chunk_tokens)
+            if score > 0:
+                all_scored.append((score, doc["name"], chunk))
 
-Q: How do I geo-reference my BIM model?
-A: Easting/Northing: SVY21 (EPSG: 3414). Height: Singapore Height Datum (SHD). Orientation: True North.
-In Revit: Manage > Coordinates > Specify Coordinates at a Point.
-Source: IFC-SG SP Guide Sep 2025 pp.126–136
+    all_scored.sort(key=lambda x: x[0], reverse=True)
+    return [(name, chunk) for _, name, chunk in all_scored[:max_chunks]]
 
-== PROCESS ==
-Q: Do I need 2D drawings for BIM submissions?
-A: No — 2D drawings NOT required for BIM submissions. Exception: complex details impractical to model in 3D. External Works may be submitted in 2D CAD.
-Source: RABW Mar 2026 p.134 (Misconception #3)
+# ─── SYSTEM PROMPT ────────────────────────────────────────────────────────────
+BASE_SYSTEM = """You are the CORENET X Knowledge Base AI — an authoritative assistant for Singapore's CORENET X regulatory submission platform.
 
-Q: Common misconceptions about CORENET X?
-A: Myth 1: Only QPs involved — False. Developers, Builders, RE/RTO, Accredited Checkers also interact.
-Myth 2: All projects must submit in BIM — False. BIM mandatory only for GFA ≥ 5,000 m².
-Myth 3: 3D BIM still requires 2D drawings — False. 2D generally NOT required.
-Myth 4: All requirements must be cleared at gateways — False. Certain requirements can be submitted separately.
-Myth 5: Demolition waits for main building works — False. Demolition can proceed independently.
-Myth 6: Must restart if clearance not in 2 iterations — False. Submissions can go beyond 2 iterations.
-Source: RABW Mar 2026 pp.134–135
+IMPORTANT:
+- Answer ONLY from the official document excerpts provided below.
+- Do not invent requirements, numbers, or rules not present in the provided text.
+- Always cite which document and page your answer comes from.
+- Note if something is a Design Gateway (G1) vs Construction Gateway (G2) requirement — they differ significantly.
+- SCDF fire suppression is ONLY a CG requirement, NOT a DG requirement.
 
-Q: What are the validity periods for gateway clearances?
-A: Design Gateway: 12 months. Piling Gateway: 24 months. Construction Gateway: 24 months. CSC: within 2 years of TOP.
-Source: RABW Mar 2026 p.105
-
-Q: How does the joint submission process work?
-A: 1. Project Coordinator creates project on CORENET X Submission Portal.
-2. Developer/Owner logs in via Singpass to appoint QPs.
-3. QPs input data, upload model and documents, declare accuracy.
-4. Team pays fees via CORENET Pay.
-5. Agencies collaborate and process plans in 20 working days.
-6. Agencies issue clearance or consolidated Written Direction.
-Source: RABW Mar 2026 pp.101–103
-"""
-
-SYSTEM_PROMPT = f"""You are the CORENET X Knowledge Base AI — an authoritative, helpful assistant for Singapore's CORENET X regulatory submission platform.
-
-Answer ONLY from the official sources below. Do not invent requirements, numbers, or rules not present in the knowledge base.
-
-{KB_CONTEXT}
-
-RESPONSE FORMAT: Always respond in valid JSON with this exact structure:
-{{
-  "answer": "<HTML-formatted answer using <p>, <ul>, <li>, <strong>, <h4> tags. Be specific and cite sections.>",
-  "confidence": <integer 0-99>,
+RESPONSE FORMAT: Always respond in valid JSON:
+{
+  "answer": "<HTML using <p>, <ul>, <li>, <strong>, <h4> tags>",
+  "confidence": <0-99>,
   "tier": "<A|B|C|D>",
   "tier_reason": "<one sentence>",
-  "sources": ["<source 1>", "<source 2>"],
-  "key_point": "<most important single sentence, or null>",
-  "follow_ups": ["<follow-up 1>", "<follow-up 2>", "<follow-up 3>"]
-}}
+  "sources": ["<doc name p.XX>"],
+  "key_point": "<most important sentence or null>",
+  "follow_ups": ["<q1>", "<q2>", "<q3>"]
+}
 
 TIER RULES:
-- Tier A (≥85%): Directly answered by the KB. Cite exact section/page.
-- Tier B (70–84%): Partially answered; officer should review.
-- Tier C (40–69%): AI inference from related content; officer should verify.
-- Tier D (<40%): Not in KB. Direct user to contact a CORENET X officer.
+- A (≥85%): Directly answered by the provided excerpts. Cite exact page.
+- B (70-84%): Partially answered; officer should verify.
+- C (40-69%): Inferred from related content; officer should check.
+- D (<40%): Not found in provided documents. Direct user to a CORENET X officer.
 
-CRITICAL: Never invent specific numbers. Note if something is DG vs CG (they differ significantly). Respond ONLY with JSON.
+Respond ONLY with JSON. No preamble, no markdown outside the JSON.
 """
 
-# ─── Session state init ────────────────────────────────────────────────────────
-def init_state():
-    defaults = {
-        "messages": [],
-        "review_queue": [],
-        "kb_additions": [],
-        "stats": {"asked": 0, "resolved": 0, "pending": 0},
-        "role": "user",
-        "officer_authenticated": False,
-        "officer_pw_input": "",
-    }
-    for k, v in defaults.items():
-        if k not in st.session_state:
-            st.session_state[k] = v
+# Fallback KB context if no documents have been processed yet
+FALLBACK_KB = """
+FALLBACK KNOWLEDGE (use only if no document excerpts are provided):
+- CORENET X: Singapore's multi-agency BIM regulatory platform. Mandatory 1 Oct 2025.
+- 3 Gateways: G1 Design, G1.5 Piling (optional), G2 Construction, G3 Completion/TOP.
+- 10 agencies: BCA, URA, GovTech, HDB, JTC, LTA, NEA, NParks, SCDF, SLA.
+- BIM (IFC+SG) mandatory for GFA ≥ 5,000 m². Max file size: 800 MB per IFC file.
+- Geo-reference: SVY21 (EPSG: 3414) + Singapore Height Datum. Orientation: True North.
+- SCDF at DG: fire engine accessway ONLY. Fire suppression systems = CG requirement.
+- NParks planting areas: min soil depth 2.0 m. IfcGeographicElement PLANTINGAREAS.
+- Trees: IfcGeographicElement LANDSCAPE_TREE/PALM/HEDGE.
+- Fire tanks: IfcTank (FIREFIGHTERSTORAGE). Sprinklers: IfcFireSuppressionTerminal.
+- Validity: DG = 12 months, PG/CG = 24 months.
+- Common myth: 2D drawings NOT required for BIM submissions.
+"""
 
-init_state()
+def build_system_prompt(retrieved_chunks):
+    if retrieved_chunks:
+        excerpts = "\n\n".join([
+            f"[SOURCE: {doc_name}, Page {chunk['page']}]\n{chunk['text']}"
+            for doc_name, chunk in retrieved_chunks
+        ])
+        return BASE_SYSTEM + f"\n\nOFFICIAL DOCUMENT EXCERPTS (answer from these):\n{excerpts}"
+    else:
+        return BASE_SYSTEM + "\n\n" + FALLBACK_KB + "\n\nNOTE: No documents have been processed yet. Answers are from the fallback summary only — upload and process PDFs in the Officer Dashboard for full accuracy."
 
-# ─── API call ──────────────────────────────────────────────────────────────────
-def ask_claude(question: str, history: list) -> dict:
+# ─── CLAUDE API ───────────────────────────────────────────────────────────────
+def ask_claude(question, history, retrieved_chunks):
     api_key = get_api_key()
     if not api_key:
-        return {"answer": "<p>API key not configured.</p>", "confidence": 0,
-                "tier": "D", "tier_reason": "No API key.", "sources": [],
-                "key_point": None, "follow_ups": []}
+        return {"answer": "<p>API key not configured.</p>", "confidence": 0, "tier": "D",
+                "tier_reason": "No API key.", "sources": [], "key_point": None, "follow_ups": []}
     client = anthropic.Anthropic(api_key=api_key)
-    messages = []
-    for m in history[-6:]:
-        if m["role"] in ("user", "assistant"):
-            messages.append({"role": m["role"], "content": m.get("content", "")})
+    messages = [{"role": m["role"], "content": m.get("content", "")}
+                for m in history[-6:] if m["role"] in ("user", "assistant")]
     messages.append({"role": "user", "content": question})
     try:
-        resp = client.messages.create(model=MODEL, max_tokens=1024,
-                                      system=SYSTEM_PROMPT, messages=messages)
-        raw = resp.content[0].text.strip()
-        raw = re.sub(r'^```(?:json)?\s*', '', raw)
+        resp = client.messages.create(
+            model=MODEL, max_tokens=1200,
+            system=build_system_prompt(retrieved_chunks),
+            messages=messages
+        )
+        raw = re.sub(r'^```(?:json)?\s*', '', resp.content[0].text.strip())
         raw = re.sub(r'\s*```$', '', raw)
         return json.loads(raw)
     except Exception as e:
         return {"answer": f"<p>Error: {e}</p>", "confidence": 0, "tier": "D",
                 "tier_reason": "Error.", "sources": [], "key_point": None, "follow_ups": []}
 
-# ─── Helpers ───────────────────────────────────────────────────────────────────
+# ─── KB UPDATE ANALYSIS ───────────────────────────────────────────────────────
+def analyse_doc_for_kb_updates(doc_name, sample_chunks):
+    """Ask Claude to review new doc chunks and identify what KB topics are affected."""
+    api_key = get_api_key()
+    if not api_key or not sample_chunks: return []
+    client = anthropic.Anthropic(api_key=api_key)
+    sample_text = "\n\n".join([c["text"] for c in sample_chunks[:15]])
+    prompt = f"""You are reviewing a new/updated CORENET X document: "{doc_name}".
+
+Document excerpts (first 15 chunks):
+{sample_text}
+
+Identify the key topics this document covers and any regulatory requirements it contains.
+For each topic, indicate: topic name, brief description, what KB category it falls under, and urgency for update (High/Medium/Low).
+
+Respond as JSON array:
+[{{"topic": "...", "description": "...", "category": "...", "urgency": "High|Medium|Low", "sample_quote": "..."}}]
+
+Respond ONLY with the JSON array."""
+
+    try:
+        resp = client.messages.create(
+            model=MODEL, max_tokens=800,
+            messages=[{"role": "user", "content": prompt}]
+        )
+        raw = re.sub(r'^```(?:json)?\s*', '', resp.content[0].text.strip())
+        raw = re.sub(r'\s*```$', '', raw)
+        return json.loads(raw)
+    except Exception:
+        return []
+
+# ─── HELPERS ──────────────────────────────────────────────────────────────────
 TIER_LABELS = {"A": "✅ Verified (Tier A)", "B": "📋 Officer Reviewing (Tier B)",
                "C": "🤖 AI Draft (Tier C)", "D": "📞 Needs Officer (Tier D)"}
 
 def conf_bar(conf, tier):
-    colors = {"A": "#1b6b3a", "B": "#1a3c5e", "C": "#d97706", "D": "#dc2626"}
-    c = colors.get(tier, "#6b7280")
-    return f'<div style="display:flex;align-items:center;gap:8px;margin:4px 0"><span style="font-size:13px;font-weight:700;color:{c}">{conf}%</span><div style="flex:1;height:6px;background:#e5e7eb;border-radius:3px;overflow:hidden"><div style="width:{conf}%;height:6px;background:{c};border-radius:3px"></div></div></div>'
+    c = {"A":"#1b6b3a","B":"#1a3c5e","C":"#d97706","D":"#dc2626"}.get(tier,"#6b7280")
+    return f'<div style="display:flex;align-items:center;gap:8px;margin:4px 0"><span style="font-size:13px;font-weight:700;color:{c}">{conf}%</span><div style="flex:1;height:6px;background:#e5e7eb;border-radius:3px"><div style="width:{conf}%;height:6px;background:{c};border-radius:3px"></div></div></div>'
 
-# ─── SIDEBAR ───────────────────────────────────────────────────────────────────
+# ─── SESSION STATE ────────────────────────────────────────────────────────────
+for k, v in {"messages":[], "review_queue":[], "stats":{"asked":0,"resolved":0,"pending":0},
+              "role":"user", "officer_authenticated":False, "pending_q":None,
+              "registry":None, "custom_kb":None}.items():
+    if k not in st.session_state: st.session_state[k] = v
+
+# ─── SIDEBAR ──────────────────────────────────────────────────────────────────
 with st.sidebar:
     st.markdown("### 🏗️ CORENET X KB")
-    st.caption("12 Official Sources · COP v3.1 Dec 2025")
-    st.divider()
+    st.caption("Official Singapore government sources")
 
-    # Role toggle
+    if github_enabled():
+        st.caption("🟢 GitHub sync active")
+    else:
+        st.caption("🟡 Session-only mode (add GITHUB_TOKEN to enable sync)")
+
+    st.divider()
     col1, col2 = st.columns(2)
     if col1.button("👤 User", use_container_width=True,
-                   type="primary" if st.session_state.role == "user" else "secondary"):
-        st.session_state.role = "user"
-        st.rerun()
+                   type="primary" if st.session_state.role=="user" else "secondary"):
+        st.session_state.role = "user"; st.rerun()
     if col2.button("🔐 Officer", use_container_width=True,
-                   type="primary" if st.session_state.role == "officer" else "secondary"):
-        if not st.session_state.officer_authenticated:
-            st.session_state.role = "officer_login"
-        else:
+                   type="primary" if st.session_state.role in ("officer","officer_login") else "secondary"):
+        if st.session_state.officer_authenticated:
             st.session_state.role = "officer"
+        else:
+            st.session_state.role = "officer_login"
         st.rerun()
 
-    # Officer login gate
     if st.session_state.role == "officer_login":
-        st.warning("Enter officer password")
-        pw = st.text_input("Password", type="password", key="pw_field")
-        if st.button("Login", type="primary"):
-            if pw == get_officer_password():
+        pw = st.text_input("Officer password", type="password", key="pw_input")
+        if st.button("Login", type="primary", use_container_width=True):
+            if pw == get_officer_pw():
                 st.session_state.officer_authenticated = True
-                st.session_state.role = "officer"
-                st.rerun()
-            else:
-                st.error("Incorrect password")
+                st.session_state.role = "officer"; st.rerun()
+            else: st.error("Incorrect password")
 
     st.divider()
-
-    # Stats
     st.markdown("**📊 Session stats**")
-    c1, c2, c3 = st.columns(3)
+    c1,c2,c3 = st.columns(3)
     c1.metric("Asked", st.session_state.stats["asked"])
     c2.metric("✅", st.session_state.stats["resolved"])
     c3.metric("⏳", st.session_state.stats["pending"])
 
+    # Document coverage indicator
+    registry = load_registry()
+    docs = registry.get("documents", [])
+    processed = sum(1 for d in docs if d.get("processed") and d["status"]=="active")
+    total_active = sum(1 for d in docs if d["status"]=="active")
     st.divider()
-    st.markdown("**📁 Sources**")
-    st.caption("COP v3.1 (Dec 2025, 442 pp)")
-    st.caption("RABW Mar 2026 (181 pp)")
-    st.caption("IFC-SG SP Guide Sep 2025 (176 pp)")
-    st.caption("+ 9 more official SG govt docs")
+    st.markdown("**📚 Document coverage**")
+    st.progress(processed / max(total_active, 1), text=f"{processed}/{total_active} docs processed")
+    if processed == 0:
+        st.caption("⚠️ No documents processed yet — using fallback KB. Upload PDFs in Officer → Documents.")
+    else:
+        st.caption(f"✅ {processed} document(s) indexed for live retrieval")
 
     st.divider()
     if st.button("🗑️ Clear conversation", use_container_width=True):
-        st.session_state.messages = []
-        st.session_state.stats = {"asked": 0, "resolved": 0, "pending": 0}
-        st.rerun()
+        st.session_state.messages = []; st.session_state.stats = {"asked":0,"resolved":0,"pending":0}; st.rerun()
 
-# ─── OFFICER DASHBOARD ─────────────────────────────────────────────────────────
+# ─── OFFICER DASHBOARD ────────────────────────────────────────────────────────
 if st.session_state.role == "officer" and st.session_state.officer_authenticated:
     st.markdown("## 🔐 Officer Dashboard")
-    st.markdown('<span class="officer-badge">OFFICER MODE</span>', unsafe_allow_html=True)
     st.caption(f"Logged in · {datetime.now().strftime('%d %b %Y %H:%M')}")
 
-    tab1, tab2, tab3 = st.tabs(["📋 Review Queue", "📚 KB Editor", "📧 Email Notifications"])
+    tab1, tab2, tab3, tab4 = st.tabs(["📋 Review Queue", "📚 Documents", "✏️ KB Editor", "📧 Notifications"])
 
-    # ── TAB 1: REVIEW QUEUE ────────────────────────────────────────────────────
+    # ── TAB 1: REVIEW QUEUE ───────────────────────────────────────────────────
     with tab1:
-        pending_items = [q for q in st.session_state.review_queue if not q.get("reviewed")]
-        reviewed_items = [q for q in st.session_state.review_queue if q.get("reviewed")]
-
-        st.markdown(f"**{len(pending_items)} pending** · {len(reviewed_items)} reviewed")
+        pending = [q for q in st.session_state.review_queue if not q.get("reviewed")]
+        reviewed = [q for q in st.session_state.review_queue if q.get("reviewed")]
+        st.markdown(f"**{len(pending)} pending** · {len(reviewed)} reviewed")
 
         if not st.session_state.review_queue:
-            st.info("No queries yet. Questions from users appear here when confidence is below 85% (Tier B/C/D).")
-        else:
-            for i, item in enumerate(st.session_state.review_queue):
-                tier_color = {"B": "🔵", "C": "🟡", "D": "🔴"}.get(item["tier"], "⚪")
-                reviewed_label = " ✅ Reviewed" if item.get("reviewed") else ""
-                with st.expander(f"{tier_color} [{item['tier']}] {item['question'][:80]}…{reviewed_label}"):
-                    st.markdown(f"**Asked:** {item.get('timestamp', 'Unknown')}")
-                    st.markdown(f"**Confidence:** {item.get('conf', 0)}% · **Tier:** {item['tier']}")
-                    st.markdown(f"**User email:** {item.get('email', 'Not provided')}")
-                    st.markdown("**AI Answer:**")
-                    st.markdown(item.get("answer", ""), unsafe_allow_html=True)
-                    if item.get("sources"):
-                        st.caption("Sources: " + " · ".join(item["sources"]))
+            st.info("No queries yet. Tier B/C/D questions from users appear here automatically.")
+        for i, item in enumerate(st.session_state.review_queue):
+            icon = {"B":"🔵","C":"🟡","D":"🔴"}.get(item["tier"],"⚪")
+            rev_label = " ✅" if item.get("reviewed") else ""
+            with st.expander(f"{icon} [{item['tier']}] {item['question'][:75]}…{rev_label}"):
+                st.caption(f"Asked: {item.get('timestamp','')} · Conf: {item.get('conf',0)}% · Email: {item.get('email','Not provided')}")
+                st.markdown(item.get("answer",""), unsafe_allow_html=True)
+                if item.get("sources"): st.caption("Sources: " + " · ".join(item["sources"]))
+                if item.get("chunks_used"):
+                    st.caption(f"Retrieved from: {item['chunks_used']}")
+                st.markdown("---")
+                ans = st.text_area("Official answer:", value=item.get("officer_answer",""), key=f"oa_{i}", height=100)
+                c1,c2,c3 = st.columns(3)
+                if c1.button("✅ Approve → Tier A", key=f"app_{i}"):
+                    st.session_state.review_queue[i].update({"officer_answer":ans,"reviewed":True,"tier":"A"})
+                    st.success("Approved."); st.rerun()
+                if c2.button("💾 Save Draft", key=f"sv_{i}"):
+                    st.session_state.review_queue[i]["officer_answer"] = ans; st.success("Saved.")
+                if c3.button("🗑️ Dismiss", key=f"dis_{i}"):
+                    st.session_state.review_queue[i]["reviewed"] = True; st.rerun()
 
-                    st.markdown("---")
-                    st.markdown("**Officer Response:**")
-                    officer_ans = st.text_area(
-                        "Write official answer (will upgrade to Tier A):",
-                        value=item.get("officer_answer", ""),
-                        key=f"oa_{i}",
-                        height=120
-                    )
-                    col_a, col_b, col_c = st.columns(3)
-                    if col_a.button("✅ Approve & Upgrade to Tier A", key=f"approve_{i}"):
-                        st.session_state.review_queue[i]["officer_answer"] = officer_ans
-                        st.session_state.review_queue[i]["reviewed"] = True
-                        st.session_state.review_queue[i]["tier"] = "A"
-                        st.success("Marked as Tier A — verified answer recorded.")
-                        st.rerun()
-                    if col_b.button("💾 Save Draft", key=f"save_{i}"):
-                        st.session_state.review_queue[i]["officer_answer"] = officer_ans
-                        st.success("Draft saved.")
-                        st.rerun()
-                    if col_c.button("🗑️ Dismiss", key=f"dismiss_{i}"):
-                        st.session_state.review_queue[i]["reviewed"] = True
-                        st.rerun()
-
-    # ── TAB 2: KB EDITOR ───────────────────────────────────────────────────────
+    # ── TAB 2: DOCUMENT REGISTRY ──────────────────────────────────────────────
     with tab2:
-        st.markdown("**Add a new Knowledge Base entry**")
-        st.caption("New entries are active for this session. To make them permanent, contact your admin to update the app code.")
+        st.markdown("### 📚 Document Registry")
+        st.caption("Upload PDFs to enable live document-based answers. Mark old versions as superseded when updating.")
 
-        with st.form("kb_add_form"):
-            new_q = st.text_input("Question")
-            new_a = st.text_area("Answer (plain text or HTML)", height=150)
-            new_src = st.text_input("Source (e.g. COP v3.1 §3 p.110)")
-            new_cat = st.selectbox("Category", ["Overview", "Design Gateway", "External Works",
-                                                  "Construction Gateway", "Completion Gateway",
-                                                  "BIM & IFC+SG", "Greenery & Trees", "Process"])
-            new_conf = st.slider("Confidence %", 40, 99, 85)
-            submitted = st.form_submit_button("➕ Add to KB", type="primary")
-            if submitted and new_q and new_a:
-                entry = {"q": new_q, "a": new_a, "src": new_src,
-                         "cat": new_cat, "conf": new_conf,
-                         "added_by": "officer",
-                         "timestamp": datetime.now().strftime("%d %b %Y %H:%M")}
-                st.session_state.kb_additions.append(entry)
-                st.success(f"✅ Entry added: '{new_q[:60]}…'")
+        registry = load_registry()
+        docs = registry.get("documents", [])
 
-        if st.session_state.kb_additions:
-            st.markdown(f"**Session additions ({len(st.session_state.kb_additions)}):**")
-            for e in st.session_state.kb_additions:
-                with st.expander(f"[{e['cat']}] {e['q'][:70]}"):
-                    st.markdown(e["a"])
-                    st.caption(f"Source: {e['src']} · Added: {e['timestamp']}")
+        for i, doc in enumerate(docs):
+            status = doc["status"]
+            css = {"active":"doc-active","superseded":"doc-superseded"}.get(status,"doc-pending")
+            processed_icon = "🟢" if doc.get("processed") else "🔴"
+            st.markdown(f'<div class="{css}">', unsafe_allow_html=True)
+
+            col_info, col_actions = st.columns([3,2])
+            with col_info:
+                st.markdown(f"**{doc['name']}** `v{doc['version']}`")
+                st.caption(f"{processed_icon} {'Indexed' if doc.get('processed') else 'Not yet uploaded'} · {doc.get('pages',0) or '?'} pages · {doc.get('notes','')}")
+                if doc.get("uploaded"): st.caption(f"Last uploaded: {doc['uploaded']}")
+
+            with col_actions:
+                # Upload new PDF
+                uploaded_file = st.file_uploader(
+                    f"Upload PDF", type=["pdf"], key=f"upload_{doc['id']}",
+                    label_visibility="collapsed"
+                )
+                if uploaded_file:
+                    with st.spinner(f"Extracting text from {doc['name']}…"):
+                        if pdfplumber:
+                            chunks = extract_chunks_from_pdf(uploaded_file)
+                            if chunks:
+                                save_chunks(doc["id"], chunks)
+                                docs[i]["processed"] = True
+                                docs[i]["pages"] = max((c["page"] for c in chunks), default=0)
+                                docs[i]["uploaded"] = datetime.now().strftime("%d %b %Y %H:%M")
+                                docs[i]["chunk_count"] = len(chunks)
+                                registry["documents"] = docs
+                                save_registry(registry)
+                                st.success(f"✅ Extracted {len(chunks)} chunks from {doc['name']}")
+
+                                # Run KB update analysis
+                                with st.spinner("Analysing document for KB update prompts…"):
+                                    updates = analyse_doc_for_kb_updates(doc["name"], chunks)
+                                if updates:
+                                    st.session_state[f"updates_{doc['id']}"] = updates
+                                st.rerun()
+                        else:
+                            st.error("pdfplumber not installed. Add it to requirements.txt.")
+
+                c1, c2 = st.columns(2)
+                if status == "active" and c1.button("⚠️ Supersede", key=f"sup_{i}"):
+                    docs[i]["status"] = "superseded"
+                    registry["documents"] = docs
+                    save_registry(registry); st.rerun()
+                if status == "superseded" and c1.button("↩️ Restore", key=f"res_{i}"):
+                    docs[i]["status"] = "active"
+                    registry["documents"] = docs
+                    save_registry(registry); st.rerun()
+                if doc.get("processed") and c2.button("🔄 Re-process", key=f"rep_{i}"):
+                    docs[i]["processed"] = False
+                    registry["documents"] = docs
+                    save_registry(registry); st.rerun()
+
+            st.markdown('</div>', unsafe_allow_html=True)
+
+            # Show KB update prompts if available
+            updates = st.session_state.get(f"updates_{doc['id']}")
+            if updates:
+                st.info(f"📣 KB Update Prompts for **{doc['name']}** — {len(updates)} topics identified:")
+                for u in updates:
+                    urgency_color = {"High":"🔴","Medium":"🟡","Low":"🟢"}.get(u.get("urgency",""), "⚪")
+                    with st.expander(f"{urgency_color} [{u.get('urgency','')}] {u.get('topic','')}"):
+                        st.markdown(f"**Category:** {u.get('category','')} · **Description:** {u.get('description','')}")
+                        if u.get("sample_quote"): st.caption(f'Quote: "{u["sample_quote"][:200]}…"')
+                        st.markdown("Go to **KB Editor** tab to add or update the relevant KB entry.")
+                if st.button(f"✅ Dismiss prompts for {doc['name']}", key=f"dismiss_upd_{doc['id']}"):
+                    del st.session_state[f"updates_{doc['id']}"]
+                    st.rerun()
 
         st.divider()
-        st.markdown("**Current KB coverage (official sources)**")
-        topics = {
-            "COP v3.1 §1": "Overview, agencies, mandatory dates",
-            "COP v3.1 §3 DG": "Design Gateway — all 7 agencies",
-            "COP v3.1 §3 CG": "Construction Gateway — SCDF fire safety",
-            "COP v3.1 §3 EW": "External Works — LTA, NParks, PUB",
-            "COP v3.1 §4": "IFC+SG: trees, planting, fire cisterns",
-            "RABW Mar 2026": "Misconceptions, validity, process, Part-ST",
-            "IFC-SG SP Sep 2025": "File size, geo-referencing, Revit export",
-        }
-        for src, desc in topics.items():
-            st.markdown(f"✅ **{src}** — {desc}")
-        st.caption("⚠️ Image-based PDFs (Design Gateway.pdf, Construction Gateway.pdf) have no extractable text — not yet indexed.")
+        st.markdown("**Add a new document to the registry:**")
+        with st.form("add_doc_form"):
+            nd_name = st.text_input("Document name")
+            nd_ver = st.text_input("Version / date")
+            nd_notes = st.text_input("Notes (e.g. which agency, topic)")
+            nd_id = st.text_input("Short ID (no spaces, e.g. bca_circular_2026)")
+            if st.form_submit_button("➕ Add document", type="primary"):
+                if nd_name and nd_id:
+                    new_doc = {"id": nd_id.replace(" ","_").lower(), "name": nd_name,
+                               "version": nd_ver, "pages": 0, "status": "active",
+                               "processed": False, "uploaded": None, "notes": nd_notes}
+                    registry["documents"].append(new_doc)
+                    save_registry(registry)
+                    st.success(f"Added '{nd_name}' — now upload the PDF above."); st.rerun()
 
-    # ── TAB 3: EMAIL NOTIFICATIONS ─────────────────────────────────────────────
+    # ── TAB 3: KB EDITOR ──────────────────────────────────────────────────────
     with tab3:
-        items_with_email = [q for q in st.session_state.review_queue if q.get("email")]
-        st.markdown(f"**{len(items_with_email)} queries with user email provided**")
+        st.markdown("### ✏️ Custom KB Entries")
+        st.caption("Add entries that supplement or clarify document content. These are included in every query context.")
 
-        if not items_with_email:
-            st.info("No users have provided their email address yet. Email addresses appear here when users submit them on Tier B/C/D responses.")
-        else:
-            for i, item in enumerate(items_with_email):
-                with st.expander(f"📧 {item['email']} — {item['question'][:60]}…"):
-                    officer_ans_text = item.get("officer_answer", "")
-                    if not officer_ans_text:
-                        st.warning("No officer answer yet. Go to Review Queue tab to write one first.")
-                    else:
-                        email_body = f"""Dear User,
+        custom_kb = load_custom_kb()
+        with st.form("kb_form"):
+            kq = st.text_input("Question")
+            ka = st.text_area("Answer (plain text)", height=120)
+            ks = st.text_input("Source reference")
+            kc = st.selectbox("Category", ["Overview","Design Gateway","External Works",
+                                            "Construction Gateway","BIM & IFC+SG",
+                                            "Greenery & Trees","Process","Other"])
+            kconf = st.slider("Confidence %", 50, 99, 90)
+            if st.form_submit_button("➕ Add to KB", type="primary"):
+                if kq and ka:
+                    entry = {"q":kq,"a":ka,"src":ks,"cat":kc,"conf":kconf,
+                             "added":datetime.now().strftime("%d %b %Y %H:%M")}
+                    custom_kb.append(entry)
+                    save_custom_kb(custom_kb)
+                    st.success("Entry added."); st.rerun()
 
-Thank you for your query via the CORENET X Knowledge Base.
+        if custom_kb:
+            st.markdown(f"**{len(custom_kb)} custom entries:**")
+            for j, e in enumerate(custom_kb):
+                with st.expander(f"[{e['cat']}] {e['q'][:60]}…"):
+                    st.markdown(e["a"])
+                    st.caption(f"Source: {e['src']} · Added: {e.get('added','')} · Conf: {e.get('conf','')}%")
+                    if st.button("🗑️ Remove", key=f"rmkb_{j}"):
+                        custom_kb.pop(j); save_custom_kb(custom_kb); st.rerun()
 
-Your question: {item['question']}
+    # ── TAB 4: EMAIL NOTIFICATIONS ────────────────────────────────────────────
+    with tab4:
+        with_email = [q for q in st.session_state.review_queue if q.get("email")]
+        st.markdown(f"**{len(with_email)} queries with user email**")
+        if not with_email:
+            st.info("No user emails yet. They appear when users submit their email on Tier B/C/D answers.")
+        for item in with_email:
+            with st.expander(f"📧 {item['email']} — {item['question'][:55]}…"):
+                ans_text = item.get("officer_answer","")
+                if not ans_text:
+                    st.warning("Write official answer in Review Queue tab first.")
+                else:
+                    body = f"""Dear User,\n\nThank you for your query via the CORENET X Knowledge Base.\n\nYour question: {item['question']}\n\nOfficial Response:\n{ans_text}\n\nSources: {', '.join(item.get('sources',[]))}\n\nIf you have further questions, please visit the CORENET X portal.\n\nRegards,\nCORENET X Knowledge Base Team"""
+                    st.code(body, language=None)
+                    st.markdown(f"[📨 Open in email client](mailto:{item['email']}?subject=CORENET%20X%20Query%20Response&body={body[:800].replace(chr(10),'%0A').replace(' ','%20')})")
 
-Official Response:
-{officer_ans_text}
-
-Sources: {', '.join(item.get('sources', []))}
-
-If you have further questions, please contact us at the CORENET X portal.
-
-Regards,
-CORENET X Knowledge Base Team
-"""
-                        st.markdown("**Draft email — copy and send via your email client:**")
-                        st.code(email_body, language=None)
-
-                        mailto_link = f"mailto:{item['email']}?subject=CORENET%20X%20Query%20Response&body={email_body.replace(chr(10), '%0A').replace(' ', '%20')[:1000]}"
-                        st.markdown(f"[📨 Open in email client]({mailto_link})")
-                        st.caption("Or copy the text above and paste into your email.")
-
-# ─── USER CHAT INTERFACE ───────────────────────────────────────────────────────
+# ─── USER CHAT INTERFACE ──────────────────────────────────────────────────────
 else:
-    if st.session_state.role != "officer_login":
+    if st.session_state.role not in ("officer_login",):
         st.markdown("## 🏗️ CORENET X Interactive Knowledge Base")
-        st.caption("Answers drawn from 12 official Singapore government documents · Powered by Claude AI")
+
+        registry = load_registry()
+        docs = registry.get("documents", [])
+        processed_count = sum(1 for d in docs if d.get("processed") and d["status"]=="active")
+        if processed_count > 0:
+            st.caption(f"Live answers from {processed_count} processed document(s) · Powered by Claude AI")
+        else:
+            st.caption("Answers from official document summaries · Upload PDFs in Officer Dashboard for full accuracy")
 
         # Starter questions
         if not st.session_state.messages:
             st.markdown("**Try a question:**")
-            starters = [
-                "What is CORENET X?",
-                "What do I need for a fire tank?",
-                "External works at Design Gateway?",
-                "What are the 3 key gateways?",
-                "Do I need to model soil depth at Design Gateway?",
-                "What are the validity periods?",
-                "Do I need 2D drawings for BIM?",
-                "How do I model trees in IFC+SG?",
-            ]
+            starters = ["What is CORENET X?","What do I need for a fire tank?",
+                        "External works at Design Gateway?","What are the 3 key gateways?",
+                        "Do I need to model soil depth at DG?","What are the validity periods?",
+                        "Do I need 2D drawings for BIM?","How do I model trees in IFC+SG?"]
             cols = st.columns(4)
             for i, q in enumerate(starters):
-                if cols[i % 4].button(q, key=f"s_{i}", use_container_width=True):
-                    st.session_state["pending_q"] = q
-                    st.rerun()
+                if cols[i%4].button(q, key=f"s_{i}", use_container_width=True):
+                    st.session_state.pending_q = q; st.rerun()
 
-        # Render conversation history
+        # Render messages
         for msg in st.session_state.messages:
             if msg["role"] == "user":
                 st.markdown(f'<div style="text-align:right;margin:12px 0"><div class="user-bubble">{msg["content"]}</div></div>', unsafe_allow_html=True)
             else:
-                r = msg["data"]
-                t = r.get("tier", "D")
-                conf = r.get("confidence", 0)
-
+                r = msg["data"]; t = r.get("tier","D"); conf = r.get("confidence",0)
                 with st.container(border=True):
-                    tier_colors = {"A": "#1b6b3a", "B": "#1a3c5e", "C": "#d97706", "D": "#dc2626"}
-                    c = tier_colors.get(t, "#6b7280")
                     st.markdown(f'<span class="tier-{t}">{TIER_LABELS[t]}</span> <span style="font-size:11px;color:#6b7280">{r.get("tier_reason","")}</span>', unsafe_allow_html=True)
                     st.markdown(conf_bar(conf, t), unsafe_allow_html=True)
-
+                    if msg.get("chunks_used"):
+                        st.caption(f"📄 Retrieved from: {msg['chunks_used']}")
                     if r.get("key_point"):
                         st.markdown(f'<div class="kp-box">📌 <strong>Key point:</strong> {r["key_point"]}</div>', unsafe_allow_html=True)
-
-                    st.markdown(r.get("answer", ""), unsafe_allow_html=True)
-
+                    st.markdown(r.get("answer",""), unsafe_allow_html=True)
                     if r.get("sources"):
                         st.markdown(f'<div class="src-box">📄 <strong>Sources:</strong> {" · ".join(r["sources"])}</div>', unsafe_allow_html=True)
-
-                    # Resolved / officer notice + email capture
                     if t == "A":
                         st.success("✅ Query resolved — verified from official documents")
                     else:
-                        notices = {
-                            "B": "📬 Being reviewed by a CORENET X officer.",
-                            "C": "🤖 AI-drafted from official documents. Officer verification recommended.",
-                            "D": "📞 This topic needs direct officer guidance."
-                        }
-                        st.warning(notices.get(t, ""))
-                        # Email capture
-                        email_key = f"email_{id(msg)}"
+                        notices = {"B":"📬 Being reviewed by a CORENET X officer.",
+                                   "C":"🤖 AI-drafted. Officer verification recommended.",
+                                   "D":"📞 This topic needs direct officer guidance."}
+                        st.warning(notices.get(t,""))
                         if not msg.get("email_submitted"):
-                            email_col, btn_col = st.columns([3, 1])
-                            user_email = email_col.text_input("Leave your email to be notified when an officer responds:",
-                                                               key=email_key, label_visibility="collapsed",
-                                                               placeholder="your@email.com")
-                            if btn_col.button("Notify me", key=f"nb_{id(msg)}"):
-                                if user_email:
-                                    msg["email_submitted"] = True
-                                    msg["user_email"] = user_email
-                                    # Update review queue entry
-                                    for qitem in st.session_state.review_queue:
-                                        if qitem.get("question") == msg.get("question"):
-                                            qitem["email"] = user_email
-                                    st.success(f"✅ Registered — officer will notify you at {user_email}")
-                                    st.rerun()
+                            ec, bc = st.columns([3,1])
+                            em = ec.text_input("Leave email for officer follow-up:", key=f"em_{id(msg)}", label_visibility="collapsed", placeholder="your@email.com")
+                            if bc.button("Notify me", key=f"nb_{id(msg)}"):
+                                if em:
+                                    msg["email_submitted"] = True; msg["user_email"] = em
+                                    for qi in st.session_state.review_queue:
+                                        if qi.get("question") == msg.get("question"): qi["email"] = em
+                                    st.success(f"✅ Registered for {em}"); st.rerun()
                         else:
                             st.caption(f"✅ Notification registered for {msg.get('user_email','')}")
-
-                    # Follow-up buttons
                     if r.get("follow_ups"):
-                        st.markdown("**Suggested follow-ups:**")
-                        fu_cols = st.columns(len(r["follow_ups"]))
+                        st.markdown("**Follow-ups:**")
+                        fc = st.columns(len(r["follow_ups"]))
                         for i, fq in enumerate(r["follow_ups"]):
-                            if fu_cols[i].button(f"💬 {fq}", key=f"fu_{id(msg)}_{i}", use_container_width=True):
-                                st.session_state["pending_q"] = fq
-                                st.rerun()
+                            if fc[i].button(f"💬 {fq}", key=f"fu_{id(msg)}_{i}", use_container_width=True):
+                                st.session_state.pending_q = fq; st.rerun()
 
-        # Input area
+        # Input
         st.markdown("---")
         with st.form("chat_form", clear_on_submit=True):
-            icol, bcol = st.columns([5, 1])
-            user_input = icol.text_input("Ask anything about CORENET X…",
-                                          label_visibility="collapsed",
-                                          placeholder="e.g. What does SCDF require at Design Gateway?")
-            submitted = bcol.form_submit_button("Send ➤", use_container_width=True, type="primary")
+            ic, bc = st.columns([5,1])
+            user_input = ic.text_input("Ask anything about CORENET X…", label_visibility="collapsed", placeholder="e.g. What does SCDF require at Design Gateway?")
+            submitted = bc.form_submit_button("Send ➤", use_container_width=True, type="primary")
 
-        # Handle pending question
-        pending = st.session_state.pop("pending_q", None)
-        if pending:
-            user_input = pending
-            submitted = True
+        pending = st.session_state.pending_q
+        if pending: user_input = pending; submitted = True; st.session_state.pending_q = None
 
         if submitted and user_input and user_input.strip():
-            question = user_input.strip()
-            st.session_state.messages.append({"role": "user", "content": question, "question": question})
+            q = user_input.strip()
+            st.session_state.messages.append({"role":"user","content":q,"question":q})
+            history = [{"role":m["role"],"content":m.get("content","")} for m in st.session_state.messages[:-1]]
 
-            history = [{"role": m["role"], "content": m.get("content", "")}
-                       for m in st.session_state.messages[:-1]]
+            with st.spinner("Searching documents…"):
+                chunks = get_relevant_chunks(q)
+                result = ask_claude(q, history, chunks)
 
-            with st.spinner("Searching official documents…"):
-                result = ask_claude(question, history)
-
+            chunks_label = ", ".join(set(f"{name} p.{c['page']}" for name, c in chunks)) if chunks else None
             st.session_state.messages.append({
-                "role": "assistant",
-                "content": result.get("answer", ""),
-                "data": result,
-                "question": question,
+                "role":"assistant","content":result.get("answer",""),
+                "data":result,"question":q,"chunks_used":chunks_label
             })
 
-            # Update stats
-            t = result.get("tier", "D")
+            t = result.get("tier","D")
             st.session_state.stats["asked"] += 1
-            if t == "A":
-                st.session_state.stats["resolved"] += 1
+            if t == "A": st.session_state.stats["resolved"] += 1
             else:
                 st.session_state.stats["pending"] += 1
-                # Add to review queue
                 st.session_state.review_queue.append({
-                    "question": question,
-                    "tier": t,
-                    "conf": result.get("confidence", 0),
-                    "answer": result.get("answer", ""),
-                    "sources": result.get("sources", []),
-                    "email": None,
-                    "timestamp": datetime.now().strftime("%d %b %Y %H:%M"),
-                    "reviewed": False,
-                    "officer_answer": "",
+                    "question":q,"tier":t,"conf":result.get("confidence",0),
+                    "answer":result.get("answer",""),"sources":result.get("sources",[]),
+                    "chunks_used":chunks_label,"email":None,
+                    "timestamp":datetime.now().strftime("%d %b %Y %H:%M"),
+                    "reviewed":False,"officer_answer":""
                 })
-
             st.rerun()
