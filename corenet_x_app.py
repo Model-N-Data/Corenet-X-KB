@@ -440,7 +440,7 @@ if st.session_state.role == "officer" and st.session_state.officer_authenticated
             with col_actions:
                 # Upload new PDF
                 uploaded_file = st.file_uploader(
-                    f"Upload PDF", type=["pdf"], key=f"upload_{doc['id']}",
+                    f"Upload PDF", type=["pdf"], key=f"upload_{i}_{doc['id']}",
                     label_visibility="collapsed"
                 )
                 if uploaded_file and not doc.get("processed"):
@@ -505,12 +505,17 @@ if st.session_state.role == "officer" and st.session_state.officer_authenticated
             nd_id = st.text_input("Short ID (no spaces, e.g. bca_circular_2026)")
             if st.form_submit_button("➕ Add document", type="primary"):
                 if nd_name and nd_id:
-                    new_doc = {"id": nd_id.replace(" ","_").lower(), "name": nd_name,
-                               "version": nd_ver, "pages": 0, "status": "active",
-                               "processed": False, "uploaded": None, "notes": nd_notes}
-                    registry["documents"].append(new_doc)
-                    save_registry(registry)
-                    st.success(f"Added '{nd_name}' — now upload the PDF above."); st.rerun()
+                    clean_id = nd_id.replace(" ","_").lower()
+                    existing_ids = [d["id"] for d in registry.get("documents", [])]
+                    if clean_id in existing_ids:
+                        st.error(f"ID '{clean_id}' already exists. Choose a different Short ID.")
+                    else:
+                        new_doc = {"id": clean_id, "name": nd_name,
+                                   "version": nd_ver, "pages": 0, "status": "active",
+                                   "processed": False, "uploaded": None, "notes": nd_notes}
+                        registry["documents"].append(new_doc)
+                        save_registry(registry)
+                        st.success(f"Added '{nd_name}' — now upload the PDF above."); st.rerun()
 
     # ── TAB 3: KB EDITOR ──────────────────────────────────────────────────────
     with tab3:
