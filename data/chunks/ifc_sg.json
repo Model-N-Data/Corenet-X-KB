@@ -1,0 +1,1127 @@
+[
+  {
+    "page": 1,
+    "text": "USER MANUAL FOR SUBMISSION PORTAL Version: 1.0 Date: 27 January 2026 1",
+    "chunk_id": "p1_c0"
+  },
+  {
+    "page": 2,
+    "text": "Go to Contents Page Change Log Version Date Updated Remarks 1.0 27 January 2026 First Release 2",
+    "chunk_id": "p2_c0"
+  },
+  {
+    "page": 3,
+    "text": "Go to Contents Page Contents Change Log .................................................................................................................................................................................... 2 1. Getting Started .................................................................................................................................................................... 8 1.1 What is the CORENET X Submission Portal? ........................................................................................................................... 8 1.2 Prerequisites ........................................................................................................................................................................ 9 1.3 User Roles in the CORENET X",
+    "chunk_id": "p3_c0"
+  },
+  {
+    "page": 3,
+    "text": ".................................................................. 9 1.3 User Roles in the CORENET X Submission Portal ................................................................................................................... 10 1.4 Understanding the Submission Workflow ............................................................................................................................. 11 2. Training Environment ......................................................................................................................................................... 12 2.1 What is the Training Environment?........................................................................................................................................ 12 2.2 Account registration for new ",
+    "chunk_id": "p3_c0"
+  },
+  {
+    "page": 3,
+    "text": "............................................................... 12 2.2 Account registration for new users ....................................................................................................................................... 13 2.3 Login and User Profile Management ..................................................................................................................................... 16 3. Login to Submission Portal ................................................................................................................................................ 20 3.1 Login as Business User via Singpass for Business .................................................................................................................. 20 3.2 Login as Individual User vi",
+    "chunk_id": "p3_c1"
+  },
+  {
+    "page": 3,
+    "text": "................................................................. 20 3.2 Login as Individual User via Singpass .................................................................................................................................... 22 3.3 Creating Your Profile (First-Time Login) ................................................................................................................................. 23 3.4 Updating Your Profile ........................................................................................................................................................... 26 3.5 Managing System Notifications ............................................................................................................................................ 27 4. Navigatin",
+    "chunk_id": "p3_c2"
+  },
+  {
+    "page": 3,
+    "text": ".................................................................................... 27 4. Navigating the Submission Dashboard (First-Time Login) ................................................................................................... 29 3",
+    "chunk_id": "p3_c3"
+  },
+  {
+    "page": 4,
+    "text": "Go to Contents Page 5. Managing Accounts ........................................................................................................................................................... 32 6. Managing Assistants ......................................................................................................................................................... 34 6.1 Adding Assistants ............................................................................................................................................................... 34 6.2 Removing Assistants ........................................................................................................................................................... 36 7. Creating a New Project ..........................",
+    "chunk_id": "p4_c0"
+  },
+  {
+    "page": 4,
+    "text": "............................................ 36 7. Creating a New Project ...................................................................................................................................................... 38 8. Managing your Project Team .............................................................................................................................................. 45 8.1 Adding Team Members ........................................................................................................................................................ 45 8.2 Removing Team Members .................................................................................................................................................... 52 8.3 Replacing the Project Coordinator ",
+    "chunk_id": "p4_c0"
+  },
+  {
+    "page": 4,
+    "text": ".......................................................... 52 8.3 Replacing the Project Coordinator ....................................................................................................................................... 53 8.4 Managing Developer Personnel ............................................................................................................................................ 54 9. Assigning Responsibilities and Appointing Team Members ................................................................................................ 58 9.1 Assign responsibilities to Team Members ............................................................................................................................. 58 9.2 Initiating appointments of Team Members .........",
+    "chunk_id": "p4_c1"
+  },
+  {
+    "page": 4,
+    "text": "........................................... 58 9.2 Initiating appointments of Team Members ............................................................................................................................ 61 10. Applying for a Pre-Submission Consultation ...................................................................................................................... 69 11. Submitting for Demolition ................................................................................................................................................. 77 11.1 Creating a Submission ........................................................................................................................................................ 77 11.2 Review Computation of Fees ..................",
+    "chunk_id": "p4_c2"
+  },
+  {
+    "page": 4,
+    "text": ".............................................. 77 11.2 Review Computation of Fees ............................................................................................................................................... 87 11.3 Making Declarations ........................................................................................................................................................... 88 4",
+    "chunk_id": "p4_c3"
+  },
+  {
+    "page": 5,
+    "text": "Go to Contents Page 12. Submitting for Design Gateway / Piling Gateway / Construction Gateway / Direct Submission Process ............................. 93 12.1 Creating a Submission ........................................................................................................................................................ 93 12.2 Adding Project Information ................................................................................................................................................ 102 12.3 Assigning Project Parties ................................................................................................................................................... 104 12.4 Uploading Files .............................................................................",
+    "chunk_id": "p5_c0"
+  },
+  {
+    "page": 5,
+    "text": "4 12.4 Uploading Files ................................................................................................................................................................. 106 12.5 Review Computation of Fees ............................................................................................................................................. 110 12.6 Making Declarations ......................................................................................................................................................... 111 12.7 Deleting a Submission before Processing ........................................................................................................................... 114 13. Making Payment for Submissions ..........................................",
+    "chunk_id": "p5_c0"
+  },
+  {
+    "page": 5,
+    "text": ".................. 114 13. Making Payment for Submissions .................................................................................................................................... 115 13.1 Choosing Mode of Payment ............................................................................................................................................... 115 13.2 Bank Transfer (for private sector clients) ............................................................................................................................. 118 13.3 Bank Transfer (for Government Procurement Entities (GPE) clients) ...................................................................................... 123 13.4 Credit Card.......................................................................",
+    "chunk_id": "p5_c1"
+  },
+  {
+    "page": 5,
+    "text": "........ 123 13.4 Credit Card....................................................................................................................................................................... 128 13.5 Ask someone else to pay ................................................................................................................................................... 130 13.6 Payment has been made earlier (for projects that have made separate arrangements with agencies) ...................................... 134 13.7 Make payment as guest ..................................................................................................................................................... 135 14. Tracking Submission Status...............................................................",
+    "chunk_id": "p5_c2"
+  },
+  {
+    "page": 5,
+    "text": ".. 135 14. Tracking Submission Status............................................................................................................................................. 137 14.1 Viewing Submission Status ................................................................................................................................................ 137 14.2 Withdrawing a Submission during Processing ..................................................................................................................... 138 5",
+    "chunk_id": "p5_c3"
+  },
+  {
+    "page": 6,
+    "text": "Go to Contents Page 15. Responding to Written Directions and Making Resubmissions ........................................................................................ 139 15.1 Downloading Written Directions ........................................................................................................................................ 139 15.2 Extending a Written Direction ............................................................................................................................................ 141 15.3 Initiating a Resubmission .................................................................................................................................................. 142 15.4 Amending uploaded files .........................................................",
+    "chunk_id": "p6_c0"
+  },
+  {
+    "page": 6,
+    "text": "......... 142 15.4 Amending uploaded files ................................................................................................................................................... 145 15.5 Making Declarations ......................................................................................................................................................... 148 16. Making Amendments after Submission Clearance .......................................................................................................... 149 16.1 Initiating Amendment ........................................................................................................................................................ 149 16.2 Making Declarations ......................................................",
+    "chunk_id": "p6_c0"
+  },
+  {
+    "page": 6,
+    "text": "................ 149 16.2 Making Declarations ......................................................................................................................................................... 153 17. Submitting Independent Submissions ............................................................................................................................. 155 17.1 Creating an Independent Submission ................................................................................................................................. 155 17.2 Making Declarations ......................................................................................................................................................... 162 18. Submitting Permit Application to carry out works .................",
+    "chunk_id": "p6_c1"
+  },
+  {
+    "page": 6,
+    "text": "......................... 162 18. Submitting Permit Application to carry out works ............................................................................................................ 165 18.1 Creating a Submission ...................................................................................................................................................... 165 18.2 Making Declarations ......................................................................................................................................................... 173 19. Applying for Waiver.......................................................................................................................................................... 178 19.1 Creating a Waiver Application ......................",
+    "chunk_id": "p6_c2"
+  },
+  {
+    "page": 6,
+    "text": "...................................... 178 19.1 Creating a Waiver Application ............................................................................................................................................ 178 19.2 Review Computation of Fees ............................................................................................................................................. 184 6",
+    "chunk_id": "p6_c3"
+  },
+  {
+    "page": 7,
+    "text": "Go to Contents Page 20. Submitting for Completion (TOP/CSC) ............................................................................................................................. 186 20.1 Booking Site Inspections ................................................................................................................................................... 187 20.2 Checking Required Technical Clearances ........................................................................................................................... 189 20.3 Obtaining Required Technical Clearances .......................................................................................................................... 190 20.4 Certificate of Supervision and As-Built .......................................",
+    "chunk_id": "p7_c0"
+  },
+  {
+    "page": 7,
+    "text": "........... 190 20.4 Certificate of Supervision and As-Built ............................................................................................................................... 192 20.5 Completion of Structural Works ......................................................................................................................................... 193 20.6 Apply for final TOP / CSC ................................................................................................................................................... 195 21. Accessing Approved Plans............................................................................................................................................... 196 21.1 Verifying approved plans using checksum .........................",
+    "chunk_id": "p7_c0"
+  },
+  {
+    "page": 7,
+    "text": "......................... 196 21.1 Verifying approved plans using checksum .......................................................................................................................... 200 7",
+    "chunk_id": "p7_c1"
+  },
+  {
+    "page": 8,
+    "text": "Go to Contents Page 1. Getting Started 1.1 What is the CORENET X Submission Portal? • The Submission Portal will replace CORENET 2.0 as the platform to make submissions to agencies for approvals. • The Submission Portal is a web- based front-facing portal that industry practitioners and their assistants interact with to make submissions. • It is developed through agile methodology that progressively delivers new features and improvements to enhance the system. • The system is designed with users at its core, intended for a guided submission process. 8",
+    "chunk_id": "p8_c0"
+  },
+  {
+    "page": 9,
+    "text": "Go to Contents Page 1.2 Prerequisites Please check that you have fulfilled the following requirements in order to access the Submission Portal: • You have a Singpass Account. • If you are a Business user representing an organisation (i.e., Developer, Consultant, Builder, etc.), you should log in using Singpass for Business (Corppass). Your company's Corppass administrator will need to authorise you to access the e-service ‘CORENET X Industry Portal’ so that you may access the CORENET X Submission Portal. For more information on Corpass, please visit https://www.corppass.gov.sg/portal. 9",
+    "chunk_id": "p9_c0"
+  },
+  {
+    "page": 10,
+    "text": "Go to Contents Page 1.3 User Roles in the CORENET X Submission Portal There are two key system roles in CORENET X – the Project Coordinator and the Submission Coordinator. System Role Description Key Responsibilities Project This role is usually • Create the project in Submission Portal Coordinator assumed by the overall • Add/remove project members lead Qualified Person (QP) Submission This role is assumed by • Create joint submission, including selecting sections and schemes Coordinator the QP who initiates the • Assign project party to respective sections (for joint joint submission. • Initiate declaration for joint submissions (after all project parties have submissions only) completed respective sections) The project members who can be added by the Project Coordinator are listed below",
+    "chunk_id": "p10_c0"
+  },
+  {
+    "page": 10,
+    "text": "espective sections) The project members who can be added by the Project Coordinator are listed below. They can also assign assistants who can perform their duties on their behalf. • Developer • Professional • Specialist • Registered Inspector • Resident Technical (Organisation) Engineer Accredited Checker (A) Officer (C&S) • Developer (Mechanical) • Specialist • Registered Inspector • Resident Technical (Individual) • Fire Safety Engineer Professional (M&E) Officer (M&E) Architect • Registered Surveyor Engineer (Lift and • Resident Engineer • Transport Consultant • Professional • Accredited Checker Escalator) (C&S) Other member Engineer (Chemical) • Licensed Builder • Specialist • Resident Engineer (viewing rights only) • Professional • Licensed Specialist Professional (M&E) Engineer (Civi",
+    "chunk_id": "p10_c0"
+  },
+  {
+    "page": 10,
+    "text": "ngineer (viewing rights only) • Professional • Licensed Specialist Professional (M&E) Engineer (Civil) Builder Engineer • Professional • Licensed Plumber (Geotechnical) Engineer (Electrical) 10",
+    "chunk_id": "p10_c1"
+  },
+  {
+    "page": 11,
+    "text": "Go to Contents Page 1.4 Understanding the Submission Workflow A typical Project Team’s Submission Workflow is shown below. Please refer to the Code of Practice for more information. 1. Create Project in Submission Portal (Refer to Section 7) 2. Carry out Pre-submission Consultations (Refer to Section 10) Note: 1. At each gateway submission, payment 3. Submit for Demolition (if applicable) must be made and processed in full (Refer to Section 11) for agencies to start processing the submission (refer to Section 13) 4. Submit for Design Gateway 4. Submit for Direct Submission 2. After each gateway submission: (Refer to Section 12) Process (Refer to Section 12) • Track the status of your submission (refer to Section 14) 4.1. Submit for Piling Gateway • Make resubmissions to respond (optional) ",
+    "chunk_id": "p11_c0"
+  },
+  {
+    "page": 11,
+    "text": "ion (refer to Section 14) 4.1. Submit for Piling Gateway • Make resubmissions to respond (optional) (Refer to Section 12) to Written Direction (refer to Section 15) 5. Submit Independent Submissions • Make amendment submissions (Refer to Section 17) after clearance if needed (refer to Section 16) 6. Submit for Construction Gateway 3. Apply for waivers (refer to Section 19) (Refer to Section 12) 7. Completion Gateway (TOP) (Refer to Section 20) 11",
+    "chunk_id": "p11_c0"
+  },
+  {
+    "page": 12,
+    "text": "Go to Contents Page 2. Training Environment 2.1 What is the Training Environment? All users are strongly encouraged to try out the training environment before making a formal submission. The training environment replicates the CORENET X Submission Portal and allows you to explore the Portal's interface, functions and submission forms, before you make a formal submission. Everyone may access the training environment at https://training.corenet.gov.sg/ Click here to access our guide to the training environment. Note: Please note that the training environment is intended for function exploration and process familiarization, not for real project submissions. Some features may be unavailable. 12",
+    "chunk_id": "p12_c0"
+  },
+  {
+    "page": 13,
+    "text": "Go to Contents Page 2.2 Account registration for new users 1. All new users must sign up for an account. 2. Access the landing page at: https://training.corenet.gov.sg/ 3. Click on “Login”. 13",
+    "chunk_id": "p13_c0"
+  },
+  {
+    "page": 14,
+    "text": "Go to Contents Page 4. If you do not have an account, please click on the “Sign up” button to create one. 14",
+    "chunk_id": "p14_c0"
+  },
+  {
+    "page": 15,
+    "text": "Go to Contents Page 5. Fill in your name, firm UEN, and firm name. 6. Select your role from the drop- down list – indicate “others” if your role is not listed. 7. You must provide an email address for verification purposes every time you log in. A One-Time Password (OTP) will be sent to your indicated email address. 8. Key in the OTP and click on “Verify and sign up” to complete the account registration process. 15",
+    "chunk_id": "p15_c0"
+  },
+  {
+    "page": 16,
+    "text": "Go to Contents Page 2.3 Login and User Profile Management 1. Go to the landing page at: https://training.corenet.gov.sg / 2. Click on “Login”. 16",
+    "chunk_id": "p16_c0"
+  },
+  {
+    "page": 17,
+    "text": "Go to Contents Page 3. Key in the email address you have provided during registration. 4. An OTP will be sent to your email address. 5. Key in the OTP and click on “Verify and log in”. 17",
+    "chunk_id": "p17_c0"
+  },
+  {
+    "page": 18,
+    "text": "Go to Contents Page 6. Upon receiving the OTP and successfully logging in, you will see the training environment interface. 7. If you are logging in for the first time, you will see a few mock profiles such as Architect, Professional Engineer and Builder. 8. You may try out the different profiles by clicking on “use profile”. 9. You may also generate new profiles for other project parties (e.g., Fire Safety If you are logging in for the first time, the names will not be populated yet. For example: Engineer, Resident Engineer) by clicking on “Generate new profile”. 18",
+    "chunk_id": "p18_c0"
+  },
+  {
+    "page": 19,
+    "text": "Go to Contents Page 10. After clicking on “use profile”, a pop-up window will appear to inform that you are entering the training environment with the selected profile. 11. Click on “Proceed”. 12. If you have selected the mock profile for the first time, you will be prompted to create a mock profile. This page mirrors the process of setting up your profile in the actual Submission Portal (see Section 3.3). 13. After filling in this form, you may complete setting up the mock profile by clicking on “Create profile”. Tip: Users are recommended to create profiles for different project roles to try out the different functionalities. 14. You may refer to the recording of our webinar in the Training Environment here. 19",
+    "chunk_id": "p19_c0"
+  },
+  {
+    "page": 20,
+    "text": "Go to Contents Page 3. Login to Submission Portal 3.1 Login as Business User via Singpass for Business All users are required to login to the CORENET X Submission Portal via Singpass: https://portal.corenet.gov.sg/. Developers and licensed builders are required to log in through Singpass for Business. It is strongly encouraged for all other project members to do the same unless they are providing services in a personal capacity. 1. Click on the “Login via Singpass” button. Note: Do ensure all project members using SingPass for Business are authorised to access the Submission Portal (refer to Section 1.2 for steps to set up Singpass for Business). 20",
+    "chunk_id": "p20_c0"
+  },
+  {
+    "page": 21,
+    "text": "Go to Contents Page 2. Click on “Log in as Business”. 3. For users registered under multiple CorpPass entities, you will be prompted to select the appropriate company on whose behalf you are logging in. Ensure that you choose the correct company to make or assist with submissions. 21",
+    "chunk_id": "p21_c0"
+  },
+  {
+    "page": 22,
+    "text": "Go to Contents Page 3.2 Login as Individual User via Singpass 1. Click on the “Login via Singpass” button. 2. If you are logging in as an individual (e.g., individual developer), please click on “Log in as an individual” 22",
+    "chunk_id": "p22_c0"
+  },
+  {
+    "page": 23,
+    "text": "Go to Contents Page 3.3 Creating Your Profile (First-Time Login) Creating your profile (action by new users) 1. If you are logging in for the first time, you will be brought to the “Create my profile” page to create a profile. 2. You are encouraged to select “Retrieve Myinfo” to ensure the most accurate details are extracted in your preparation for submission. 3. Your particulars will be auto populated. 23",
+    "chunk_id": "p23_c0"
+  },
+  {
+    "page": 25,
+    "text": "Go to Contents Page 4. You may specify your preferred primary email address to receive notifications for your projects. Tip: If you have a project- specific email address, you may customise through your project member details within the specific project workspace. This can only be done by the individual users. If no project-specific email address is specified, the project notifications will be sent to the primary email address. 5. After filling in all the details, click on “Create profile” to finish setting up your profile. 25",
+    "chunk_id": "p25_c0"
+  },
+  {
+    "page": 26,
+    "text": "Go to Contents Page 3.4 Updating Your Profile 1. Users may update their profile details any time after creating their profile. 2. Go to the “My projects” workspace. Your projects will be shown here. 3. Click on the top right icon and click on “My profile” to access your profile page. 4. You may proceed to update your profile details. 26",
+    "chunk_id": "p26_c0"
+  },
+  {
+    "page": 27,
+    "text": "Go to Contents Page 3.5 Managing System Notifications 1. The primary email is where system notifications will be sent. 2. Go to your profile page by following the steps in Section 3.4. 27",
+    "chunk_id": "p27_c0"
+  },
+  {
+    "page": 28,
+    "text": "Go to Contents Page 3. Notifications are also accessible through the bell icon, which collates the items that are pending your action e.g. declaration, appointment which you may access directly through the link provided 28",
+    "chunk_id": "p28_c0"
+  },
+  {
+    "page": 29,
+    "text": "Go to Contents Page 4. Navigating the Submission Dashboard (First-Time Login) Home Page – “Welcome back!” Page 1. If you are logging in for the first time and have created your profile, you will be directed to the home page. 2. This will be the default landing page that you will be directed to when you login subsequently. 3. The homepage shows all the outstanding items requiring your attention, across all projects you are involved in. 29",
+    "chunk_id": "p29_c0"
+  },
+  {
+    "page": 30,
+    "text": "Go to Contents Page “My projects” page 4. You can also navigate to the “My projects” page by clicking on the second icon on the bar on the left-hand side. 5. This page will list all of your projects in CORENET X. “My payments” page 6. You can also navigate to the “My payments” page by clicking on the second icon on the bar on the left-hand side. 7. This page allows you to search and make payment for a submission. 30",
+    "chunk_id": "p30_c0"
+  },
+  {
+    "page": 31,
+    "text": "Go to Contents Page Checking Notifications 8. Click on the bell icon to check if you have any latest notifications. Managing your profile, managing your accounts, managing assistants & logging out 9. To update your profile, manage project accounts, add or remove assistants, or logout, click on the face icon on the top right corner of the webpage. 10. Select the appropriate button. 31",
+    "chunk_id": "p31_c0"
+  },
+  {
+    "page": 32,
+    "text": "Go to Contents Page 5. Managing Accounts 1. Under “My projects”, click on the top right icon and click on “Manage accounts”. 2. Users will be able to manage switch their account type (Singpass as individual or Singpass as Business) for each project 3. All users should use Singpass as Business unless acting in your individual capacity as a registered QP, or as an individual owner (Developer individual). 32",
+    "chunk_id": "p32_c0"
+  },
+  {
+    "page": 33,
+    "text": "Go to Contents Page 4. Users can select the available Singpass account for their projects accordingly. 33",
+    "chunk_id": "p33_c0"
+  },
+  {
+    "page": 34,
+    "text": "Go to Contents Page 6. Managing Assistants 6.1 Adding Assistants 5. Under “My projects”, click on the top right icon and click on “Manage assistants”. Note: All users may assign assistants. An assistant may create projects (if applicable) and prepare submissions on your behalf. However, an assistant is not allowed to make any submission. 6. Your existing assistants will be shown here. 7. To add a new assistant, click on “Add assistant”. 34",
+    "chunk_id": "p34_c0"
+  },
+  {
+    "page": 35,
+    "text": "Go to Contents Page 8. Fill in all fields – name, full NRIC/FIN No. and email. Note: The email must be specified correctly as the assistant will be receiving your request through this email. 9. Select the type of access rights. Tip: If you have one assistant who assists with all your projects, you can select “Assistant can edit all projects under me” 10. Click on “Add assistant” to complete the process. 35",
+    "chunk_id": "p35_c0"
+  },
+  {
+    "page": 36,
+    "text": "Go to Contents Page 6.2 Removing Assistants 1. Under “My projects”, click on the top right icon and click on “Manage assistants”. 2. Your existing assistants will be shown here. 3. To remove an existing assistant or change their access rights, click on “View”. 36",
+    "chunk_id": "p36_c0"
+  },
+  {
+    "page": 37,
+    "text": "Go to Contents Page 4. Click on “remove assistant” to remove the existing assistant. 5. Click on “Edit” to amend existing access rights. 37",
+    "chunk_id": "p37_c0"
+  },
+  {
+    "page": 38,
+    "text": "Go to Contents Page 7. Creating a New Project 1. After logging in, click on “Create project”. Note: Only Qualified Persons (QPs) or assistants of QPs can create a project. 38",
+    "chunk_id": "p38_c0"
+  },
+  {
+    "page": 39,
+    "text": "Go to Contents Page 2. You have two options: • Create a project for yourself (if you are the project coordinator) OR • Create a project for others (if you are an assistant). 3. After you have selected the correct option, click “Next”. 39",
+    "chunk_id": "p39_c0"
+  },
+  {
+    "page": 40,
+    "text": "Go to Contents Page Input Project Details 4. You will take on the role of “Project Coordinator” in the system. 5. Fill in your project details. 6. Indicate the type of development and building works by selecting the appropriate option. Note: This selection determines the project submission process, either Direct Submission Process (DSP) or the Gateway Process. Tip: Click on “Find out more about development type” to know which typology your development falls under. 40",
+    "chunk_id": "p40_c0"
+  },
+  {
+    "page": 41,
+    "text": "Go to Contents Page 7. Input your project title. This title is editable even after the project is created. 8. Click on “Next” to enter your project address. 41",
+    "chunk_id": "p41_c0"
+  },
+  {
+    "page": 42,
+    "text": "Go to Contents Page Indicate Project Address 9. Fill in the project details. Note: • All projects should have a Mukim/TS lot number. If your project does not have one, you may click “no”. This only applies to special projects where land lot numbers have yet to be allocated by SLA. • For the formatted address, key in the postal code and click on “retrieve” to auto-populate your address details. • If you lack a specific project address, you can select a site 42",
+    "chunk_id": "p42_c0"
+  },
+  {
+    "page": 43,
+    "text": "Go to Contents Page description with a simple name. 10. Click on “Next”. Review Information 11. Review all information, including the development type and building works as this will determine whether your project falls under the Gateway Process or Direct Submission Process. 12. Ensure that the project coordinator’s information is correct as well. 13. After verifying the information, click on “Create Project”. 43",
+    "chunk_id": "p43_c0"
+  },
+  {
+    "page": 44,
+    "text": "Go to Contents Page Project Overview 14. The project is now created. 15. A project reference number is automatically generated by the system. There is no need for manual input of project reference number which is currently the case in CORENET 2.0. 16. You may now proceed to add project members – follow the steps in Section 8. 44",
+    "chunk_id": "p44_c0"
+  },
+  {
+    "page": 45,
+    "text": "Go to Contents Page 8. Managing your Project Team 8.1 Adding Team Members Adding Members (action by Project Coordinator or Project Coordinator Assistant) 1. Go to the “Project overview” page. 2. Click on the “Project Members” button. Note: Only project coordinators or their assistants can add and remove members. Tip: Alternatively, if no members have been added yet (as per this screenshot), you can click on “Add” beside the “Add project member” milestone. 45",
+    "chunk_id": "p45_c0"
+  },
+  {
+    "page": 46,
+    "text": "Go to Contents Page 3. You will be able to view the list of project members that you have added. 4. To add a new member, click on “Add member”. 46",
+    "chunk_id": "p46_c0"
+  },
+  {
+    "page": 47,
+    "text": "Go to Contents Page (1) Adding the Developer (Organisation) 5. If the Developer is an organisation, select “Developer (Organisation)” under Role. Note: You may add multiple developers (if applicable). 6. Indicate the UEN. Ensure that this UEN is accurate. 7. For Developer (organisation), you will need to indicate 1 main acting personnel. Tip: You can add secondary developer personnel by clicking on “Add additional personnel”. You may add up to 2 secondary developer personnel. These secondary developer personnel will have the same access rights as the main acting personnel. 8. Click on “Add member”. 47",
+    "chunk_id": "p47_c0"
+  },
+  {
+    "page": 48,
+    "text": "Go to Contents Page (2) Adding the Developer (Individual) 9. If the Developer is an individual e.g., house owner, select “Developer (Individual)” under Role. Note: You may add multiple developers (if applicable). 10. Key in the other details. 11. Click on “Add member”. 48",
+    "chunk_id": "p48_c0"
+  },
+  {
+    "page": 49,
+    "text": "Go to Contents Page (3) Adding a Qualified Person 12. To add a QP, select their role from the list and enter their registration number (for QPs). 13. Input the email address of the QP. Ensure this email is accurate as your request to add the member will be sent to this email address and the member must accept this request through email. 14. A green tick indicates that the added professional has a valid licence under the relevant Board/Registry. 15. Input the member’s name as per NRIC/FIN, last four digits of their NRIC/FIN and email address. This name is important as it will be reflected in the approval letters issued by agencies. 16. Click on “Add member”. 49",
+    "chunk_id": "p49_c0"
+  },
+  {
+    "page": 50,
+    "text": "Go to Contents Page 17. Follow the same steps above to add other project personnel. 18. Once you have added the new member, an email will be sent to the new member’s specified email address. 19. Please inform the new Email sent to added project member to confirm their addition to the project team: member to accept the email invitation. The new member needs to click on “confirm addition” button in the email invite. Until then, their status will be reflected as “email invite sent”. 50",
+    "chunk_id": "p50_c0"
+  },
+  {
+    "page": 51,
+    "text": "Go to Contents Page 20. Once the new member has accepted the email invitation, their status will be updated accordingly. • When a Developer accepts the invitation, his status will be updated to “Added”. • When a Qualified Person has accepted the invitation, his status will be updated to “Pending responsibility”. 21. For members whose status are reflected as “pending responsibility”, you will need to assign responsibility – refer to Section 9 for the steps. 51",
+    "chunk_id": "p51_c0"
+  },
+  {
+    "page": 52,
+    "text": "Go to Contents Page 8.2 Removing Team Members 1. Project coordinators / assistants can remove members, subject to authorisation by the developer or builder. 2. Go the “project members” page and “view” the member to be removed. 3. At the member information page, click on “remove member”. 4. If the project member was appointed by the developer / builder, an email will be sent to the developer / builder to confirm the removal. Note: Removed members will no longer be able to make or continue submissions except for submission of documents. However, they will retain “view only” rights for 10 working days to provide the necessary handover documents as required by agencies through the “Independent Submission”, “Submission of Documents” before they are removed from the project entirely. 52",
+    "chunk_id": "p52_c0"
+  },
+  {
+    "page": 52,
+    "text": "ubmission”, “Submission of Documents” before they are removed from the project entirely. 52",
+    "chunk_id": "p52_c0"
+  },
+  {
+    "page": 53,
+    "text": "Go to Contents Page 8.3 Replacing the Project Coordinator 1. Project coordinators (PC) can leave and replace themselves if needed. 2. Go the “project members” page and “view” the project coordinator’s member information. 3. Click on “Leave and replace”. Note: • A PC cannot leave without a replacement. • The replacement of PC may only proceed with authorisation by the developer or builder (whoever appointed the PC). • When this replacement is confirmed, the PC and PC assistants' access to this project will be removed after 10 working days. 53",
+    "chunk_id": "p53_c0"
+  },
+  {
+    "page": 54,
+    "text": "Go to Contents Page 8.4 Managing Developer Personnel 1. Go the “project members” page. 2. Click on “view firm information”. Developer firms will have at least one main personnel. 3. To add / remove secondary developer personnel, proceed with step 5. 4. To replace main or secondary developer personnel, skip to step 8. Note: Only the Project Coordinator / assistant can add / remove / replace personnel. 54",
+    "chunk_id": "p54_c0"
+  },
+  {
+    "page": 55,
+    "text": "Go to Contents Page Adding secondary personnel 5. Click on “Add secondary personnel” Note: Similar to existing developer personnel, the added personnel must also be added into their organisation’s Corppass to be given access. 6. Fill in the personnel’s details. An email will be sent to the added secondary personnel. The secondary personnel must confirm his addition via email before he or she is successfully added. 55",
+    "chunk_id": "p55_c0"
+  },
+  {
+    "page": 56,
+    "text": "Go to Contents Page Removing secondary personnel 7. Click on “Remove” Note: An email notification will be sent to the secondary personnel who was removed. 56",
+    "chunk_id": "p56_c0"
+  },
+  {
+    "page": 57,
+    "text": "Go to Contents Page Replacing main / secondary personnel 8. Click the “Replace” button beside the name of the personnel to be replaced. 9. On the next page, select the personnel to be replaced. 10. Review replacement details and click “next” to confirm. Note: If the added personnel is currently not part of the project, he / she will be required to accept addition to the project to complete the replacement process. Until then, the personnel who is replaced will still be allowed to access the project functions. 57",
+    "chunk_id": "p57_c0"
+  },
+  {
+    "page": 58,
+    "text": "Go to Contents Page 9. Assigning Responsibilities and Appointing Team Members 9.1 Assign responsibilities to Team Members 1. For members whose statuses are shown as “pending responsibility”, you will need to assign them their responsibilities. Note: This will determine the type of submissions the respective member is responsible for. With this, only the competent QP of the acceptable discipline will be able to create and submit for the specific submission e.g. Only a PE (Civil) appointed for BCA’s Structural submissions will be able to create and submit for the ST submission. 2. Go to the “Project members” page. 3. Click on “Add responsibility”. 58",
+    "chunk_id": "p58_c0"
+  },
+  {
+    "page": 59,
+    "text": "Go to Contents Page 4. For each Qualified Person/Professional, select their responsibilities under the specified agencies. 5. You may refer to this link for the roles and responsibilities each project member may undertake. Note: The CORENET X system has digitalised the appointment process, eliminating the traditional appointment process done on paper. 59",
+    "chunk_id": "p59_c0"
+  },
+  {
+    "page": 60,
+    "text": "Go to Contents Page 6. For a QP, responsibilities can be filtered and assigned for relevant agencies. 7. Ensure that all information is accurate before clicking “save”. 8. After this step, the project coordinator / assistant will need proceed to initiate appointment so that the developer may appoint the QP (refer to Section 9.2). Note: Project members who are involved in providing inputs to the submissions need to be appointed to be able to create or access the relevant form e.g. PE (Civil) needs to be appointed to be able to create Independent structural and permit application to BCA. This applies to all submissions except for pre-submission consultation. 60",
+    "chunk_id": "p60_c0"
+  },
+  {
+    "page": 61,
+    "text": "Go to Contents Page 9.2 Initiating appointments of Team Members Initiate Appointment (action by Project Coordinator / Project Coordinator assistant) 1. After assigning the responsibilities to the team members, return to the project members’ page. 2. Scroll down to the list of project members. 3. If a project member has been assigned responsibilities but has not been appointed by the developer, their status will be shown as “pending appointment”. 4. Initiate appointment by clicking on “Send appointment request”. 61",
+    "chunk_id": "p61_c0"
+  },
+  {
+    "page": 62,
+    "text": "Go to Contents Page 5. You will be directed to the “Manage appointments” page. This page allows the digital management of appointments and can only be accessed by the Project Coordinator or Project Coordinator assistant, who must initiate an appointment request with the developer or licensed builder. 6. Select all personnel for which appointment is to be initiated. Each appointment request can only be sent to one party (developer or licensed builder). 7. Click on “Send appointment request”. 62",
+    "chunk_id": "p62_c0"
+  },
+  {
+    "page": 63,
+    "text": "Go to Contents Page 8. Choose whether the members are to be appointed by the developer or the licensed builder. Note: • Please ensure that the developer / licensed builder has been added to the project and has also accepted the email invite before this step. • If the members are to be appointed by the licensed builder, the licensed builder must be appointed before their name appears in the drop- down list. 63",
+    "chunk_id": "p63_c0"
+  },
+  {
+    "page": 64,
+    "text": "Go to Contents Page 9. You will see the members that need to be appointed, categorised by agency. 10. You may select multiple members to be appointed by the appointing party. Select the members by clicking on the checkbox. Tip: All members will be selected by default. By selecting multiple members, this allows the appointing party to authorise the multiple appointments in a single click. 11. Click “Send” to send the appointment request via email to the developer. 12. Inform the developer / licensed builder to authorise the appointments – they can either check their email for the link or log in to the portal and go to the bell notifications. 64",
+    "chunk_id": "p64_c0"
+  },
+  {
+    "page": 65,
+    "text": "Go to Contents Page Email received by developer: Appoint members (action by developer / licensed builder) 13. The appointer (developer / licensed builder) would receive an email and bell notification on the portal to appoint the selected members. Clicking the link would bring them to the member appointment page. Bell notification on developer’s submission portal page: 65",
+    "chunk_id": "p65_c0"
+  },
+  {
+    "page": 66,
+    "text": "Go to Contents Page 14. The developer is to select the members to be appointed. 15. Click on “Appoint selected members”. 66",
+    "chunk_id": "p66_c0"
+  },
+  {
+    "page": 67,
+    "text": "Go to Contents Page 16. All the responsibilities pending appointment will be selected by default. Uncheck any responsibilities selected where applicable. 17. Click “Confirm” to confirm appointment. 67",
+    "chunk_id": "p67_c0"
+  },
+  {
+    "page": 68,
+    "text": "Go to Contents Page 18. If the members are successfully appointed, their status will be reflected as “Appointed” under the Project members page. 68",
+    "chunk_id": "p68_c0"
+  },
+  {
+    "page": 69,
+    "text": "Go to Contents Page 10. Applying for a Pre-Submission Consultation 1. Go to the “Project Overview” page. 2. Click on “Submission Workspace” to initiate a submission. 69",
+    "chunk_id": "p69_c0"
+  },
+  {
+    "page": 70,
+    "text": "Go to Contents Page 3. The submission workspace dashboard reflects the stage your project is at. Note: In this example, we are at the Design Gateway (DG) 4. Click on “Create Submission”. Note: If no submissions have been made, any member can proceed to create one. 70",
+    "chunk_id": "p70_c0"
+  },
+  {
+    "page": 71,
+    "text": "Go to Contents Page 5. Select “Pre-submission consultation”. 6. Select the submission type, agency and category. Note: The project member creating this submission will be assigned the role of Submission Coordinator for this pre-submission consultation. 7. Click “Next” 71",
+    "chunk_id": "p71_c0"
+  },
+  {
+    "page": 72,
+    "text": "Go to Contents Page 8. Review submission details and click “Create”. Note: Only the submission coordinator and his or her assistant can edit and submit this submission. 72",
+    "chunk_id": "p72_c0"
+  },
+  {
+    "page": 73,
+    "text": "Go to Contents Page 9. A pre-submission consultation will be created. At the start, its submission status will be reflected as “draft”. 10. The Submission Coordinator can click on “Edit” to fill in the details and upload documents. 73",
+    "chunk_id": "p73_c0"
+  },
+  {
+    "page": 74,
+    "text": "Go to Contents Page Completing the Pre-Submission Consultation Form 11. The assigned QP can click on the “Details” section to fill in the details and upload required documents. 12. It is recommended for users to “save section as draft” to prevent data loss. 13. Once this section is finalised, click on “Review section”. Payment and Fees 14. No fees are to be paid. 74",
+    "chunk_id": "p74_c0"
+  },
+  {
+    "page": 75,
+    "text": "Go to Contents Page After Submission 15. Upon successful submission, the status will be reflected as “Submitted”. 75",
+    "chunk_id": "p75_c0"
+  },
+  {
+    "page": 76,
+    "text": "Go to Contents Page After Issuance of Agency Response 16. You will be notified via email when a response has been issued. 17. The submission status will now be reflected as “Response issued”. 18. You may download the agency responses by clicking on “View Responses”. 76",
+    "chunk_id": "p76_c0"
+  },
+  {
+    "page": 77,
+    "text": "Go to Contents Page 11. Submitting for Demolition 11.1 Creating a Submission 1. An application for full demolition can be made before main application for new proposed works. This is to support projects that plan to commence demolition works prior to firming up the inputs and details for the proposed new works. This submission will be routed to BCA and URA for joint processing. Demolition application fees will apply for both agencies. 2. This application can also be made after the main application has been approved. If a valid URA clearance has already been obtained through the main application (Design Gateway/ Direct Submission Process), application to URA in this “Demolition application” is not 77",
+    "chunk_id": "p77_c0"
+  },
+  {
+    "page": 78,
+    "text": "Go to Contents Page required again. URA need not be selected under the list of applicable agencies under this submission (see item 10). 3. Go to the “Project Overview” page. 4. Click on “Submission Workspace”. 5. Click on “Create submission”. 78",
+    "chunk_id": "p78_c0"
+  },
+  {
+    "page": 79,
+    "text": "Go to Contents Page 6. Select “Plan application”. 7. Under Submission, select “Full demolition application”. 8. Click “Next”. 79",
+    "chunk_id": "p79_c0"
+  },
+  {
+    "page": 80,
+    "text": "Go to Contents Page 9. Review the information and click “Next”. 80",
+    "chunk_id": "p80_c0"
+  },
+  {
+    "page": 81,
+    "text": "Go to Contents Page 10. Select sections required for approval – see item 2 for more information. 11. Review information and click on “Create Submission”. 81",
+    "chunk_id": "p81_c0"
+  },
+  {
+    "page": 82,
+    "text": "Go to Contents Page 12. Click “Edit” to fill in the application form. 82",
+    "chunk_id": "p82_c0"
+  },
+  {
+    "page": 83,
+    "text": "Go to Contents Page Input Demolition Information (action by Project Coordinator / Assistant) 13. Click on the “Demolition Information” section and fill in the particulars. Ensure that these details are accurate as they would be used to generate the fees applicable to demolition (to both URA and BCA). 83",
+    "chunk_id": "p83_c0"
+  },
+  {
+    "page": 84,
+    "text": "Go to Contents Page 14. Add blocks to be demolished. 15. If all inputs are in order, click on “Review section” to lock the inputs for review. 84",
+    "chunk_id": "p84_c0"
+  },
+  {
+    "page": 85,
+    "text": "Go to Contents Page Input planning parameters section (action by QP appointed for URA responsibilities) 16. Input the planning parameters 85",
+    "chunk_id": "p85_c0"
+  },
+  {
+    "page": 86,
+    "text": "Go to Contents Page Input Building Control section (action by QP appointed for BCA structural works responsibilities for demolition) 17. Complete the form. 86",
+    "chunk_id": "p86_c0"
+  },
+  {
+    "page": 87,
+    "text": "Go to Contents Page 11.2 Review Computation of Fees Review Fees for Demolition Application 1. Select the “Fee computation” tab. Note: All project members including developers can view the expected plan fee payment. Please note that the fees will be updated as the QPs fill in the form in the various subsections. The final accurate fee will be displayed when all the related fields are filled in under the “ready to review” mode. 2. When the submission has been declared and is in “pending payment” stage, the entry point for fees payable to each agency will be shown in the submission workspace Payment is to be made to each individual agency separately. 87",
+    "chunk_id": "p87_c0"
+  },
+  {
+    "page": 88,
+    "text": "Go to Contents Page 11.3 Making Declarations Proceed to Declarations (action by Project Coordinator / Project Coordinator Assistant) 1. A green tick will appear beside completed sections. Note: Project Coordinator / Assistant will receive notifications when a section is completed as well. 2. After all sections in a form have been completed by all assigned QPs, the Project Coordinator is to trigger declaration for all QPs by clicking on “Proceed to declaration by QP(s)”. Note: While assigned project parties can prepare their respective sections concurrently, they are not allowed to declare for their respective sections until all inputs are completed. This is to ensure that all parties are declaring on the same set of finalised inputs for proper accountability. 88",
+    "chunk_id": "p88_c0"
+  },
+  {
+    "page": 88,
+    "text": "laring on the same set of finalised inputs for proper accountability. 88",
+    "chunk_id": "p88_c0"
+  },
+  {
+    "page": 89,
+    "text": "Go to Contents Page 3. The status of the submission in the “Submission Workspace” will be updated to “Pending declaration”. 4. An email will be sent to all Qualified Persons to inform them to make their declarations (see step 6). 5. Project Coordinators / Assistants can track the declarations by viewing the status of the individual sections. Note: If revisions are needed, the project coordinator can click on the “Revert submission to draft” button to return the submission to draft status for necessary edits. 89",
+    "chunk_id": "p89_c0"
+  },
+  {
+    "page": 90,
+    "text": "Go to Contents Page Submit Declarations (by assigned Project Parties) 6. As the assigned project party, review all information and proceed by clicking on “Declare for submission”. 90",
+    "chunk_id": "p90_c0"
+  },
+  {
+    "page": 91,
+    "text": "Go to Contents Page 7. The QP will be brought to the declaration page. Click on “Declare and Submit”. 91",
+    "chunk_id": "p91_c0"
+  },
+  {
+    "page": 92,
+    "text": "Go to Contents Page 8. After all QPs have made their declarations, the submission status will be updated to “Pending Payment”. 9. Proceed to make payment by following the steps in Section 13. 92",
+    "chunk_id": "p92_c0"
+  },
+  {
+    "page": 93,
+    "text": "Go to Contents Page 12. Submitting for Design Gateway / Piling Gateway / Construction Gateway / Direct Submission Process 12.1 Creating a Submission 1. Go to the “Project Overview” page. 2. Click on “Submission Workspace” to initiate a submission. 3. The submission workspace dashboard reflects the stage your project is at. Note: In this example, we are at the Design Gateway (DG) 4. Click on “Create Submission”. Note: If no submissions have been made, any member can proceed to create one. 93",
+    "chunk_id": "p93_c0"
+  },
+  {
+    "page": 94,
+    "text": "Go to Contents Page If your project is going through the Gateway Process, these are the options you will see: 5. Select “Plan application”. 6. Select the correct submission type. Note: The project member creating this submission will be assigned the role of Submission Coordinator for this submission. 7. Click “Next”. If your project is going through the Direct Submission Process, these are the options you will see: 94",
+    "chunk_id": "p94_c0"
+  },
+  {
+    "page": 95,
+    "text": "Go to Contents Page 8. Review submission details and click “Next”. Note: There will be a Submission Coordinator assigned for joint submissions (involving more than 1 project member). Refer to Section 1.3 for the responsibilities of the Submission Coordinator. 95",
+    "chunk_id": "p95_c0"
+  },
+  {
+    "page": 96,
+    "text": "Go to Contents Page Select sections for approval 9. Select the applicable sections required for approval by clicking on the check boxes. 10. You may return to this page under “Edit Sections and Schemes” later as you are filling up the form, but any changes made in the selection affecting the agency will refresh the affected subsection and may require the form fields to be input again. Note: Submissions to all agencies may not be required depending on the extent of works in the proposal, or due to prescribed exemptions. 96",
+    "chunk_id": "p96_c0"
+  },
+  {
+    "page": 97,
+    "text": "Go to Contents Page Tip: If you are not sure which sections are required for regulatory approval, click on “What is required for Design Gateway approval” for agency specific details. Alternatively, submit a pre-submission consultation to the agency for further clarification. 11. Click “Next” to proceed. 97",
+    "chunk_id": "p97_c0"
+  },
+  {
+    "page": 98,
+    "text": "Go to Contents Page Identify Submission Scheme 12. At this page, provide inputs to the list of questions. 13. Based on your inputs, the applicable submission schemes will be selected for your project. For example, having selected URA earlier, you may be eligible for a lodgement scheme. Note: Two types of submission schemes exist: 'Plan Application' and 'Lodgement/Self- Declaration/Simplified Submission'. 14. Click “Next” to proceed. Tip: All indicated information can still be edited. 98",
+    "chunk_id": "p98_c0"
+  },
+  {
+    "page": 99,
+    "text": "Go to Contents Page Select additional details 15. Proceed to select additional details. 16. If 3D BIM submission applies to your project, select ‘Yes’. A coordinated BIM (IFC+SG) will be mandatory for submission. This will apply to projects with a total GFA >5000m2. 17. Click “Next” to proceed. 99",
+    "chunk_id": "p99_c0"
+  },
+  {
+    "page": 100,
+    "text": "Go to Contents Page Review summary 18. Review the summary of submission schemes and sections indicated previously. Note: In this example, sections such as LTA Rails were not selected earlier and will be marked as not required for approval. 19. If all is order, click on “Create submission”. 100",
+    "chunk_id": "p100_c0"
+  },
+  {
+    "page": 101,
+    "text": "Go to Contents Page 20. The Design Gateway submission has been created. Its initial status will be reflected as “Draft”. 21. To modify the sections requiring regulatory approval and edit submission schemes, you may click on “Edit sections and schemes”. 22. You may scroll down to view the assigned project parties for each section. The submission coordinator / assistant is responsible for assigning the project parties (refer to Section 12.3 for the steps). 101",
+    "chunk_id": "p101_c0"
+  },
+  {
+    "page": 102,
+    "text": "Go to Contents Page 12.2 Adding Project Information Going to the Project Information Section (action by Submission Coordinator / Submission Coordinator Assistant) 1. Select the submission in the “Submission workspace”. 2. When you have arrived at the “View submission timeline” page, click on “Edit”. 3. The Submission Coordinator / Submission Coordinator Assistant is required to input the project details in the first section of the submission. 4. Project details to be provided include the project title, development type, site area, SGFA and building blocks information. 102",
+    "chunk_id": "p102_c0"
+  },
+  {
+    "page": 103,
+    "text": "Go to Contents Page 5. Total SGFA is crucial for fee computation. 6. If you are still not ready to confirm the details, you may click on “Save section as draft” to avoid data loss. 7. Once ready, click on “Review section”. 8. After clicking on “Review Section”, click on “Confirm”. This will change the data to a read-only view for project-wide access. 103",
+    "chunk_id": "p103_c0"
+  },
+  {
+    "page": 104,
+    "text": "Go to Contents Page 12.3 Assigning Project Parties Assign Project Parties (action by Submission Coordinator / Submission Coordinator Assistant) 1. It is necessary to involve all relevant Qualified Persons (QPs) who are part of the project, ensuring they join for the preparation of the Design Gateway (DG). 2. Click on \"Assign Project Party\" to proceed with this task. Note: Assigning a project party is an action restricted to the submission coordinator or their assistant. 104",
+    "chunk_id": "p104_c0"
+  },
+  {
+    "page": 105,
+    "text": "Go to Contents Page 3. In the relevant section, the submission coordinator / assistant can see and appoint suitable parties. 4. If the desired name does not appear, please check that they have been appointed for the relevant responsibility. E.g. an Architect only appointed for NParks’ internal greenery responsibility will not have their name appear on URA’s planning parameters for selection. 5. After the parties have been assigned, click on “Assign”. 105",
+    "chunk_id": "p105_c0"
+  },
+  {
+    "page": 106,
+    "text": "Go to Contents Page 12.4 Uploading Files Uploading documents (action by assigned Project Parties) 1. Under each section of the submission, the assigned Project Party may upload documents using the digital upload feature. Tip: Required documents will be listed here. Please check carefully if the documents labelled (if applicable) apply to your project. You may click on “What should be included in documents/plans” for more information. Note: Do not upload zip files. Ensure that drawings and plans required for approval are encrypted before uploading. The encryption of files remain status quo through Netrust application. 106",
+    "chunk_id": "p106_c0"
+  },
+  {
+    "page": 107,
+    "text": "Go to Contents Page 2. Assigned project parties are to ensure that the file requirements are met before uploading the documents. Note: The entire submission package should not exceed 10GB. 3. Allow some time for virus scanning during document upload. 4. More time is required for the uploading of larger files. Users may navigate away while the file continues uploading. 107",
+    "chunk_id": "p107_c0"
+  },
+  {
+    "page": 108,
+    "text": "Go to Contents Page 5. After the file is uploaded, select respective file tag(s). A green tick will indicate that the document has been uploaded as required. Tip: You can select the file tag immediately while waiting for the file scan to be completed, after the file is uploaded. 6. Uploaded files can be downloaded and deleted. 108",
+    "chunk_id": "p108_c0"
+  },
+  {
+    "page": 109,
+    "text": "Go to Contents Page Uploading BIM Model (action by assigned Project Parties) 7. All assigned QPs can access the coordinated BIM submission. 8. Uploaded plans are displayed and can be downloaded. 9. More than 1 .ifc file for BIM models per discipline can be uploaded. Each model should not exceed 800MB. Files must be encrypted. 109",
+    "chunk_id": "p109_c0"
+  },
+  {
+    "page": 110,
+    "text": "Go to Contents Page 12.5 Review Computation of Fees Review Fees for Permit Application 1. Select the “Fee computation” tab. Note: All project members including developers can view the expected plan fee payment. Please note that the fees will be updated as the QPs fill in the form in the various subsections. The final accurate fee will be displayed when all sections have been filled in. 2. Review the required fees and ensure that they are accurate before making payment. Note: If you decide to cancel the submission, you can delete it provided no payment has been made (refer to Section 12.7). Payment is to be made to each individual agency separately. 110",
+    "chunk_id": "p110_c0"
+  },
+  {
+    "page": 111,
+    "text": "Go to Contents Page 12.6 Making Declarations Proceed to Declarations (action by Submission Coordinator / Submission Coordinator Assistant) 1. A green tick will appear beside completed sections. Note: Submission Coordinator / Assistant will receive notifications when a section is completed as well. 2. After all sections in a form have been completed by all assigned QPs, the Submission Coordinator is to trigger declaration for all QPs by clicking on “Proceed to declaration by QP(s)”. Note: While assigned project parties can prepare their respective sections concurrently, they are not allowed to declare for their respective sections until all inputs are completed. 111",
+    "chunk_id": "p111_c0"
+  },
+  {
+    "page": 112,
+    "text": "Go to Contents Page 3. The status of the submission in the “Submission Workspace” will be updated to “Pending declaration”. 4. An email will be sent to all Qualified Persons to inform them to make their declarations. 5. Submission Coordinators / Assistants can track the declarations by viewing the status of the individual sections. Note: If revisions are needed, the submission coordinator can click on the “Revert to Draft” button to return the submission to draft status for necessary edits. 112",
+    "chunk_id": "p112_c0"
+  },
+  {
+    "page": 113,
+    "text": "Go to Contents Page Submit Declarations (by assigned Project Parties) 6. As the assigned project party, review all information and proceed by clicking on “Declare and Submit”. 7. The submission status will be updated to “Pending Payment”. 8. Proceed to make payment by following the steps in Section 13. 113",
+    "chunk_id": "p113_c0"
+  },
+  {
+    "page": 114,
+    "text": "Go to Contents Page 12.7 Deleting a Submission before Processing Delete Submission (action by Project Coordinator / Project Coordinator Assistant) 1. Proceed to the Submission Workspace and select the relevant project. 2. Click on “Delete submission”. Note: This function is only available before the submission is sent to agencies for processing. 114",
+    "chunk_id": "p114_c0"
+  },
+  {
+    "page": 115,
+    "text": "Go to Contents Page 13. Making Payment for Submissions Payment must be made and processed in full before submission can transit to agencies for processing. 13.1 Choosing Mode of Payment 1. Go to the “Submission Workspace”. 2. Click on “Make payment”. Tip: Click on “Ask someone to pay” to request someone else to make payment (proceed to Section 13.5) 115",
+    "chunk_id": "p115_c0"
+  },
+  {
+    "page": 116,
+    "text": "Go to Contents Page 3. Select the mode of payment: a. Bank Transfer: Takes at least 2-3 working days to be processed (proceed to Section 13.2). Choose this option if client is GPE requiring e-invoice (proceed to Section 13.3). b. Credit Card: Up to $10,000 per transaction. Proceed to Section 13.4 for next steps. c. *coming soon* PayNow: Up to $200,000 per transaction. d. Payment has been made earlier: Only for special cases where payment has been made earlier (e.g. ongoing CN2 projects transiting to CORENET X). (proceed to Section 13.6) Note: This does not apply to new projects in CORENET X. 116",
+    "chunk_id": "p116_c0"
+  },
+  {
+    "page": 117,
+    "text": "Go to Contents Page Making payment as guest 4. External parties can make payment directly from the CORENET X landing page. 5. First, go to the landing page (https://portal.corenet.gov.sg/). 6. Select “Make payment as guest”. 7. Proceed to Section 13.7 for the remaining steps. 117",
+    "chunk_id": "p117_c0"
+  },
+  {
+    "page": 118,
+    "text": "Go to Contents Page 13.2 Bank Transfer (for private sector clients) 1. If the “bank transfer” option is selected, the CORENET X ES number will be generated. 2. Indicate the ES number as reference number or Details of Payment when making the bank transaction. Sample bank transaction: 118",
+    "chunk_id": "p118_c0"
+  },
+  {
+    "page": 119,
+    "text": "Go to Contents Page Sample bank transaction: 3. Take note of the Bank Transaction Reference Number. 4. Input this reference number under \"Bank transaction no.\" on the Submission portal payment page. Input in Payment Page: 119",
+    "chunk_id": "p119_c0"
+  },
+  {
+    "page": 120,
+    "text": "Go to Contents Page 5. If payment is successful, you should see a confirmation screen. The payment status will be updated to “verifying payment”. 120",
+    "chunk_id": "p120_c0"
+  },
+  {
+    "page": 121,
+    "text": "Go to Contents Page 6. The submission status will also be reflected in the “Submission Workspace”. 121",
+    "chunk_id": "p121_c0"
+  },
+  {
+    "page": 122,
+    "text": "Go to Contents Page 7. Once the payment has been verified by the agency, you will receive an email notification on successful payment. 8. The payment status will be updated to “paid”. Tip: Double check to ensure that payment to all relevant agencies have been made successfully. 9. After all payments are completed, the submission will be advanced to the “Processing” stage. 122",
+    "chunk_id": "p122_c0"
+  },
+  {
+    "page": 123,
+    "text": "Go to Contents Page 13.3 Bank Transfer (for Government Procurement Entities (GPE) clients) 1. If the “bank transfer” option is selected, GPE clients making payment will see the “Yes/No” options. 1.1. HDB/ JTC should select “Yes”. Proceed to step 4. 1.2. GPE clients requiring e- invoice should select “No”. Proceed to step 5. 2. The CORENET X ES number will be generated. 3. Indicate the ES number as reference number or Details of Payment when making the bank transaction. 123",
+    "chunk_id": "p123_c0"
+  },
+  {
+    "page": 124,
+    "text": "Go to Contents Page 4. If “yes” was chosen, payee is to upload proof of payment. 124",
+    "chunk_id": "p124_c0"
+  },
+  {
+    "page": 125,
+    "text": "Go to Contents Page 5. If “no” was chosen, payee is to fill in their details accordingly. 125",
+    "chunk_id": "p125_c0"
+  },
+  {
+    "page": 126,
+    "text": "Go to Contents Page 6. The payment status will be updated to “verifying payment”. 126",
+    "chunk_id": "p126_c0"
+  },
+  {
+    "page": 127,
+    "text": "Go to Contents Page 7. Once the payment has been verified by the agency, you will receive an email notification on successful payment. 8. The payment status will be updated to “paid”. Tip: Double check to ensure that payment to all relevant agencies have been made successfully. 9. After all payments are completed, the submission will be advanced to the “Processing” stage. 127",
+    "chunk_id": "p127_c0"
+  },
+  {
+    "page": 128,
+    "text": "Go to Contents Page 13.4 Credit Card 1. Fill in the required fields. 2. Credit card transaction is immediate. Note: Credit card payment is applicable to transactions up to $10,000. 128",
+    "chunk_id": "p128_c0"
+  },
+  {
+    "page": 129,
+    "text": "Go to Contents Page 3. A successful payment page will be shown. 4. Click on “View receipt” to download the receipt for record purposes. 129",
+    "chunk_id": "p129_c0"
+  },
+  {
+    "page": 130,
+    "text": "Go to Contents Page 13.5 Ask someone else to pay 1. Click on “Ask someone to pay”. 2. Click on “Make payment”. 130",
+    "chunk_id": "p130_c0"
+  },
+  {
+    "page": 131,
+    "text": "Go to Contents Page 3. Indicate the email address of the recipient and click on “Send request”. A specific link will be sent to the recipient to request them to make payment. Tip: Click on “preview payment link” to view what recipient will see upon logging in. 131",
+    "chunk_id": "p131_c0"
+  },
+  {
+    "page": 132,
+    "text": "Go to Contents Page 4. The recipient will have a restricted view and will only be able to see the outstanding payments to be made. 5. The recipient can click \"Make payment\" for the item that he/she wishes to make payment. Note: The recipient must login with Singpass to access the system to make this 3rd party payment. However, these individuals’ registration into their company’s Corppass is optional. 132",
+    "chunk_id": "p132_c0"
+  },
+  {
+    "page": 133,
+    "text": "Go to Contents Page 6. There are 2 payment methods available: • Bank transfer – recipient may follow the steps in Section 13.2 (for private sector clients) or Section 13.3 (for GPE clients). • Credit card (up to $10,000) – recipient may follow the steps in Section 13.4. 133",
+    "chunk_id": "p133_c0"
+  },
+  {
+    "page": 134,
+    "text": "Go to Contents Page 13.6 Payment has been made earlier (for projects that have made separate arrangements with agencies) 1. If this option is selected, please provide justification and the relevant reference numbers for the respective agency finance department to trace the records and reconcile the payment. 134",
+    "chunk_id": "p134_c0"
+  },
+  {
+    "page": 135,
+    "text": "Go to Contents Page 13.7 Make payment as guest 1. External parties can also login to make payment directly. 2. First, go to the CX landing page (https://portal.corenet.gov.sg/). 3. After logging in, external party needs to select “My payment” tab located on the left navigation bar and input the ES number to be able to search for the relevant payments. 135",
+    "chunk_id": "p135_c0"
+  },
+  {
+    "page": 136,
+    "text": "Go to Contents Page 4. The external party will have a restricted view and will only be able to see the outstanding payments to be made. 5. The external party can click \"Make payment\" for the item that he/she wishes to make payment for. 136",
+    "chunk_id": "p136_c0"
+  },
+  {
+    "page": 137,
+    "text": "Go to Contents Page 14. Tracking Submission Status 14.1 Viewing Submission Status 1. All project members can track the status of all submissions in the Submission Portal. 2. Project members can go to the \"Project overview\" page to view the submission milestone dashboard and project information. The types of statuses are shown below: • Not started • Draft • Processing: Agencies are processing • Written Direction Issued / Response Issued: Project members can download the responses and make resubmissions to address agencies’ comments • Clearance 3. You can view the details of each submission by clicking “View submission”. 137",
+    "chunk_id": "p137_c0"
+  },
+  {
+    "page": 138,
+    "text": "Go to Contents Page 14.2 Withdrawing a Submission during Processing 1. If withdrawal of the submission is necessary during processing, use the “Withdraw Submission” button to initiate the process. 2. Upon withdrawal, the submission will be reverted to its last status e.g. Written Direction Issued. Submission Coordinator may initiate reply to Written direction again, and fees will be re-computed and apply. 138",
+    "chunk_id": "p138_c0"
+  },
+  {
+    "page": 139,
+    "text": "Go to Contents Page 15. Responding to Written Directions and Making Resubmissions 15.1 Downloading Written Directions 1. You will notice a written direction has been issued for this submission. 2. You can view the written direction(s) by clicking \"View Responses\". 139",
+    "chunk_id": "p139_c0"
+  },
+  {
+    "page": 140,
+    "text": "Go to Contents Page 3. Download the relevant written direction from the relevant agencies. 140",
+    "chunk_id": "p140_c0"
+  },
+  {
+    "page": 141,
+    "text": "Go to Contents Page 15.2 Extending a Written Direction 1. You can extend a written direction by 14 working days. Do so by clicking \"Extend Written Direction\". This is a one-time extension. 2. Click “confirm”. The due date will be extended accordingly. 141",
+    "chunk_id": "p141_c0"
+  },
+  {
+    "page": 142,
+    "text": "Go to Contents Page 15.3 Initiating a Resubmission Making a Resubmission (action by Submission Coordinator / assigned Project Parties) 1. To initiate a resubmission, submission coordinators and assigned project parties, along with their assistants, can click \"Reply to Comments.\" 2. Click “Confirm”. 142",
+    "chunk_id": "p142_c0"
+  },
+  {
+    "page": 143,
+    "text": "Go to Contents Page 3. After clicking \"Confirm,\" the system will create a resubmission, retaining all details from the previous submission. 4. Click \"Edit\" to proceed. 143",
+    "chunk_id": "p143_c0"
+  },
+  {
+    "page": 144,
+    "text": "Go to Contents Page 5. If a written direction has been issued for a specific section, the tick beside that section will be greyed out. That section is returned to draft state for assigned project parties to modify and edit. 6. The assigned project parties for the sections requiring revisions may modify information where necessary, change submission schemes or update files. 7. If there are updates to the parameters affecting plan fees, this is automatically trigger a top up of fees, which will be reflected in the “Fee computation” section when the form sections are completed. 8. Note: All files from previous submissions will be repopulated. 144",
+    "chunk_id": "p144_c0"
+  },
+  {
+    "page": 145,
+    "text": "Go to Contents Page 15.4 Amending uploaded files Amending uploaded documents (action by assigned Project Parties) 1. In the respective section, the assigned Project Parties can “replace” or “delete” the files that were earlier submitted. 2. If a file has been revised to address the agency’s comment for resubmission, replace the old file by clicking \"Replace\". This action allows changes to be tracked between the initial and resubmitted file. Note: Do not use delete unless the file must be omitted and is irrelevant to the submission. Otherwise, revised drawings should use “Replace”. 3. Ensure that you “save” the section after replacing the file. File scanning may take some time, but you may navigate to the coordinated 145",
+    "chunk_id": "p145_c0"
+  },
+  {
+    "page": 146,
+    "text": "Go to Contents Page BIM section while waiting for the file to upload. 4. If a file is no longer needed, click \"Delete File.\" Note: Keep in mind that deleting a file removes it permanently. Only delete if necessary. 5. To add a new file, follow the same steps in the initial submission. It will appear as a new entry. 146",
+    "chunk_id": "p146_c0"
+  },
+  {
+    "page": 147,
+    "text": "Go to Contents Page Amending uploaded BIM model (action by assigned Project Parties) 6. In the coordinated BIM section, your draft will be returned during resubmission. 7. Select and “replace” the affected section if any amendments to the BIM model require redeclaration by the assigned project party. 8. You will be prompted to select the agency’s section that has been affected by the revisions made in this replacement model e.g. “planning parameters” 9. .bcf file is acceptable, if the project team has replied to the WD comments through the .bcf file. 10. All files are to be encrypted by the relevant QPs 147",
+    "chunk_id": "p147_c0"
+  },
+  {
+    "page": 148,
+    "text": "Go to Contents Page 11. Once your file is updated, click “review section”. 12. If no changes are necessary, click on “review section”. 15.5 Making Declarations Proceed to declaration (action by Submission Coordinator / Submission Coordinator Assistant) 1. Upon completing the resubmission, the submission coordinator may click on “proceed to declaration by QP(s)”. Note: Only sections that have been edited and resubmitted require re-declarations. 148",
+    "chunk_id": "p148_c0"
+  },
+  {
+    "page": 149,
+    "text": "Go to Contents Page 16. Making Amendments after Submission Clearance 16.1 Initiating Amendment 1. Once the submission is approved and eligible for an amendment, the submission coordinator gains access to apply for an amendment. 2. Go to the submission workspace and click “Amend” on the submission to be amended. Note: An amendment can generally be made for all submissions except the Design Gateway submission. 149",
+    "chunk_id": "p149_c0"
+  },
+  {
+    "page": 150,
+    "text": "Go to Contents Page 3. A draft amendment submission is created. 4. Click “Edit” to access the amendment submission form. Note: Click on “Delete amendment” to delete the amendment submission form. This will revert the submission to its last approved status. 150",
+    "chunk_id": "p150_c0"
+  },
+  {
+    "page": 151,
+    "text": "Go to Contents Page 5. All approved details from the last submission will be repopulated. 6. The respective QP can click the “Edit” button to initiate the amendment for that section. 7. If there are errors, re-upload the necessary files. 8. All input is automatically saved. However, if unsure, use the “Save Section as Draft” button to preserve your changes. 9. Once changes have been finalised, click on “Review section”. 151",
+    "chunk_id": "p151_c0"
+  },
+  {
+    "page": 152,
+    "text": "Go to Contents Page Checking for fees 10. Check if any fees have been triggered. If empty, it indicates no fees are required. 152",
+    "chunk_id": "p152_c0"
+  },
+  {
+    "page": 153,
+    "text": "Go to Contents Page 16.2 Making Declarations Proceed to declaration (action by Submission Coordinator / Submission Coordinator Assistant) 11. Once the amended sections are finalised, the submission coordinator may click on “proceed to declaration”. 12. All Qualified Persons will now be notified to make their declarations. Note: All QPs need to redeclare for the amendment, regardless of whether their assigned sections were amended. 153",
+    "chunk_id": "p153_c0"
+  },
+  {
+    "page": 154,
+    "text": "Go to Contents Page Submitting Declarations (by assigned Project Parties) 13. For sections that were amended, the declaration will reappear. 14. For sections not amended, review that changes are immaterial and don't require new approval before declaring and submitting. 15. If additional fees are triggered, proceed to make payment by following the steps in Section 13. 154",
+    "chunk_id": "p154_c0"
+  },
+  {
+    "page": 155,
+    "text": "Go to Contents Page 17. Submitting Independent Submissions 17.1 Creating an Independent Submission 1. Go to the “Project Overview” page. 2. Click on “Submission Workspace” to initiate a submission. 155",
+    "chunk_id": "p155_c0"
+  },
+  {
+    "page": 156,
+    "text": "Go to Contents Page 3. The submission workspace dashboard reflects the stage your project is at. Note: In this example, we are at the Design Gateway (DG) 4. Click on “Create Submission”. Note: If no submissions have been made, any member can proceed to create one. 156",
+    "chunk_id": "p156_c0"
+  },
+  {
+    "page": 157,
+    "text": "Go to Contents Page 5. Select “Independent submission (to individual agencies)”. 6. Select the agency and submission type – in this example, the independent submission is a Noise Assessment to be submitted to NEA. Note: The project member creating this submission will be assigned the role of Submission Coordinator for this pre-submission consultation. 7. Click “Next”. 157",
+    "chunk_id": "p157_c0"
+  },
+  {
+    "page": 158,
+    "text": "Go to Contents Page 8. Review submission details and click “Create”. 158",
+    "chunk_id": "p158_c0"
+  },
+  {
+    "page": 159,
+    "text": "Go to Contents Page 9. An independent submission will be created. At the start, its submission status will be reflected as “draft”. 10. The assigned Project Parties can click on “Edit” to fill in the details and upload documents. 159",
+    "chunk_id": "p159_c0"
+  },
+  {
+    "page": 160,
+    "text": "Go to Contents Page Completing the Independent Submission Form 11. A greyed-out tick will appear beside the section(s) to be completed – in this example, the section is “Noise assessment”. 12. The assigned QP(s) can click on these sections to fill in the details and upload required documents. 13. It is recommended for users to “save section as draft” to prevent data loss. 160",
+    "chunk_id": "p160_c0"
+  },
+  {
+    "page": 161,
+    "text": "Go to Contents Page 14. Once all inputs have been finalised and required documents have been uploaded, click on “Review section”. 15. A pop-up window will appear. Click on “Confirm” to proceed. 161",
+    "chunk_id": "p161_c0"
+  },
+  {
+    "page": 162,
+    "text": "Go to Contents Page 17.2 Making Declarations Proceed to declaration (action by Submission Coordinator / Submission Coordinator Assistant) 1. After the sections have been locked for review, the submission coordinator may click on “proceed to declaration by QP(s)”. 2. All assigned Qualified Person(s) will now be notified to make their declarations via email. Email notification to assigned QP(s): 162",
+    "chunk_id": "p162_c0"
+  },
+  {
+    "page": 163,
+    "text": "Go to Contents Page 3. The submission status will be updated to “pending declaration”. 4. You will be able to view who are the appointed parties who need to submit their declarations. Note: In this simplified example, the architect (who is also the submission coordinator) is the only one who needs to make the declaration. 5. If the submission needs to be amended, the submission coordinator may click on “revert submission to draft”. 163",
+    "chunk_id": "p163_c0"
+  },
+  {
+    "page": 164,
+    "text": "Go to Contents Page Submit Declaration (action by assigned QP(s)) 6. The assigned QP(s) will need to click on the link in their email, which will bring them to the declaration page. 7. Click on “Declare for submission”. 164",
+    "chunk_id": "p164_c0"
+  },
+  {
+    "page": 165,
+    "text": "Go to Contents Page 18. Submitting Permit Application to carry out works 18.1 Creating a Submission 1. Go to the “Project Overview” page. 2. Click on “Submission Workspace”. 3. Click on “Create submission”. 165",
+    "chunk_id": "p165_c0"
+  },
+  {
+    "page": 166,
+    "text": "Go to Contents Page 4. Select “Permit application (to carry out works)”. Note: For BCA permits, there should be existing approved structural plans, including the structural works approved in Piling and Construction gateways. Only the PE(Civil) appointed for supervision responsibilities can create this submission. 5. Select the Agency and Submission Type. 6. Select the corresponding structural plan approval ES number to proceed. Note: The project member creating this submission will be assigned the role of Submission Coordinator for this submission. 7. Click “Next”. 166",
+    "chunk_id": "p166_c0"
+  },
+  {
+    "page": 167,
+    "text": "Go to Contents Page 8. Select “Create”. Note: Builder must be appointed before this step, so that his name appears in the drop-down list for selection. 167",
+    "chunk_id": "p167_c0"
+  },
+  {
+    "page": 168,
+    "text": "Go to Contents Page 9. A draft submission will be created. As there may be multiple parties involved in the submission, assign the project parties into each of the sections before proceeding. See “assign project party” section for more information. 10. Click on “Edit” to fill in the submission form. 168",
+    "chunk_id": "p168_c0"
+  },
+  {
+    "page": 169,
+    "text": "Go to Contents Page Input Permit Details (action by QP (Supervision), i.e. PE (Civil) appointed for supervision of structural works) 11. QP (Supervision) is to input the permit details. 12. Once all fields have been filled in, click on “review section”. 169",
+    "chunk_id": "p169_c0"
+  },
+  {
+    "page": 170,
+    "text": "Go to Contents Page Provide inputs for Supervision of Structural Works (action by QP (Supervision)) 13. QP (Supervision) is to provide inputs for this section. 14. QP (Supervision) shall indicate the Resident Engineer (RE) and Resident Technical Officer (RTO) involved for the project into the project in the permit. Their names will appear in the drop-down list for selection when they are successfully added into the project. 15. The QP (Supervision) is responsible for adding the RE and RTO involved for the project into the project. Like every other project member, the REs and RTOs are required to login to the system and acknowledge their addition to the project. Following this, the QP (supervision) may then see their names appear in the permit form for selection. 170",
+    "chunk_id": "p170_c0"
+  },
+  {
+    "page": 170,
+    "text": "ision) may then see their names appear in the permit form for selection. 170",
+    "chunk_id": "p170_c0"
+  },
+  {
+    "page": 171,
+    "text": "Go to Contents Page 16. If Geotechnical works are involved as per indicated during the creation of this form, “Supervision of Geotechnical Building works” section will also be generated. PE (Geotechnical) appointed for supervision of the works can access this section to make their inputs. 17. Once all fields have been filled in, click on “review section”. Tip: Refer to “does this project require RE/RTO?” to see the requirements. 171",
+    "chunk_id": "p171_c0"
+  },
+  {
+    "page": 172,
+    "text": "Go to Contents Page Provide inputs for Manpower, Constructability and Specialist Building Works (action by Building Technical Controller) 18. Technical Controller (TC) is to provide inputs for this section. 19. If there are specialist building works involved, the TC shall select the appointed licensed specialist builder (LSB) accordingly involved in the works under this permit. Contact the PC to add the LSB and complete the appointment process. Their names will appear in the list thereafter. 20. Once all fields have been filled in, click on “Review section”. 172",
+    "chunk_id": "p172_c0"
+  },
+  {
+    "page": 173,
+    "text": "Go to Contents Page 18.2 Making Declarations Proceed to Declarations (action by Submission Coordinator / Submission Coordinator Assistant) 1. A green tick will appear beside completed sections. Note: Submission Coordinator / Assistant will receive notifications when a section is completed as well. 2. After all sections in a form have been completed by all assigned QPs, the Submission Coordinator is to trigger declaration for all QPs by clicking on “Proceed to declaration by QP(s)”. Note: While assigned project parties can prepare their respective sections concurrently, they are not allowed to declare for their respective sections until all inputs are completed. 173",
+    "chunk_id": "p173_c0"
+  },
+  {
+    "page": 174,
+    "text": "Go to Contents Page 3. The status of the submission in the “Submission Workspace” will be updated to “Pending declaration”. 4. An email will be sent to all Qualified Persons to inform them to make their declarations. 5. Project Coordinators / Assistants can track the declarations by viewing the status of the individual sections. Note: If revisions are needed, the submission coordinator can click on the “Revert submission to draft” button to return the submission to draft status for necessary edits. 174",
+    "chunk_id": "p174_c0"
+  },
+  {
+    "page": 175,
+    "text": "Go to Contents Page Submit Declarations (by assigned Project Parties) 6. As the assigned project party, review all information and proceed by clicking on “Declare for submission”. 7. The submission status will be updated to “Pending Payment”. 8. Proceed to make payment by following the steps in Section 13. 175",
+    "chunk_id": "p175_c0"
+  },
+  {
+    "page": 176,
+    "text": "Go to Contents Page 9. The assigned project party will be brought to the declaration page. Click on “Declare and Submit”. 176",
+    "chunk_id": "p176_c0"
+  },
+  {
+    "page": 177,
+    "text": "Go to Contents Page 10. After all QPs have made their declarations, the submission status will be updated to “Processing”. 177",
+    "chunk_id": "p177_c0"
+  },
+  {
+    "page": 178,
+    "text": "Go to Contents Page 19. Applying for Waiver 19.1 Creating a Waiver Application 1. Go to the “Project Overview” page. 2. Click on “Submission Workspace” to initiate a submission. 178",
+    "chunk_id": "p178_c0"
+  },
+  {
+    "page": 179,
+    "text": "Go to Contents Page 3. The submission workspace dashboard reflects the stage your project is at. Note: In this example, we are at the Design Gateway (DG) 4. Click on “Create Submission”. Note: If no submissions have been made, any member can proceed to create one. 179",
+    "chunk_id": "p179_c0"
+  },
+  {
+    "page": 180,
+    "text": "Go to Contents Page 5. Select “Waiver / Non- compliance”. 6. Select the agency and category for which the waiver is to be submitted. 7. Click “Next”. 180",
+    "chunk_id": "p180_c0"
+  },
+  {
+    "page": 181,
+    "text": "Go to Contents Page 8. Review submission details and click “Create”. 9. An email will be sent to the assigned Qualified Person(s) to inform them to prepare the waiver submission. 181",
+    "chunk_id": "p181_c0"
+  },
+  {
+    "page": 182,
+    "text": "Go to Contents Page 10. A waiver submission will be created. At the start, its submission status will be reflected as “draft”. 11. The assigned Qualified Person(s) click on “Edit” to fill in the Waiver details and upload documents. 182",
+    "chunk_id": "p182_c0"
+  },
+  {
+    "page": 183,
+    "text": "Go to Contents Page Completing the Waiver Submission 12. The assigned QP can click on the “Waiver/non-compliance” section to fill in the details and upload required documents. 13. It is recommended for users to “save section as draft” to prevent data loss. 14. Once this section is finalised, click on “Review section”. 15. Once the section has been locked for review, a green tick will appear. 183",
+    "chunk_id": "p183_c0"
+  },
+  {
+    "page": 184,
+    "text": "Go to Contents Page 19.2 Review Computation of Fees Review Fees for Waiver Application 1. Select the “Fee computation” section to review payable fees. 2. Click “Submit” and confirm to submit the waiver application. 184",
+    "chunk_id": "p184_c0"
+  },
+  {
+    "page": 185,
+    "text": "Go to Contents Page Make Payment 3. The status of the waive application will be updated to “pending payment”. 4. Make payment by following the steps in Section 13. 185",
+    "chunk_id": "p185_c0"
+  },
+  {
+    "page": 186,
+    "text": "Go to Contents Page 20. Submitting for Completion (TOP/CSC) 1. After clearing the Design Gateway, Piling Gateway (if applicable) and Construction Gateway or the Direct Submission Process, the clearances will be reflected on the submission milestone dashboard in the “Submission Workspace”. 2. You will see that the status for the “Completion” stage is reflected as “Not started”. 3. Click on “View TOP/CSC requirements” to proceed. 186",
+    "chunk_id": "p186_c0"
+  },
+  {
+    "page": 187,
+    "text": "Go to Contents Page 20.1 Booking Site Inspections 4. Site inspections can be booked through “Site inspection booking” on the Project overview page or in the TOP/CSC requirements page. 5. On the TOP/CSC requirements page, you can view the site inspection requirements for TOP/CSC – click on “view checklist” for detailed requirements. 6. You may click on “manage inspection booking” to book inspections. 187",
+    "chunk_id": "p187_c0"
+  },
+  {
+    "page": 188,
+    "text": "Go to Contents Page 7. Go to the “Manage Site Inspection Booking” page. 8. Click on “Book Inspection”. Proceed to book your preferred slot. Note: Currently, only booking of site inspections by the Building and Construction Authority (BCA) are supported in CORENET X Submission Portal. Other agencies’ site inspection booking will be progressively introduced and will currently remain status quo, where project teams can approach the agency directly to make the bookings. 188",
+    "chunk_id": "p188_c0"
+  },
+  {
+    "page": 189,
+    "text": "Go to Contents Page 20.2 Checking Required Technical Clearances 9. If you are uncertain which technical clearances are required from agencies based on submitted plans, you may go to the “Submission Workspace” and click on “View TOP/CSC requirements” under the submission milestone dashboard. 10. Click on the “Technical Clearance” tab. This section informs you whether your latest approved construction gateway requires TOP/CSC clearances from each agency. Tip: Click on “view checklist” to understand each agency’s requirements for technical clearance. 11. Obtain the required technical clearances by following the steps in Section 20.3. 189",
+    "chunk_id": "p189_c0"
+  },
+  {
+    "page": 190,
+    "text": "Go to Contents Page 20.3 Obtaining Required Technical Clearances 1. Go to the Submission Workspace and click on “Create Submission”. 2. Select “Technical clearances” under the Submission category. 3. Choose the appropriate forms to be submitted for technical clearance. 4. Click “Next” and complete the guided submission to obtain the relevant technical clearance. 190",
+    "chunk_id": "p190_c0"
+  },
+  {
+    "page": 191,
+    "text": "Go to Contents Page 5. Once the relevant technical clearance has been obtained, the clearance status will be updated to “Clearance”. 6. Ensure that all required items’ statuses are updated to “Cleared” in the respective stages before applying for overall TOP/CSC to BCA. 191",
+    "chunk_id": "p191_c0"
+  },
+  {
+    "page": 192,
+    "text": "Go to Contents Page 20.4 Certificate of Supervision and As-Built 7. Depending on project requirements, not all Certificate of Supervision and As-Build Forms may be required to be submitted. 8. Submit required forms and track the status. 192",
+    "chunk_id": "p192_c0"
+  },
+  {
+    "page": 193,
+    "text": "Go to Contents Page 20.5 Completion of Structural Works 1. Go to the “Submission Workspace” and click on “View TOP/CSC requirements” under the submission milestone. 2. Click on the “Completion of Structural works” tab. This feature allows tracking of approved permits and structural plans, and if the required C-forms have been submitted. Note: The C-forms can be applied through “Technical Clearances” to BCA under “Completion of structural works”. 3. A yellow banner may indicate an outstanding approved structural plan not linked to permits. 4. Click 'View Approved Plan not tied to Permit' to view the required next steps. 193",
+    "chunk_id": "p193_c0"
+  },
+  {
+    "page": 194,
+    "text": "Go to Contents Page 5. To rectify the above issue, click on “Manage structural plans”. Note: Only the supervising Qualified Person (QP) can edit this section. 6. The supervising QP will need add the necessary plans to the permit. 7. The supervising QP is to ensure the permit is linked to the relevant plans, before clicking on “save”. 8. After clicking on “save”, the yellow banner should disappear if the error is resolved. This means that all approved permits have been linked to the relevant plans. 9. You can review permit status or download relevant documents, which are categorised under “Technical Clearances”. 194",
+    "chunk_id": "p194_c0"
+  },
+  {
+    "page": 195,
+    "text": "Go to Contents Page 20.6 Apply for final TOP / CSC 1. Before submitting for final TOP / CSC, do ensure that all technical clearances have been obtained. Tip: Regularly check the status of the technical clearances by clicking on “View TOP/CSC requirements”. 2. To submit for final TOP/CSC, go to the submission workspace and click “Create Submission”. 3. Select “TOP/CSC” under the “Submission category”. 4. Click “Next”. 195",
+    "chunk_id": "p195_c0"
+  },
+  {
+    "page": 196,
+    "text": "Go to Contents Page 21. Accessing Approved Plans 1. When a submission is cleared, its status will be reflected as “Clearance”. 2. Click on \"View approved submission\" to download the approved plans. 3. Click on “View responses” to download agencies responses. 196",
+    "chunk_id": "p196_c0"
+  },
+  {
+    "page": 197,
+    "text": "Go to Contents Page After clicking on “View approved submission”: 4. Click “Download” to download the respective approved drawings and models. After clicking on “View responses”: 197",
+    "chunk_id": "p197_c0"
+  },
+  {
+    "page": 198,
+    "text": "Go to Contents Page 5. This is a sample clearance letter with “List of Approved Plans” and the corresponding checksum for each Approved Plan. 198",
+    "chunk_id": "p198_c0"
+  },
+  {
+    "page": 199,
+    "text": "Go to Contents Page 6. The checksum is an alphanumeric value that uniquely represents the contents of the file. It is embedded in the QR code. 7. Refer to Section 21.1 for the steps to verify if a file is the approved plan using checksum. 199",
+    "chunk_id": "p199_c0"
+  },
+  {
+    "page": 200,
+    "text": "Go to Contents Page 21.1 Verifying approved plans using checksum To verify if a file is the Approval Plan, you can compare the checksum of the file with the checksum listed in the \"List of Approved Plans\". Option 1: Verification with Netrust Digital Signer (NDS) 1. The latest version of NDS has the capability to perform validation of files with a List of Approved Plans. 2. Please download the latest version of NDS (ZIP folder) and refer to the User Guide for Checksum Validation of Approved Plans using NDS. Option 2: Verification without <There is no image here> Netrust Digital Signer (NDS) 3. Scan the QR code in the approval letter using any QR code reader to obtain the SHA256 checksum of the approved plan. 200",
+    "chunk_id": "p200_c0"
+  },
+  {
+    "page": 201,
+    "text": "Go to Contents Page 4. Obtain the SHA256 checksum of the file you wish to verify. There are many ways to obtain the SHA256 checksum of the file (e.g. online tool https://emn178.github.io/onli ne-tools/sha256_checksum.html). 5. Compare the checksums from (a) and (b). The checksums will be the same if the file is the Approved Plan. 201",
+    "chunk_id": "p201_c0"
+  },
+  {
+    "page": 202,
+    "text": "Go to Contents Page 6. This is a sample clearance letter with “List of Approved Plans” and the corresponding checksum for each Approved Plan. 202",
+    "chunk_id": "p202_c0"
+  }
+]
